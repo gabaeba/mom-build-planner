@@ -103,7 +103,7 @@ export const soulStrike: Skill = {
   preRequisites: [{ skill: napalmBeat, level: 4 }],
 };
 
-export const safetyWall: Skill = {
+export const safetyWallMage: Skill = {
   name: "Safety Wall",
   description:
     "Use a Blue Gemstone to create a pillar on a cell that protects whoever stands in it from melee attacks.",

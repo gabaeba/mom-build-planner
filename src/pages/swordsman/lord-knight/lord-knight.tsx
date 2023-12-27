@@ -13,6 +13,17 @@ import {
   swordMastery,
 } from "../swordsman/skills";
 import { SkillComponent } from "../../../common/skill";
+import {
+  autoCounter,
+  brandishSpear,
+  chargeAttack,
+  movementMastery,
+  pecoPecoRide,
+  pierce,
+  spearBoomerang,
+  spearStab,
+  twoHandQuicken,
+} from "../knight/skills";
 
 export const LordKnight = () => {
   return (
@@ -33,6 +44,18 @@ export const LordKnight = () => {
         <SkillComponent skill={autoBerserk} />
         <SkillComponent skill={fatalBlow} />
         <SkillComponent skill={hpRecoveryWhileMoving} />
+      </div>
+      <div>KNIGHT</div>
+      <div style={{ display: "flex" }}>
+        <SkillComponent skill={twoHandQuicken} />
+        <SkillComponent skill={autoCounter} />
+        <SkillComponent skill={movementMastery} />
+        <SkillComponent skill={brandishSpear} />
+        <SkillComponent skill={pecoPecoRide} />
+        <SkillComponent skill={pierce} />
+        <SkillComponent skill={spearBoomerang} />
+        <SkillComponent skill={spearStab} />
+        <SkillComponent skill={chargeAttack} />
       </div>
     </>
   );
