@@ -1,7 +1,3 @@
-import React from 'react'
-
 export const Stalker = () => {
-  return (
-    <div>stalker</div>
-  )
-}
+  return <div>stalker</div>;
+};
