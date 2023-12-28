@@ -8,31 +8,48 @@ import {
 } from "use-query-params";
 
 type SwordsmanSkills = {
-  "1": typeof NumberParam;
-  "2": typeof NumberParam;
-  "3": typeof NumberParam;
-  "4": typeof NumberParam;
-  "5": typeof NumberParam;
-  "6": typeof NumberParam;
-  "7": typeof NumberParam;
-  "8": typeof NumberParam;
-  "9": typeof NumberParam;
-  "10": typeof NumberParam;
-  "11": typeof NumberParam;
-  "12": typeof NumberParam;
+  Bash: typeof NumberParam;
+  Provoke: typeof NumberParam;
+  Endure: typeof NumberParam;
+  "Increase HP Recovery": typeof NumberParam;
+  "Magnum Break": typeof NumberParam;
+  "Sword Mastery": typeof NumberParam;
+  "Spear Mastery": typeof NumberParam;
+  "Iron Defense": typeof NumberParam;
+  "One-Hand Quicken": typeof NumberParam;
+  "Auto Berserk": typeof NumberParam;
+  "Fatal Blow": typeof NumberParam;
+  "Hp Recovery While Moving": typeof NumberParam;
 };
 
 export type KnightSkills = SwordsmanSkills & {
-  "13": typeof NumberParam;
-  "14": typeof NumberParam;
-  "15": typeof NumberParam;
-  "16": typeof NumberParam;
-  "17": typeof NumberParam;
-  "18": typeof NumberParam;
-  "19": typeof NumberParam;
-  "20": typeof NumberParam;
-  "21": typeof NumberParam;
-  "22": typeof NumberParam;
+  "Twohand Quicken": typeof NumberParam;
+  "Auto Counter": typeof NumberParam;
+  "Peco Peco Ride": typeof NumberParam;
+  "Movement Mastery": typeof NumberParam;
+  Pierce: typeof NumberParam;
+  "Spear Stab": typeof NumberParam;
+  "Spear Boomerang": typeof NumberParam;
+  "Bowling Bash": typeof NumberParam;
+  "Brandish Spear": typeof NumberParam;
+  "Charge Attack": typeof NumberParam;
+};
+
+export type LordKnightSkills = KnightSkills & {
+  "Aerial Assault": typeof NumberParam;
+  "Aura Blade": typeof NumberParam;
+  Berserk: typeof NumberParam;
+  "Clashing Spiral": typeof NumberParam;
+  Concentration: typeof NumberParam;
+  "Defensive Stance": typeof NumberParam;
+  "Head Crush": typeof NumberParam;
+  "Ignition Break": typeof NumberParam;
+  "Joint Beat": typeof NumberParam;
+  "Majestic Sword": typeof NumberParam;
+  Parry: typeof NumberParam;
+  "Phantom Thrust": typeof NumberParam;
+  "Tension Relax": typeof NumberParam;
+  Vendetta: typeof NumberParam;
 };
 
 interface ContextProvider {
@@ -63,29 +80,43 @@ export function LordKnightProvider({
   children: React.ReactNode;
 }) {
   const [isHovered, setIsHovered] = useState<Skill["preRequisites"]>();
-  const [query, setQuery] = useQueryParams<KnightSkills>({
-    "1": NumberParam,
-    "2": NumberParam,
-    "3": NumberParam,
-    "4": NumberParam,
-    "5": NumberParam,
-    "6": NumberParam,
-    "7": NumberParam,
-    "8": NumberParam,
-    "9": NumberParam,
-    "10": NumberParam,
-    "11": NumberParam,
-    "12": NumberParam,
-    "13": NumberParam,
-    "14": NumberParam,
-    "15": NumberParam,
-    "16": NumberParam,
-    "17": NumberParam,
-    "18": NumberParam,
-    "19": NumberParam,
-    "20": NumberParam,
-    "21": NumberParam,
-    "22": NumberParam,
+  const [query, setQuery] = useQueryParams<LordKnightSkills>({
+    Bash: NumberParam,
+    Provoke: NumberParam,
+    Endure: NumberParam,
+    "Increase HP Recovery": NumberParam,
+    "Magnum Break": NumberParam,
+    "Sword Mastery": NumberParam,
+    "Spear Mastery": NumberParam,
+    "Iron Defense": NumberParam,
+    "One-Hand Quicken": NumberParam,
+    "Auto Berserk": NumberParam,
+    "Fatal Blow": NumberParam,
+    "Hp Recovery While Moving": NumberParam,
+    "Twohand Quicken": NumberParam,
+    "Auto Counter": NumberParam,
+    "Peco Peco Ride": NumberParam,
+    "Movement Mastery": NumberParam,
+    Pierce: NumberParam,
+    "Spear Stab": NumberParam,
+    "Spear Boomerang": NumberParam,
+    "Bowling Bash": NumberParam,
+    "Brandish Spear": NumberParam,
+    "Charge Attack": NumberParam,
+    "Aerial Assault": NumberParam,
+    "Aura Blade": NumberParam,
+    Berserk: NumberParam,
+    "Clashing Spiral": NumberParam,
+    Concentration: NumberParam,
+    "Defensive Stance": NumberParam,
+    "Head Crush": NumberParam,
+    "Ignition Break": NumberParam,
+    "Joint Beat": NumberParam,
+    "Majestic Sword": NumberParam,
+    Parry: NumberParam,
+    "Phantom Thrust": NumberParam,
+    "Tension Relax": NumberParam,
+    Vendetta: NumberParam,
   });
 
   return (

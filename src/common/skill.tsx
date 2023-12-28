@@ -9,7 +9,6 @@ import { useSkill } from "./helpers/handle-skill-change";
 
 function flattenReqs(preReq: { skill: Skill; level: number }) {
   const { preRequisites, ...rest } = preReq.skill;
-  console.log({ rest });
   const teste = {
     ...rest,
     level: preReq.level,
@@ -53,7 +52,7 @@ export const SkillComponent = ({ skill }: SkillProps) => {
 
   return (
     <div
-      id={skill.skillId}
+      id={skill.name}
       className={skillExist ? hovered : ""}
       onMouseEnter={() => setIsHovered(skill.preRequisites)}
       onMouseLeave={() => setIsHovered([])}
@@ -62,8 +61,8 @@ export const SkillComponent = ({ skill }: SkillProps) => {
     >
       <div>{skill.name}</div>
       <div>
-        {query[skill.skillId as keyof KnightSkills]
-          ? query[skill.skillId as keyof KnightSkills]
+        {query[skill.name as keyof KnightSkills]
+          ? query[skill.name as keyof KnightSkills]
           : 0}
       </div>
       <img src={skill.icon} alt={skill.name} />

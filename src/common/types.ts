@@ -11,13 +11,8 @@ export type Skill = {
   maxLevel: number;
   type: SkillType;
   icon: string;
-  skillId: string;
   preRequisites: {
     skill: Skill;
-    level: number;
-  }[];
-  dependedBy: {
-    skill: string;
     level: number;
   }[];
 };

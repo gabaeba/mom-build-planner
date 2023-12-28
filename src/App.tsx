@@ -15,7 +15,7 @@ function App() {
   return (
     <QueryParamProvider adapter={ReactRouter5Adapter}>
       <Switch>
-        <Route path="/lordKnight">
+        <Route path="/mom-build-planner/lordKnight">
           <LordKnightComponent />
         </Route>
         <Route path="/paladin">
