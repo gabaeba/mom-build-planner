@@ -22,7 +22,7 @@ function flattenReqs(preReq: { skill: Skill; level: number }) {
 
 const useStyles = createUseStyles({
   hovered: {
-    border: "red 1px solid",
+    color: "red",
   },
 });
 
