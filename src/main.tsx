@@ -8,7 +8,7 @@ import { ReactRouter5Adapter } from "use-query-params/adapters/react-router-5";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <HashRouter basename="/mom-build-planner">
+    <HashRouter>
       <QueryParamProvider adapter={ReactRouter5Adapter}>
         <App />
       </QueryParamProvider>
