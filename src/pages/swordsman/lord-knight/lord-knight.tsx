@@ -18,13 +18,14 @@ import {
 } from "./skills";
 import { Swordsman } from "../swordsman/swordsman";
 import { useSkill } from "../../../common/helpers/handle-skill-change";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Skill } from "../../../common/types";
-import { NumberParam, useQueryParams } from "use-query-params";
+import { NumberParam, StringParam, useQueryParams } from "use-query-params";
 import { Knight, KnightSkills } from "../knight/knight";
 import { checkHowManySkillPoints } from "../../../common/helpers/check-skill-points";
 import { useLocation } from "react-router-dom";
 import { createUseStyles } from "react-jss";
+import { toBlob } from "html-to-image";
 
 const useStyles = createUseStyles({
   classDiv: {
@@ -40,6 +41,23 @@ const useStyles = createUseStyles({
     flexShrink: 0,
     boxShadow:
       "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+  },
+  input: {
+    padding: "16px",
+    outlineColor: "#6b696e",
+    width: "100%",
+    background: "#454647",
+    color: "#FFF",
+    border: "#938f99 solid 2px",
+    borderRadius: "8px",
+    // "&:hover, &:active, &:focus": {
+    //   border: "none",
+    //   // backgroundColor: "#007336",
+    // },
+    "&:focus": {
+      outline: "none",
+      border: "#FFF solid 2px",
+    },
   },
 });
 
@@ -58,10 +76,11 @@ export type LordKnightSkillParams = KnightSkills & {
   "Phantom Thrust": typeof NumberParam;
   "Tension Relax": typeof NumberParam;
   Vendetta: typeof NumberParam;
+  BuildName: typeof StringParam;
 };
 
 export const LordKnight = () => {
-  const { classDiv } = useStyles();
+  const { classDiv, input } = useStyles();
   const [query, setQuery] = useQueryParams<LordKnightSkillParams>({
     Bash: NumberParam,
     Provoke: NumberParam,
@@ -95,6 +114,7 @@ export const LordKnight = () => {
     "Phantom Thrust": NumberParam,
     "Tension Relax": NumberParam,
     Vendetta: NumberParam,
+    BuildName: StringParam,
   });
 
   const [isHovered, setIsHovered] = useState<Skill["preRequisites"]>();
@@ -121,21 +141,66 @@ export const LordKnight = () => {
     checkHowManySkillPoints(skillNames, urlParams, setSkillPoints);
   }, [skillNames, urlParams]);
 
+  const ref = useRef<HTMLDivElement>(null);
+
+  const filter = (node: HTMLElement) => {
+    const exclusionClasses = ["share"];
+    return !exclusionClasses.some((classname) =>
+      node.classList?.contains(classname)
+    );
+  };
+
+  const onButtonClick = useCallback(() => {
+    if (ref.current === null) {
+      return;
+    }
+
+    toBlob(ref.current, { cacheBust: true, filter }).then(async function (
+      blob
+    ) {
+      try {
+        await navigator.clipboard.write([
+          //@ts-expect-error - typescript doesn't know about ClipboardItem yet
+          new ClipboardItem({
+            [blob?.type ?? ""]: blob,
+          }),
+        ]);
+        console.log("Image copied");
+      } catch (error) {
+        console.error(error);
+      }
+    });
+
+    // toPng(ref.current, { cacheBust: true, filter })
+    //   .then(async (dataUrl) => {
+    //     const link = document.createElement("a");
+    //     link.download = "my-image-name.png";
+
+    //     link.href = dataUrl;
+    //     link.click();
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+  }, [ref]);
+
   return (
-    <div>
+    <div ref={ref}>
       <div
         style={{
           display: "flex",
           gap: 12,
           justifyContent: "space-around",
+          alignItems: "center",
+          marginTop: 12,
           marginBottom: 48,
         }}
       >
         <div className={classDiv}>
           <img
-            src="./assets/lord-knight/lord_knight_sprite.png"
+            src="./assets/lord-knight/lk_sprite.png"
             alt="lk sprite"
-            style={{ position: "absolute", left: -100, zIndex: 1 }}
+            style={{ position: "absolute", left: -20, zIndex: 1 }}
           />
           <img
             src="./assets/lord-knight/lk_icon.png"
@@ -157,8 +222,38 @@ export const LordKnight = () => {
             <p style={{ fontSize: 16, margin: 0 }}>Lord Knight</p>
           </div>
         </div>
-        <div></div>
-        <div></div>
+        <div style={{ width: "232px" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "start",
+              gap: 6,
+            }}
+          >
+            <label htmlFor="name" style={{ textAlign: "start", color: "#FFF" }}>
+              Build name
+            </label>
+            <input
+              name="name"
+              id="name"
+              className={input}
+              maxLength={40}
+              onChange={(e) =>
+                setQuery(
+                  (prev) => ({
+                    ...prev,
+                    BuildName: e?.target?.value ? e.target.value : undefined,
+                  }),
+                  "push"
+                )
+              }
+            />
+          </div>
+        </div>
+        <div className="share" style={{ width: "232px" }}>
+          <button onClick={onButtonClick}>Click me</button>
+        </div>
       </div>
       <div
         style={{

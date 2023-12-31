@@ -31,9 +31,9 @@ const Home = () => {
       <div style={{ display: "flex", gap: 12, justifyContent: "space-around" }}>
         <div className={classDiv} onClick={() => history.push("lordKnight")}>
           <img
-            src="./assets/lord-knight/lord_knight_sprite.png"
+            src="./assets/lord-knight/lk_sprite.png"
             alt="lk sprite"
-            style={{ position: "absolute", left: -100, zIndex: 1 }}
+            style={{ position: "absolute", left: -20, zIndex: 1 }}
           />
           <img
             src="./assets/lord-knight/lk_icon.png"

@@ -27,7 +27,7 @@ export const useSkill = <T extends QueryParamConfigMap>({
         setQuery(
           (prev) => ({
             ...prev,
-            [sk.name]: level,
+            [sk.name]: level > (prev[sk.name] ?? 0) ? level : prev[sk.name],
           }),
           "push"
         );
