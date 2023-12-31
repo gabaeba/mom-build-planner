@@ -18,7 +18,7 @@ function App() {
       <div style={{ display: "flex", flexDirection: "column" }}>
         <Navbar />
         <Switch>
-          <Route path={`/lordKnight`} exact>
+          <Route path="/lordKnight" exact>
             <LordKnight />
           </Route>
           <Route path="/paladin">

@@ -29,7 +29,7 @@ const Home = () => {
     <>
       <div>Mom build calculator</div>
       <div style={{ display: "flex", gap: 12, justifyContent: "space-around" }}>
-        <div className={classDiv} onClick={() => history.push("/lordKnight")}>
+        <div className={classDiv} onClick={() => history.push("lordKnight")}>
           <img
             src="./assets/lord-knight/lord_knight_sprite.png"
             alt="lk sprite"
