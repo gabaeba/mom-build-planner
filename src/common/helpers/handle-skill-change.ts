@@ -13,7 +13,6 @@ type AccumulatorType = {
 }[];
 
 type LevelUpSkillProps<T extends QueryParamConfigMap> = {
-  skill: Skill;
   query: DecodedValueMap<T>;
   setQuery: SetQuery<T>;
 };
@@ -74,7 +73,6 @@ export const useSkill = <T extends QueryParamConfigMap>({
           const currentSkill = cur;
           const { preRequisites } = cur;
           const skills = preRequisites?.map((e) => e.skill.name);
-          console.log({ skills });
 
           if (skills?.includes(sk.name)) {
             const found = preRequisites?.find((e) => e.skill.name === sk.name);

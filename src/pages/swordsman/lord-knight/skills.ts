@@ -23,7 +23,7 @@ export const aerialAssault: Skill = {
     "A Spear technique. The Lord Knight leaps a great distance, dealing area damage upon landing.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "src/assets/lord-knight/aerial_assault.png",
+  icon: "/assets/lord-knight/aerial_assault.png",
   preRequisites: [
     {
       skill: spearMastery,
