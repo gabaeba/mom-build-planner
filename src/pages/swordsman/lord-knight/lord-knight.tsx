@@ -100,6 +100,10 @@ export const LordKnight = () => {
   useEffect(() => {
     checkHowManySkillPoints(skillNames, urlParams, setSkillPoints);
   }, [skillNames, urlParams]);
+
+  useEffect(() => {
+    console.log("Current pathname:", window.location.pathname);
+  }, []);
   return (
     <div
       style={{
