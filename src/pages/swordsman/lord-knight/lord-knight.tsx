@@ -50,14 +50,16 @@ const useStyles = createUseStyles({
     color: "#FFF",
     border: "#938f99 solid 2px",
     borderRadius: "8px",
-    // "&:hover, &:active, &:focus": {
-    //   border: "none",
-    //   // backgroundColor: "#007336",
-    // },
     "&:focus": {
       outline: "none",
       border: "#FFF solid 2px",
     },
+  },
+  wrapper: {
+    maxWidth: "1600px",
+    width: "100%",
+    margin: "0 auto",
+    padding: "16px",
   },
 });
 
@@ -80,7 +82,7 @@ export type LordKnightSkillParams = KnightSkills & {
 };
 
 export const LordKnight = () => {
-  const { classDiv, input } = useStyles();
+  const { classDiv, input, wrapper } = useStyles();
   const [query, setQuery] = useQueryParams<LordKnightSkillParams>({
     Bash: NumberParam,
     Provoke: NumberParam,
@@ -165,7 +167,6 @@ export const LordKnight = () => {
             [blob?.type ?? ""]: blob,
           }),
         ]);
-        console.log("Image copied");
       } catch (error) {
         console.error(error);
       }
@@ -185,7 +186,7 @@ export const LordKnight = () => {
   }, [ref]);
 
   return (
-    <div ref={ref}>
+    <div className={wrapper} ref={ref}>
       <div
         style={{
           display: "flex",
@@ -239,6 +240,7 @@ export const LordKnight = () => {
               id="name"
               className={input}
               maxLength={40}
+              value={query?.BuildName || ""}
               onChange={(e) =>
                 setQuery(
                   (prev) => ({
@@ -251,8 +253,14 @@ export const LordKnight = () => {
             />
           </div>
         </div>
-        <div className="share" style={{ width: "232px" }}>
-          <button onClick={onButtonClick}>Click me</button>
+
+        <div className="share" style={{ display: "flex", width: "232px" }}>
+          <div>
+            <button onClick={onButtonClick}>Reset build</button>
+          </div>
+          <div>
+            <button onClick={onButtonClick}>Share</button>
+          </div>
         </div>
       </div>
       <div

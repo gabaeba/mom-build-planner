@@ -26,6 +26,7 @@ const useStyles = createUseStyles({
     background: "#0F1417",
     color: "#FFF",
     alignItems: "center",
+    userSelect: "none",
     flexShrink: 0,
     boxShadow:
       "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
