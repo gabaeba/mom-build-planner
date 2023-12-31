@@ -2,7 +2,6 @@
   "name": "mom-build-planner",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://gabaeba.github.io/mom-build-planner/",
   "type": "module",
   "scripts": {
     "dev": "vite",

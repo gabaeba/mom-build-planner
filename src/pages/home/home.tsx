@@ -31,12 +31,12 @@ const Home = () => {
       <div style={{ display: "flex", gap: 12, justifyContent: "space-around" }}>
         <div className={classDiv} onClick={() => history.push("/lordKnight")}>
           <img
-            src="/assets/lord-knight/lork_knight_sprite.png"
+            src="./assets/lord-knight/lork_knight_sprite.png"
             alt="lk sprite"
             style={{ position: "absolute", left: -100, zIndex: 1 }}
           />
           <img
-            src="/assets/lord-knight/lk_icon.png"
+            src="./assets/lord-knight/lk_icon.png"
             alt="lk class icon"
             style={{ marginLeft: 10, marginRight: 20 }}
           />
