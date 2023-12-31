@@ -44,7 +44,6 @@ const useStyles = createUseStyles({
   },
   input: {
     padding: "16px",
-    outlineColor: "#6b696e",
     width: "100%",
     background: "#454647",
     color: "#FFF",

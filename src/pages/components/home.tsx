@@ -1,5 +1,6 @@
 import { createUseStyles } from "react-jss";
 import { Link, useHistory } from "react-router-dom";
+import { globalColors } from "../../common/helpers/style-variables";
 
 const useStyles = createUseStyles({
   classDiv: {
@@ -9,44 +10,63 @@ const useStyles = createUseStyles({
     height: "72px",
     padding: "0px 16px",
     borderRadius: "8px",
-    background: "#0F1417",
-    color: "#FFF",
+    background: globalColors.foreground,
+    color: globalColors.fontPrimary,
     alignItems: "center",
     flexShrink: 0,
     boxShadow:
       "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
     "&:hover, &:active, &:focus": {
       cursor: "pointer",
-      backgroundColor: "#007336",
+      backgroundColor: globalColors.success,
     },
   },
   hero: {
-    backgroundImage: "url('./assets/hero.png')",
-    backgroundSize: "contain",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
     margin: "0 auto",
     height: "600px",
     width: "100%",
-    // position: "fixed",
-  },
-  wrapper: {
-    maxWidth: "1600px",
-    width: "100%",
-    margin: "0 auto",
-    padding: "16px",
+    position: "relative",
+    "& img": {
+      position: "absolute",
+      objectFit: "cover",
+      opacity: 0.5,
+      top: 0,
+      bottom: 0,
+      right: 0,
+      maxWidth: "auto",
+      height: "100%",
+      zIndex: -1,
+    },
+    "& h1": {
+      color: globalColors.fontPrimary,
+      fontWeight: 400,
+      fontSize: 57,
+      textShadow: '8px 6px 32px rgba(0, 0, 0, 0.65)'
+    },
+    "& h2": {
+      color: globalColors.fontPrimary,
+      fontWeight: 400,
+      fontSize: 24,
+      textShadow: '8px 6px 32px rgba(0, 0, 0, 0.65)'
+    },
+    "& .title": {
+      paddingTop: 100
+    }
   },
 });
 
 const Home = () => {
-  const { classDiv, hero, wrapper } = useStyles();
+  const { classDiv, hero } = useStyles();
   const history = useHistory();
   return (
     // <div className={hero}>
-    <div className={wrapper}>
+    <div className="wrapper">
       <div className={hero}>
-        <div>Mythos of Midgard</div>
-        <div>Skill Calculator</div>
+        <div className='title'>
+          <h2>Mythos of Midgard</h2>
+          <h1>Skill Calculator</h1>
+        </div>
+        <img src="./assets/hero.png" alt="" />
       </div>
       <div style={{ marginTop: "-300px" }}>
         <div

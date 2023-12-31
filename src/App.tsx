@@ -14,7 +14,6 @@ import Footer from "./pages/components/footer";
 
 function App() {
   return (
-    <QueryParamProvider adapter={ReactRouter5Adapter}>
       <div
         style={{
           display: "flex",
@@ -78,7 +77,6 @@ function App() {
         </div>
         <Footer />
       </div>
-    </QueryParamProvider>
   );
 }
 
