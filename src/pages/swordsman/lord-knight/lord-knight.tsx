@@ -26,6 +26,7 @@ import { checkHowManySkillPoints } from "../../../common/helpers/check-skill-poi
 import { useLocation } from "react-router-dom";
 import { createUseStyles } from "react-jss";
 import { toBlob } from "html-to-image";
+import Button from "../../../common/button";
 
 const useStyles = createUseStyles({
   classDiv: {
@@ -54,12 +55,6 @@ const useStyles = createUseStyles({
       border: "#FFF solid 2px",
     },
   },
-  wrapper: {
-    maxWidth: "1600px",
-    width: "100%",
-    margin: "0 auto",
-    padding: "16px",
-  },
 });
 
 export type LordKnightSkillParams = KnightSkills & {
@@ -81,7 +76,7 @@ export type LordKnightSkillParams = KnightSkills & {
 };
 
 export const LordKnight = () => {
-  const { classDiv, input, wrapper } = useStyles();
+  const { classDiv, input } = useStyles();
   const [query, setQuery] = useQueryParams<LordKnightSkillParams>({
     Bash: NumberParam,
     Provoke: NumberParam,
@@ -185,14 +180,14 @@ export const LordKnight = () => {
   }, [ref]);
 
   return (
-    <div className={wrapper} ref={ref}>
+    <div className="wrapper" ref={ref}>
       <div
         style={{
           display: "flex",
-          gap: 12,
-          justifyContent: "space-around",
+          gap: 16,
+          justifyContent: "space-between",
           alignItems: "center",
-          marginTop: 12,
+          marginTop: 16,
           marginBottom: 48,
         }}
       >
@@ -253,12 +248,12 @@ export const LordKnight = () => {
           </div>
         </div>
 
-        <div className="share" style={{ display: "flex", width: "232px" }}>
+        <div className="share" style={{ display: "flex", width: "232px", gap: 16 }}>
           <div>
-            <button onClick={onButtonClick}>Reset build</button>
+            <Button color="error" onClick={onButtonClick}>Reset Build</Button>
           </div>
           <div>
-            <button onClick={onButtonClick}>Share</button>
+            <Button color="success" onClick={onButtonClick} icon={<div>teste</div>} showIcon>Share</Button>
           </div>
         </div>
       </div>
