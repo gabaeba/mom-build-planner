@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createUseStyles } from "react-jss";
 import { Skill } from "./types";
+import { useLocation } from "react-router-dom";
 
 function flattenReqs(preReq: { skill: Skill; level: number }) {
   const { preRequisites, ...rest } = preReq.skill;
@@ -64,7 +65,8 @@ export const SkillComponent = ({
   setIsHovered,
 }: SkillProps) => {
   const { skillBase, requirementRed, requirementGreen } = useStyles();
-  const searchParams = new URLSearchParams(window.location.search);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
   const skillName = searchParams.get(skill.name);
 
   const preReqs = isHovered?.flatMap((x: { skill: Skill; level: number }) =>

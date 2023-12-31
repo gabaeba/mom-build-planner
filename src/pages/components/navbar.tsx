@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const styles = createUseStyles({
   navbar: {
@@ -14,6 +14,10 @@ const styles = createUseStyles({
     background: "#fff",
     position: "fixed",
     marginTop: "60px",
+  },
+  links: {
+    textDecoration: "none",
+    color: "#FFF",
   },
   button: {
     width: "90%",
@@ -34,13 +38,39 @@ const styles = createUseStyles({
 });
 
 export default function Navbar() {
-  const { navbar } = styles();
+  const { links } = styles();
 
   return (
-    <nav>
-      <NavLink exact to="/">
-        Profile
-      </NavLink>
+    <nav
+      style={{
+        paddingTop: "10px",
+        display: "flex",
+        gap: 20,
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      {/* Internal Link */}
+      <Link to="/" className={links}>
+        Home
+      </Link>
+      {/* External Links */}
+      <a
+        className={links}
+        href="https://www.mythosofmidgard.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Website
+      </a>
+      <a
+        className={links}
+        href="https://www.mythosofmidgard.com/wiki"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Wiki
+      </a>
     </nav>
   );
 }

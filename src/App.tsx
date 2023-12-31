@@ -1,6 +1,6 @@
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/home/home";
+import Home from "./pages/components/home";
 import { LordKnight, Paladin } from "./pages/swordsman";
 import { HighWizard, Professor } from "./pages/mage";
 import { Clown, Gypsy, Sniper } from "./pages/archer";
@@ -9,16 +9,16 @@ import { AssassinCross, Stalker } from "./pages/thief";
 import { Champion, HighPriest } from "./pages/acolyte";
 import { QueryParamProvider } from "use-query-params";
 import { ReactRouter5Adapter } from "use-query-params/adapters/react-router-5";
-import Navbar from "./pages/home/navbar";
-import Footer from "./pages/home/footer";
+import Navbar from "./pages/components/navbar";
+import Footer from "./pages/components/footer";
 
 function App() {
   return (
     <QueryParamProvider adapter={ReactRouter5Adapter}>
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: 50 }}>
         <Navbar />
         <Switch>
-          <Route path="/lordKnight" exact>
+          <Route exact path="/lordKnight">
             <LordKnight />
           </Route>
           <Route path="/paladin">
@@ -63,7 +63,7 @@ function App() {
             Important: A route with path="/" will *always* match
             the URL because all URLs begin with a /. So that's
             why we put this one last of all */}
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>

@@ -19,6 +19,7 @@ import { Skill } from "../../../common/types";
 import { useEffect, useState } from "react";
 import { checkHowManySkillPoints } from "../../../common/helpers/check-skill-points";
 import { SkillWithoutLevel } from "../../../common/skill-without-level";
+import { useLocation } from "react-router-dom";
 
 export type SwordsmanSkills = {
   Bash: typeof NumberParam;
@@ -58,8 +59,9 @@ export const Swordsman = ({
 }: SwordsmanProps) => {
   const [skillPoints, setSkillPoints] = useState(0);
   const skillNames = swordsmanSkills?.map((e) => e.name);
+  const location = useLocation();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const urlParams = new URLSearchParams(window.location.search);
+  const urlParams = new URLSearchParams(location.search);
 
   useEffect(() => {
     checkHowManySkillPoints(skillNames, urlParams, setSkillPoints);

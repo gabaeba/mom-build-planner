@@ -13,7 +13,7 @@ export const twoHandQuicken: Skill = {
     "Temporarily increase Attack Speed when a Two Handed Sword weapon is equipped for the skill's duration.",
   maxLevel: 10,
   type: SkillType.active,
-  icon: "src/assets/knight/twohand_quicken.png",
+  icon: "./assets/knight/twohand_quicken.png",
   preRequisites: [{ skill: swordMastery, level: 1 }],
 };
 
@@ -23,7 +23,7 @@ export const autoCounter: Skill = {
     "Block an enemy's attack and automatically perform one critical attack on them, ending the Counter Attack stance.",
   maxLevel: 5,
   type: SkillType.active,
-  icon: "src/assets/knight/auto_counter.png",
+  icon: "./assets/knight/auto_counter.png",
   preRequisites: [{ skill: swordMastery, level: 1 }],
 };
 
@@ -32,7 +32,7 @@ export const pecoPecoRide: Skill = {
   description: "Enables Knights or Crusaders to ride a Peco Peco.",
   maxLevel: 1,
   type: SkillType.passive,
-  icon: "src/assets/knight/peco_peco_ride.png",
+  icon: "./assets/knight/peco_peco_ride.png",
   preRequisites: [{ skill: endure, level: 1 }],
 };
 
@@ -42,7 +42,7 @@ export const movementMastery: Skill = {
     "At maximum level removes the 50% ASPD penalty when riding a PecoPeco.",
   maxLevel: 5,
   type: SkillType.passive,
-  icon: "src/assets/knight/cavalier_mastery.png",
+  icon: "./assets/knight/cavalier_mastery.png",
   preRequisites: [{ skill: pecoPecoRide, level: 1 }],
 };
 
@@ -52,7 +52,7 @@ export const pierce: Skill = {
     "Strikes a single target for an amount of hits based on target's size. Requires a Spear class weapon.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "src/assets/knight/pierce.png",
+  icon: "./assets/knight/pierce.png",
   preRequisites: [{ skill: spearMastery, level: 1 }],
 };
 
@@ -62,7 +62,7 @@ export const spearStab: Skill = {
     "Strikes a target enemy and all enemies in a line between the player and the target. Requires a Spear. All struck enemies are knocked back 6 cells.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "src/assets/knight/spear_stab.png",
+  icon: "./assets/knight/spear_stab.png",
   preRequisites: [{ skill: pierce, level: 5 }],
 };
 
@@ -72,7 +72,7 @@ export const spearBoomerang: Skill = {
     "Must be wielding a Spear weapon. Throws the equipped spear at a single target (the spear does not require retrieval).",
   maxLevel: 5,
   type: SkillType.offensive,
-  icon: "src/assets/knight/spear_boomerang.png",
+  icon: "./assets/knight/spear_boomerang.png",
   preRequisites: [{ skill: pierce, level: 3 }],
 };
 
@@ -82,7 +82,7 @@ export const bowlingBash: Skill = {
     "Knock targets backward, causing up to 800% damage in a 3x3 cell area that hits all enemies in the area.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "src/assets/knight/bowling_bash.png",
+  icon: "./assets/knight/bowling_bash.png",
   preRequisites: [
     {
       skill: bash,
@@ -101,7 +101,7 @@ export const brandishSpear: Skill = {
     "Attacks an area of ememies around the caster. Damage for each enemy increases the closer they are to the caster.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "src/assets/knight/brandish_spear.png",
+  icon: "./assets/knight/brandish_spear.png",
   preRequisites: [
     { skill: pecoPecoRide, level: 1 },
     { skill: spearStab, level: 3 },
@@ -114,7 +114,7 @@ export const chargeAttack: Skill = {
     "Ranged attack: Rush a target, dealing more damage depending on how far away you are from it.",
   maxLevel: 1,
   type: SkillType.offensive,
-  icon: "src/assets/knight/charge_attack.png",
+  icon: "./assets/knight/charge_attack.png",
   preRequisites: [],
 };
 

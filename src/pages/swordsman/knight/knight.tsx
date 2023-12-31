@@ -17,6 +17,7 @@ import { SwordsmanSkills } from "../swordsman/swordsman";
 import { useEffect, useState } from "react";
 import { checkHowManySkillPoints } from "../../../common/helpers/check-skill-points";
 import { SkillWithoutLevel } from "../../../common/skill-without-level";
+import { useLocation } from "react-router-dom";
 
 export type KnightSkills = SwordsmanSkills & {
   "Twohand Quicken": typeof NumberParam;
@@ -56,8 +57,9 @@ export const Knight = ({
 }: KnightProps) => {
   const [skillPoints, setSkillPoints] = useState(0);
   const skillNames = knightSkills?.map((e) => e.name);
+  const location = useLocation();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const urlParams = new URLSearchParams(window.location.search);
+  const urlParams = new URLSearchParams(location.search);
 
   useEffect(() => {
     checkHowManySkillPoints(skillNames, urlParams, setSkillPoints);
