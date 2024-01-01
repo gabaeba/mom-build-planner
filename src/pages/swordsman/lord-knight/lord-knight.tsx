@@ -27,17 +27,18 @@ import { useLocation } from "react-router-dom";
 import { createUseStyles } from "react-jss";
 import { toBlob } from "html-to-image";
 import Button from "../../../common/button";
+import { globalColors } from "../../../common/helpers/style-variables";
 
 const useStyles = createUseStyles({
   classDiv: {
     position: "relative",
     display: "flex",
-    width: "200px",
+    width: "220px",
     height: "72px",
     padding: "0px 16px",
     borderRadius: "8px",
-    background: "#0F1417",
-    color: "#FFF",
+    background: globalColors.foreground,
+    color: globalColors.fontPrimary,
     alignItems: "center",
     flexShrink: 0,
     boxShadow:
@@ -195,12 +196,12 @@ export const LordKnight = () => {
           <img
             src="./assets/lord-knight/lk_sprite.png"
             alt="lk sprite"
-            style={{ position: "absolute", left: -20, zIndex: 1 }}
+            style={{ position: "absolute", left: -25, zIndex: 1 }}
           />
           <img
             src="./assets/lord-knight/lk_icon.png"
             alt="lk class icon"
-            style={{ marginLeft: 10, marginRight: 20 }}
+            style={{ marginLeft: 20, marginRight: 20 }}
           />
           <div
             style={{
@@ -248,12 +249,24 @@ export const LordKnight = () => {
           </div>
         </div>
 
-        <div className="share" style={{ display: "flex", width: "232px", gap: 16 }}>
+        <div
+          className="share"
+          style={{ display: "flex", width: "232px", gap: 16 }}
+        >
           <div>
-            <Button color="error" onClick={onButtonClick}>Reset Build</Button>
+            <Button color="error" onClick={onButtonClick}>
+              Reset Build
+            </Button>
           </div>
           <div>
-            <Button color="success" onClick={onButtonClick} icon={<div>teste</div>} showIcon>Share</Button>
+            <Button
+              color="success"
+              onClick={onButtonClick}
+              icon={<div>teste</div>}
+              showIcon
+            >
+              Share
+            </Button>
           </div>
         </div>
       </div>

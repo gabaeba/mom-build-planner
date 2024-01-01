@@ -5,6 +5,11 @@ const styles = createUseStyles({
   links: {
     textDecoration: "none",
     color: "#FFF",
+    "&:hover": {
+      color: "#FFF",
+      textDecoration: "underline",
+      textUnderlineOffset: "5px",
+    },
   },
 });
 
@@ -13,13 +18,16 @@ export default function Navbar() {
 
   return (
     <nav>
-      <div className="wrapper" style={{
-        paddingTop: "10px",
-        display: "flex",
-        gap: 20,
-        alignItems: "center",
-        justifyContent: "center",
-      }}>
+      <div
+        className="wrapper"
+        style={{
+          paddingTop: "10px",
+          display: "flex",
+          gap: 20,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         {/* Internal Link */}
         <Link to="/" className={links}>
           Home
