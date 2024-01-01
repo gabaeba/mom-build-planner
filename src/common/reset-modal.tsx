@@ -94,7 +94,15 @@ export default function ResetModal({
               setShowResetModal(false);
             }}
           >
-            (Y)es
+            <span
+              style={{
+                textDecoration: "underline",
+                textUnderlineOffset: 2,
+              }}
+            >
+              Y
+            </span>
+            es
           </Button>
           <Button
             reference={noBtn}
@@ -103,7 +111,15 @@ export default function ResetModal({
               setShowResetModal(false);
             }}
           >
-            (N)o
+            <span
+              style={{
+                textDecoration: "underline",
+                textUnderlineOffset: 2,
+              }}
+            >
+              N
+            </span>
+            o
           </Button>
         </div>
       </div>

@@ -32,12 +32,11 @@ body {
 }
 
 .tooltip {
-  all: unset;
   height: 100%;
   position: absolute;
-  width: 100%;
+  width: 150px;
   z-index: 2;
-
+  left: 20%;
 }
 
 .tooltip .tooltip-text {
@@ -45,12 +44,12 @@ body {
   background-color: #3c5666;
   border: 1px solid #fff;
   color: white;
+  font-weight: 300;
   display: none;
-  font-size: 1.4rem;
+  font-size: 16px;
   justify-content: center;
-  left: 0;
   border-radius: 5px;
-  padding: 8px;
+  padding: 8px 0px;
   position: relative;
 }
 

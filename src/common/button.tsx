@@ -4,14 +4,13 @@ import { globalColors } from "./helpers/style-variables";
 
 const useStyles = createUseStyles({
   button: {
-    borderRadius: 100,
+    borderRadius: 8,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     padding: "12px 16px",
     border: "none",
     outline: "1px solid transparent",
-    gap: 8,
   },
   success: {
     backgroundColor: globalColors.success,
@@ -23,6 +22,7 @@ const useStyles = createUseStyles({
   },
   accent: {
     backgroundColor: globalColors.accent,
+    color: globalColors.fontPrimary,
   },
   white: {
     backgroundColor: globalColors.fontPrimary,
@@ -48,6 +48,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={`${style.button} ${style[color]}`}
+      style={{ gap: showIcon ? 8 : 0 }}
       ref={reference}
       {...props}
     >

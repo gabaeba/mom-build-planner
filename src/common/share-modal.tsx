@@ -13,7 +13,7 @@ const useStyles = createUseStyles({
     borderRadius: "8px",
     padding: "16px",
     position: "absolute",
-    width: "250px",
+    width: "350px",
     height: "150px",
     top: "70px",
     left: "calc(50% - 125px)",
@@ -36,12 +36,14 @@ type ShareModalProps = {
   setShowShareModal: React.Dispatch<React.SetStateAction<boolean>>;
   copyBuildImgToClipboard: () => void;
   downloadBuildImg: () => void;
+  getCurrentUrl: () => Promise<void>;
 };
 
 export default function ShareModal({
   setShowShareModal,
   copyBuildImgToClipboard,
   downloadBuildImg,
+  getCurrentUrl,
 }: ShareModalProps) {
   const { resetModal, modalContent, buttonContainer } = useStyles();
   const yesBtn = useRef<HTMLButtonElement>(null);
@@ -90,23 +92,33 @@ export default function ShareModal({
         <div className={buttonContainer}>
           <Button
             reference={yesBtn}
-            color="success"
+            color="accent"
             onClick={() => {
               copyBuildImgToClipboard();
               setShowShareModal(false);
             }}
           >
-            Copy build image to clipboard
+            Copy image to clipboard
           </Button>
           <Button
             reference={downloadBtn}
-            color="error"
+            color="accent"
             onClick={() => {
               downloadBuildImg();
               setShowShareModal(false);
             }}
           >
-            Download build image
+            Save to image
+          </Button>
+          <Button
+            reference={downloadBtn}
+            color="accent"
+            onClick={() => {
+              getCurrentUrl();
+              setShowShareModal(false);
+            }}
+          >
+            Copy url to clipboard
           </Button>
         </div>
       </div>

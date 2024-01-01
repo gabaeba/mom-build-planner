@@ -150,6 +150,16 @@ export const LordKnight = () => {
     );
   };
 
+  const getCurrentUrl = useCallback(async () => {
+    const currentUrl = window.location.href;
+
+    try {
+      await navigator.clipboard.writeText(currentUrl);
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
+
   const copyBuildImgToClipboard = useCallback(() => {
     if (ref.current === null) {
       return;
@@ -305,6 +315,7 @@ export const LordKnight = () => {
                   setShowShareModal={setShowShareModal}
                   copyBuildImgToClipboard={copyBuildImgToClipboard}
                   downloadBuildImg={downloadBuildImg}
+                  getCurrentUrl={getCurrentUrl}
                 />,
                 document.body
               )}
