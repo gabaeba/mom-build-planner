@@ -6,7 +6,7 @@ export const pecoPecoRide: Skill = {
   description: "Enables Knights or Crusaders to ride a Peco Peco.",
   maxLevel: 1,
   type: SkillType.passive,
-  icon: "src/assets/crusader/peco_peco_ride.png",
+  icon: "./assets/crusader/peco_peco_ride.png",
   preRequisites: [{ skill: endure, level: 1 }],
 };
 
@@ -16,7 +16,7 @@ export const movementMastery: Skill = {
     "At maximum level removes the 50% ASPD penalty when riding a PecoPeco.",
   maxLevel: 5,
   type: SkillType.passive,
-  icon: "src/assets/crusader/movement_mastery.png",
+  icon: "./assets/crusader/movement_mastery.png",
   preRequisites: [{ skill: pecoPecoRide, level: 1 }],
 };
 
@@ -26,7 +26,7 @@ export const autoGuard: Skill = {
     "Blocks physical attacks with a Shield by chance for 300 seconds.",
   maxLevel: 10,
   type: SkillType.supportive,
-  icon: "src/assets/crusader/auto_guard.png",
+  icon: "./assets/crusader/auto_guard.png",
   preRequisites: [],
 };
 
@@ -36,7 +36,7 @@ export const shieldCharge: Skill = {
     "Hurl your shield at an enemy, dealing damage based on ATK and knocking them back.",
   maxLevel: 5,
   type: SkillType.offensive,
-  icon: "src/assets/crusader/shield_charge.png",
+  icon: "./assets/crusader/shield_charge.png",
   preRequisites: [{ skill: autoGuard, level: 5 }],
 };
 
@@ -46,7 +46,7 @@ export const shieldBoomerang: Skill = {
     "Throw your shield at an enemy, dealing damage based on ATK and the shield's properties.",
   maxLevel: 5,
   type: SkillType.offensive,
-  icon: "src/assets/crusader/shield_boomerang.png",
+  icon: "./assets/crusader/shield_boomerang.png",
   preRequisites: [{ skill: shieldCharge, level: 3 }],
 };
 
@@ -56,7 +56,7 @@ export const holyCross: Skill = {
     "Summon a holy cross that inflicts Holy damage on a target, blinding it by chance.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "src/assets/crusader/holy_cross.png",
+  icon: "./assets/crusader/holy_cross.png",
   preRequisites: [],
 };
 
@@ -65,7 +65,7 @@ export const cure: Skill = {
   description: "Cures the target from Silence, Chaos and Blind status effects.",
   maxLevel: 1,
   type: SkillType.supportive,
-  icon: "src/assets/crusader/cure.png",
+  icon: "./assets/crusader/cure.png",
   preRequisites: [],
 };
 
@@ -75,7 +75,7 @@ export const defender: Skill = {
     "Reduce incoming ranged damage; protects party members via Sacrifice.",
   maxLevel: 5,
   type: SkillType.supportive,
-  icon: "src/assets/crusader/defender.png",
+  icon: "./assets/crusader/defender.png",
   preRequisites: [{ skill: shieldBoomerang, level: 1 }],
 };
 
@@ -85,7 +85,7 @@ export const repelEvil: Skill = {
     "Increases attack and defence against against Demon and Undead monsters by up to 15%.",
   maxLevel: 10,
   type: SkillType.passive,
-  icon: "src/assets/crusader/repel_evil.png",
+  icon: "./assets/crusader/repel_evil.png",
   preRequisites: [],
 };
 
@@ -94,7 +94,7 @@ export const faith: Skill = {
   description: "Increases Max HP and resistance to Holy-property attacks.",
   maxLevel: 5,
   type: SkillType.passive,
-  icon: "src/assets/crusader/faith.png",
+  icon: "./assets/crusader/faith.png",
   preRequisites: [],
 };
 
@@ -104,7 +104,7 @@ export const grandCross: Skill = {
     "Summons a Grand Cross around the caster, damaging the caster and enemies with Holy property waves.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "src/assets/crusader/grand_cross.png",
+  icon: "./assets/crusader/grand_cross.png",
   preRequisites: [{ skill: holyCross, level: 6 }],
 };
 
@@ -113,7 +113,7 @@ export const heal: Skill = {
   description: "Restore a target's HP, or damage Undead targets.",
   maxLevel: 10,
   type: SkillType.supportive,
-  icon: "src/assets/crusader/heal.png",
+  icon: "./assets/crusader/heal.png",
   preRequisites: [
     { skill: grandCross, level: 5 },
     { skill: cure, level: 1 },
@@ -126,7 +126,7 @@ export const providence: Skill = {
     "Buff that allows def piercing. Effect is greater against undead and demon monsters.",
   maxLevel: 5,
   type: SkillType.supportive,
-  icon: "src/assets/crusader/providence.png",
+  icon: "./assets/crusader/providence.png",
   preRequisites: [],
 };
 
@@ -135,7 +135,7 @@ export const reflectShield: Skill = {
   description: "Reflect a fraction of the damage received back at an enemy.",
   maxLevel: 10,
   type: SkillType.supportive,
-  icon: "src/assets/crusader/reflect_shield.png",
+  icon: "./assets/crusader/reflect_shield.png",
   preRequisites: [{ skill: shieldBoomerang, level: 3 }],
 };
 
@@ -145,7 +145,7 @@ export const devotion: Skill = {
     "Protects a party member by taking all of the damage inflicted on said party member.",
   maxLevel: 5,
   type: SkillType.supportive,
-  icon: "src/assets/crusader/devotion.png",
+  icon: "./assets/crusader/devotion.png",
   preRequisites: [{ skill: reflectShield, level: 5 }],
 };
 
@@ -155,7 +155,7 @@ export const spearQuicken: Skill = {
     "Temporarily increase Attack Speed, Flee and Critical rate when using a Spear.",
   maxLevel: 10,
   type: SkillType.supportive,
-  icon: "src/assets/crusader/spear_quicken.png",
+  icon: "./assets/crusader/spear_quicken.png",
   preRequisites: [{ skill: spearMastery, level: 10 }],
 };
 
@@ -165,7 +165,7 @@ export const shrink: Skill = {
     "Adds a chance to knock back opponents when you successfully block an attack with Guard.",
   maxLevel: 1,
   type: SkillType.active,
-  icon: "src/assets/crusader/shrink.png",
+  icon: "./assets/crusader/shrink.png",
   preRequisites: [],
 };
 

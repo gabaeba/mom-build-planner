@@ -13,7 +13,7 @@ export const banishingPoint: Skill = {
   description: "A spear attack with a much greater reach than normal attacks.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/paladin/banishing_point.png",
   preRequisites: [{ skill: spearQuicken, level: 10 }],
 };
 
@@ -23,7 +23,7 @@ export const pinpointAttack: Skill = {
     "Rush against a target, dealing damage and inflicting a negative status effect.",
   maxLevel: 5,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/paladin/pinpoint_attack.png",
   preRequisites: [{ skill: banishingPoint, level: 2 }],
 };
 
@@ -33,7 +33,7 @@ export const cannonSpear: Skill = {
     "Attack all enemies in a 3 cell radius of an 11 cell line from the caster.",
   maxLevel: 5,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/paladin/cannon_spear.png",
   preRequisites: [{ skill: pinpointAttack, level: 2 }],
 };
 
@@ -43,7 +43,7 @@ export const inspiration: Skill = {
     "Increases ATK, Accuracy, and maximum HP. Cleanses negative status effects on use.",
   maxLevel: 5,
   type: SkillType.active,
-  icon: "",
+  icon: "./assets/paladin/inspiration.png",
   preRequisites: [
     { skill: faith, level: 5 },
     { skill: repelEvil, level: 3 },
@@ -56,7 +56,7 @@ export const divineGlyph: Skill = {
     "Conjure a holy symbol on the Paladin's Shield, healing nearby allies and damaging foes while draining the user's HP.",
   maxLevel: 10,
   type: SkillType.active,
-  icon: "",
+  icon: "./assets/paladin/divine_glyph.png",
   preRequisites: [{ skill: inspiration, level: 1 }],
 };
 
@@ -65,7 +65,7 @@ export const divinePunishment: Skill = {
   description: "Attacks a target enemy with long distance hybrid Holy damage.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/paladin/divine_punishment.png",
   preRequisites: [{ skill: divineGlyph, level: 3 }],
 };
 
@@ -75,7 +75,7 @@ export const exceedBreak: Skill = {
     "Gather all of your strength into the tip of your weapon, imbuing it with enhanced damage on regular attacks.",
   maxLevel: 5,
   type: SkillType.active,
-  icon: "",
+  icon: "./assets/paladin/exceed_break.png",
   preRequisites: [{ skill: pinpointAttack, level: 2 }],
 };
 
@@ -85,7 +85,7 @@ export const gospel: Skill = {
     "Begins a chant that inflicts a random status ailment on enemies within range, while also endowing party members with random buffs.",
   maxLevel: 10,
   type: SkillType.active,
-  icon: "",
+  icon: "./assets/paladin/gospel.png",
   preRequisites: [
     { skill: faith, level: 5 },
     { skill: repelEvil, level: 3 },
@@ -98,7 +98,7 @@ export const moonSlasher: Skill = {
     "Damages surrounding enemies, marking them to increase their damage taken from Paladin and Crusader skills.",
   maxLevel: 5,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/paladin/moon_slasher.png",
   preRequisites: [{ skill: magnumBreak, level: 5 }],
 };
 
@@ -108,7 +108,7 @@ export const overbrand: Skill = {
     "Brand all enemies in a wide area in front of the caster, knocking them back a great distance.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/paladin/overbrand.png",
   preRequisites: [{ skill: moonSlasher, level: 3 }],
 };
 
@@ -118,7 +118,7 @@ export const pressure: Skill = {
     "Crush a target with a huge cross from the sky, dealing Ghost element hybrid damage.",
   maxLevel: 5,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/paladin/pressure.png",
   preRequisites: [
     { skill: endure, level: 5 },
     { skill: faith, level: 5 },
@@ -132,6 +132,21 @@ export const rayOfGenesis: Skill = {
     "Call upon the wrath of God to smite enemies with Holy hybrid damage in a wide area.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/paladin/ray_of_genesis.png",
   preRequisites: [{ skill: grandCross, level: 5 }],
 };
+
+export const paladinSkills = [
+  banishingPoint,
+  pinpointAttack,
+  cannonSpear,
+  inspiration,
+  divineGlyph,
+  divinePunishment,
+  exceedBreak,
+  gospel,
+  moonSlasher,
+  overbrand,
+  pressure,
+  rayOfGenesis,
+];

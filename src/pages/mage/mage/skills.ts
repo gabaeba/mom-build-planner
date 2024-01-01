@@ -6,7 +6,7 @@ export const coldBolt: Skill = {
     "Attack a single target with up to 10x MATK Water-element damage.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/mage/cold_bolt.png",
   preRequisites: [],
 };
 
@@ -16,7 +16,7 @@ export const fireBolt: Skill = {
     "Attack a single target with up to 10x MATK Fire-element damage.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/mage/fire_bolt.png",
   preRequisites: [],
 };
 
@@ -26,7 +26,7 @@ export const fireBall: Skill = {
     "Attack a target and enemies in a 5x5 area around it for up to 170% Fire-element damage.",
   maxLevel: 5,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/mage/fire_ball.png",
   preRequisites: [{ skill: fireBolt, level: 4 }],
 };
 
@@ -35,7 +35,7 @@ export const sight: Skill = {
   description: "Reveal hidden enemies in a 7x7 area around the user.",
   maxLevel: 1,
   type: SkillType.active,
-  icon: "",
+  icon: "./assets/mage/sight.png",
   preRequisites: [],
 };
 
@@ -45,7 +45,7 @@ export const fireWall: Skill = {
     "Put up a small fire wall that causes 50% Fire-element damage to enemies passing through and pushes them back.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/mage/fire_wall.png",
   preRequisites: [
     { skill: fireBolt, level: 4 },
     { skill: fireBall, level: 5 },
@@ -59,7 +59,7 @@ export const frostDiver: Skill = {
     "Attack a target for up to 200% Water-element damage with a chance to freeze it, rendering it immobile and turning it to Water 1 element.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/mage/frost_diver.png",
   preRequisites: [{ skill: coldBolt, level: 5 }],
 };
 
@@ -69,17 +69,17 @@ export const increaseSpRecovery: Skill = {
     "Passively increases SP recovery speed when not moving. Also increases efficiency of SP-restoring items consumed and thrown by an Alchemist",
   maxLevel: 10,
   type: SkillType.passive,
-  icon: "",
+  icon: "./assets/mage/increase_sp_recovery.png",
   preRequisites: [],
 };
 
 export const lightningBolt: Skill = {
-  name: "Lightining Bolt",
+  name: "Lightning Bolt",
   description:
     "Attack a single target with up to 10x MATK Wind-element damage.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/mage/lightning_bolt.png",
   preRequisites: [],
 };
 
@@ -89,7 +89,7 @@ export const napalmBeat: Skill = {
     "Deal up to 275% MATK Ghost-element damage to target and all enemies in a 3x3 area around it.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/mage/napalm_beat.png",
   preRequisites: [],
 };
 
@@ -99,7 +99,7 @@ export const soulStrike: Skill = {
     "Ghost-element attack dealing up to 6x MATK damage to a single target. Does additional damage to Undead-element enemies.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/mage/soul_strike.png",
   preRequisites: [{ skill: napalmBeat, level: 4 }],
 };
 
@@ -109,7 +109,7 @@ export const safetyWallMage: Skill = {
     "Use a Blue Gemstone to create a pillar on a cell that protects whoever stands in it from melee attacks.",
   maxLevel: 10,
   type: SkillType.supportive,
-  icon: "",
+  icon: "./assets/mage/safety_wall.png",
   preRequisites: [
     { skill: napalmBeat, level: 5 },
     { skill: soulStrike, level: 5 },
@@ -122,7 +122,7 @@ export const stoneCurse: Skill = {
     "Attempt to turn target into stone, rendering it immobile and turning it to Earth 1 element.",
   maxLevel: 10,
   type: SkillType.active,
-  icon: "",
+  icon: "./assets/mage/stone_curse.png",
   preRequisites: [],
 };
 
@@ -132,7 +132,7 @@ export const thunderstorm: Skill = {
     "Wind-element AoE attack dealing up to 8x MATK damage to targets in a 5x5 area.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/mage/thunderstorm.png",
   preRequisites: [{ skill: lightningBolt, level: 4 }],
 };
 
@@ -142,6 +142,6 @@ export const energyCoat: Skill = {
     "Reduces damage from incoming physical attacks while consuming SP.",
   maxLevel: 1,
   type: SkillType.supportive,
-  icon: "",
+  icon: "./assets/mage/energy_coat.png",
   preRequisites: [],
 };
