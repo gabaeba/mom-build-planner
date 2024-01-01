@@ -25,9 +25,12 @@ import { Knight, KnightSkills } from "../knight/knight";
 import { checkHowManySkillPoints } from "../../../common/helpers/check-skill-points";
 import { useLocation } from "react-router-dom";
 import { createUseStyles } from "react-jss";
-import { toBlob } from "html-to-image";
+import { toBlob, toPng } from "html-to-image";
 import Button from "../../../common/button";
 import { globalColors } from "../../../common/helpers/style-variables";
+import { createPortal } from "react-dom";
+import ResetModal from "../../../common/reset-modal";
+import ShareModal from "../../../common/share-modal";
 
 const useStyles = createUseStyles({
   classDiv: {
@@ -141,13 +144,13 @@ export const LordKnight = () => {
   const ref = useRef<HTMLDivElement>(null);
 
   const filter = (node: HTMLElement) => {
-    const exclusionClasses = ["share"];
+    const exclusionClasses = ["buttons"];
     return !exclusionClasses.some((classname) =>
       node.classList?.contains(classname)
     );
   };
 
-  const onButtonClick = useCallback(() => {
+  const copyBuildImgToClipboard = useCallback(() => {
     if (ref.current === null) {
       return;
     }
@@ -166,19 +169,35 @@ export const LordKnight = () => {
         console.error(error);
       }
     });
-
-    // toPng(ref.current, { cacheBust: true, filter })
-    //   .then(async (dataUrl) => {
-    //     const link = document.createElement("a");
-    //     link.download = "my-image-name.png";
-
-    //     link.href = dataUrl;
-    //     link.click();
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
   }, [ref]);
+
+  const downloadBuildImg = useCallback(() => {
+    if (ref.current === null) {
+      return;
+    }
+
+    toPng(ref.current, { cacheBust: true, filter })
+      .then(async (dataUrl) => {
+        const link = document.createElement("a");
+        link.download = "my-image-name.png";
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [ref]);
+
+  const [showResetModal, setShowResetModal] = useState(false);
+  const [showShareModal, setShowShareModal] = useState(false);
+  const [resetBuild, setResetBuild] = useState(false);
+
+  useEffect(() => {
+    if (!resetBuild) return;
+
+    setQuery({}, "push");
+    setResetBuild(false);
+  }, [setQuery, resetBuild]);
 
   return (
     <div className="wrapper" ref={ref}>
@@ -250,30 +269,52 @@ export const LordKnight = () => {
         </div>
 
         <div
-          className="share"
+          className="buttons"
           style={{ display: "flex", width: "232px", gap: 16 }}
         >
           <div>
-            <Button color="error" onClick={onButtonClick}>
-              Reset Build
+            <Button
+              color="error"
+              onClick={() => setShowResetModal(true)}
+              icon={<img src="./assets/reset_icon.png" />}
+              showIcon
+            >
+              Reset
             </Button>
+            {showResetModal &&
+              createPortal(
+                <ResetModal
+                  setShowResetModal={setShowResetModal}
+                  setResetBuild={setResetBuild}
+                />,
+                document.body
+              )}
           </div>
           <div>
             <Button
               color="success"
-              onClick={onButtonClick}
-              icon={<div>teste</div>}
+              onClick={() => setShowShareModal(true)}
+              icon={<img src="./assets/share_icon.png" />}
               showIcon
             >
               Share
             </Button>
+            {showShareModal &&
+              createPortal(
+                <ShareModal
+                  setShowShareModal={setShowShareModal}
+                  copyBuildImgToClipboard={copyBuildImgToClipboard}
+                  downloadBuildImg={downloadBuildImg}
+                />,
+                document.body
+              )}
           </div>
         </div>
       </div>
       <div
         style={{
           display: "flex",
-          justifyContent: "space-around",
+          justifyContent: "space-between",
         }}
       >
         <Swordsman

@@ -33,8 +33,20 @@ const Footer = () => {
         </p>
       </div>
       <div className={socials}>
-        <img src="./assets/github.png" alt="github" />
-        <img src="./assets/behance.png" alt="behance" />
+        <a
+          href="https://github.com/gabaeba/mom-build-planner"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="./assets/github.png" alt="github" />
+        </a>
+        <a
+          href="https://www.behance.net/fvvvvv"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="./assets/behance.png" alt="behance" />
+        </a>
       </div>
     </footer>
   );

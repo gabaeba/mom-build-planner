@@ -11,7 +11,7 @@ const useStyles = createUseStyles({
     padding: "12px 16px",
     border: "none",
     outline: "1px solid transparent",
-    gap: 4,
+    gap: 8,
   },
   success: {
     backgroundColor: globalColors.success,
@@ -33,13 +33,24 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   showIcon?: boolean;
   icon?: ReactNode;
   color: "success" | "error" | "accent" | "white";
+  reference?: React.RefObject<HTMLButtonElement>;
 }
 
-const Button: React.FC<ButtonProps> = ({ showIcon, icon, color, ...props }) => {
+const Button: React.FC<ButtonProps> = ({
+  showIcon,
+  icon,
+  color,
+  reference,
+  ...props
+}) => {
   const style = useStyles();
 
   return (
-    <button className={`${style.button} ${style[color]}`} {...props}>
+    <button
+      className={`${style.button} ${style[color]}`}
+      ref={reference}
+      {...props}
+    >
       {showIcon && icon}
       {props.children}
     </button>
