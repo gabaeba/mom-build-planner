@@ -215,7 +215,7 @@ export const LordKnight = () => {
         style={{
           display: "flex",
           gap: 16,
-          justifyContent: "space-between",
+          justifyContent: "space-around",
           alignItems: "center",
           marginTop: 16,
           marginBottom: 48,
@@ -325,7 +325,7 @@ export const LordKnight = () => {
       <div
         style={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "space-around",
         }}
       >
         <Swordsman

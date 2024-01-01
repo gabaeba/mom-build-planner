@@ -19,8 +19,8 @@ function flattenReqs(preReq: { skill: Skill; level: number }) {
 const useStyles = createUseStyles({
   skillBase: {
     display: "flex",
-    width: "274px",
-    height: "57px",
+    width: "360px",
+    height: "60px",
     padding: "0px 16px",
     borderRadius: "8px",
     background: "#0F1417",
