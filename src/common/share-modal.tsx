@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss";
 import Button from "./button";
 
 const useStyles = createUseStyles({
-  resetModal: {
+  shareModal: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -12,12 +12,14 @@ const useStyles = createUseStyles({
     border: "1px solid black",
     borderRadius: "8px",
     padding: "16px",
-    position: "absolute",
-    width: "350px",
+    position: "fixed",
+    width: "100%",
+    maxWidth: "350px",
     height: "150px",
-    top: "70px",
-    left: "calc(50% - 125px)",
-    bottom: "70px",
+    top: "50%",
+    transform: 'translate(-50%, -50%)',
+    left: "50%",
+    zIndex: '1000',
   },
   modalContent: {
     flex: 1,
@@ -30,6 +32,15 @@ const useStyles = createUseStyles({
     justifyContent: "flex-end",
     gap: 12,
   },
+  backdrop: {
+    position: 'fixed',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    zIndex: 990,
+  }
 });
 
 type ShareModalProps = {
@@ -45,7 +56,7 @@ export default function ShareModal({
   downloadBuildImg,
   getCurrentUrl,
 }: ShareModalProps) {
-  const { resetModal, modalContent, buttonContainer } = useStyles();
+  const { shareModal, modalContent, buttonContainer, backdrop } = useStyles();
   const yesBtn = useRef<HTMLButtonElement>(null);
   const downloadBtn = useRef<HTMLButtonElement>(null);
 
@@ -74,7 +85,8 @@ export default function ShareModal({
   }, [setShowShareModal]);
 
   return (
-    <div className={resetModal}>
+    <>
+    <div className={shareModal}>
       <div className={modalContent}>
         <div style={{ display: "flex" }}>
           <div>Share this build</div>
@@ -123,5 +135,7 @@ export default function ShareModal({
         </div>
       </div>
     </div>
+    <div className={backdrop} onClick={() => setShowShareModal(false)}></div>
+    </>
   );
 }
