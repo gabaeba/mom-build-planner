@@ -13,7 +13,7 @@ export const ganbantein: Skill = {
     "Casts a spell that cancels ground targeting magic around the spot targeted by the caster.",
   maxLevel: 1,
   type: SkillType.supportive,
-  icon: "",
+  icon: "./assets/high-wizard/ganbantein.png",
   preRequisites: [{ skill: iceWall, level: 1 }],
 };
 
@@ -23,7 +23,7 @@ export const mysticalAmplification: Skill = {
     "Amplifies the magic attack strength of the next spell used by up to 150% at the cost of increasing its cast time.",
   maxLevel: 5,
   type: SkillType.supportive,
-  icon: "",
+  icon: "./assets/high-wizard/mystical_amplification.png",
   preRequisites: [],
 };
 
@@ -33,7 +33,7 @@ export const release: Skill = {
     "Throws your active Elemental orb that you currently have summoned to deal damage to target and the enemies in the way. At max level, fires a spell stored via Spellbook.",
   maxLevel: 3,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/high-wizard/release.png",
   preRequisites: [],
 };
 
@@ -43,7 +43,7 @@ export const readingSpellbook: Skill = {
     "Enables use of Magic Spellooks by reading them to seal their magic",
   maxLevel: 3,
   type: SkillType.active,
-  icon: "",
+  icon: "./assets/high-wizard/reading_spellbook.png",
   preRequisites: [{ skill: release, level: 3 }],
 };
 
@@ -53,7 +53,7 @@ export const mindExpansion: Skill = {
     "Increase the amount of spells that can be sealed with the skill Reading Spellbook.",
   maxLevel: 5,
   type: SkillType.passive,
-  icon: "",
+  icon: "./assets/high-wizard/mind_expansion.png",
   preRequisites: [{ skill: readingSpellbook, level: 2 }],
 };
 
@@ -63,7 +63,7 @@ export const recognizedSpell: Skill = {
     "By gaining a greater understanding of your magic, you can make all of your magic skills penetrate a portion of MDEF.",
   maxLevel: 5,
   type: SkillType.active,
-  icon: "",
+  icon: "./assets/high-wizard/recognized_spell.png",
   preRequisites: [{ skill: mysticalAmplification, level: 3 }],
 };
 
@@ -73,7 +73,7 @@ export const summonFireOrb: Skill = {
     "Summons a ball of fire near the caster. Level 2 summons the maximum amount.",
   maxLevel: 2,
   type: SkillType.active,
-  icon: "",
+  icon: "./assets/high-wizard/summon_fire_orb.png",
   preRequisites: [{ skill: meteorStorm, level: 1 }],
 };
 
@@ -83,7 +83,7 @@ export const summonWaterOrb: Skill = {
     "Summons a ball of water near the caster. Level 2 summons the maximum amount.",
   maxLevel: 2,
   type: SkillType.active,
-  icon: "",
+  icon: "./assets/high-wizard/summon_water_orb.png",
   preRequisites: [{ skill: stormGust, level: 1 }],
 };
 
@@ -93,7 +93,7 @@ export const summonLightningOrb: Skill = {
     "Summons a ball of lightning near the caster. Level 2 summons the maximum amount.",
   maxLevel: 2,
   type: SkillType.active,
-  icon: "",
+  icon: "./assets/high-wizard/summon_lightning_orb.png",
   preRequisites: [{ skill: lordOfVermilion, level: 1 }],
 };
 
@@ -103,7 +103,7 @@ export const summonStoneOrb: Skill = {
     "Summons a magic stone near the caster. Level 2 summons the maximum amount.",
   maxLevel: 2,
   type: SkillType.active,
-  icon: "",
+  icon: "./assets/high-wizard/summon_stone_orb.png",
   preRequisites: [{ skill: heavensDrive, level: 1 }],
 };
 
@@ -113,7 +113,7 @@ export const crimsonRock: Skill = {
     "Summons a huge meteorite on the target, striking all targets nearby and inflicting Burning.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/high-wizard/crimson_rock.png",
   preRequisites: [{ skill: summonFireOrb, level: 1 }],
 };
 
@@ -123,7 +123,7 @@ export const jackFrost: Skill = {
     "Deals water element damage to surrounding enemies, increasing the damage on subsequent uses.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/high-wizard/jack_frost.png",
   preRequisites: [{ skill: summonWaterOrb, level: 1 }],
 };
 
@@ -133,7 +133,7 @@ export const chainLightning: Skill = {
     "Deals wind element damage to a single target. When a target is struck by Chain Lightning, it will also chain to enemies near the target.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/high-wizard/chain_lightning.png",
   preRequisites: [{ skill: summonLightningOrb, level: 1 }],
 };
 
@@ -143,7 +143,7 @@ export const earthStrain: Skill = {
     "Causes the earth near you to shake and shoot up from below, dealing damage to those in range.",
   maxLevel: 10,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/high-wizard/earth_strain.png",
   preRequisites: [{ skill: summonStoneOrb, level: 1 }],
 };
 
@@ -153,7 +153,7 @@ export const tetraVortex: Skill = {
     "Deals 5 blows to target foe. Element of summoned stones determine the element of each hit. Causes one status effect from Burning, Chilled, Grounded, and Shocked status ailments.",
   maxLevel: 5,
   type: SkillType.offensive,
-  icon: "",
+  icon: "./assets/high-wizard/tetra_vortex.png",
   preRequisites: [
     { skill: summonWaterOrb, level: 1 },
     { skill: summonFireOrb, level: 1 },
@@ -165,3 +165,21 @@ export const tetraVortex: Skill = {
     { skill: earthStrain, level: 1 },
   ],
 };
+
+export const highWizardSkills = [
+  ganbantein,
+  mysticalAmplification,
+  release,
+  readingSpellbook,
+  mindExpansion,
+  recognizedSpell,
+  summonFireOrb,
+  summonWaterOrb,
+  summonLightningOrb,
+  summonStoneOrb,
+  crimsonRock,
+  jackFrost,
+  chainLightning,
+  earthStrain,
+  tetraVortex,
+];

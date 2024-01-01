@@ -145,3 +145,20 @@ export const energyCoat: Skill = {
   icon: "./assets/mage/energy_coat.png",
   preRequisites: [],
 };
+
+export const mageSkills = [
+  coldBolt,
+  fireBolt,
+  fireBall,
+  sight,
+  fireWall,
+  frostDiver,
+  increaseSpRecovery,
+  lightningBolt,
+  napalmBeat,
+  soulStrike,
+  safetyWallMage,
+  stoneCurse,
+  thunderstorm,
+  energyCoat,
+];
