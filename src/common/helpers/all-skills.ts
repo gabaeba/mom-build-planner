@@ -3,6 +3,8 @@ import { mageSkills } from "../../pages/mage/mage/skills";
 import { professorSkills } from "../../pages/mage/professor/skills";
 import { sageSkills } from "../../pages/mage/sage/skills";
 import { wizardSkills } from "../../pages/mage/wizard/skills";
+import { blacksmithSkills } from "../../pages/merchant/blacksmith/skills";
+import { merchantSkills } from "../../pages/merchant/merchant/skills";
 import { crusaderSkills } from "../../pages/swordsman/crusader/skills";
 import { knightSkills } from "../../pages/swordsman/knight/skills";
 import { lordKnightSkills } from "../../pages/swordsman/lord-knight/skills";
@@ -20,4 +22,6 @@ export const allSkills = [
   ...sageSkills,
   ...highWizardSkills,
   ...professorSkills,
+  ...merchantSkills,
+  ...blacksmithSkills,
 ];
