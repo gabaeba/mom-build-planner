@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export const Clown = () => {
-  return (
-    <div>clown</div>
-  )
-}
+  return <div></div>;
+};

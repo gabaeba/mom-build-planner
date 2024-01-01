@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export const Whitesmith = () => {
-  return (
-    <div>whitesmith</div>
-  )
-}
+  return <div></div>;
+};

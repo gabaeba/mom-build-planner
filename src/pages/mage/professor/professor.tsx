@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export const Professor = () => {
-  return (
-    <div>professor</div>
-  )
-}
+  return <div></div>;
+};

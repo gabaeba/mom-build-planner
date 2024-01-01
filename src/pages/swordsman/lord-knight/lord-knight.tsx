@@ -119,6 +119,7 @@ export const LordKnight = () => {
 
   const [isHovered, setIsHovered] = useState<Skill["preRequisites"]>();
   const [levelUpSkill, downgradeSkill] = useSkill({ query, setQuery });
+  const [copyingBuild, setCopyingBuild] = useState(false);
 
   const handleKeyPress = useCallback(
     (e: React.MouseEvent<HTMLDivElement>, skill: Skill) => {
@@ -164,6 +165,7 @@ export const LordKnight = () => {
     if (ref.current === null) {
       return;
     }
+    setCopyingBuild(true);
 
     toBlob(ref.current, { cacheBust: true, filter }).then(async function (
       blob
@@ -177,6 +179,8 @@ export const LordKnight = () => {
         ]);
       } catch (error) {
         console.error(error);
+      } finally {
+        setCopyingBuild(false);
       }
     });
   }, [ref]);
@@ -210,268 +214,280 @@ export const LordKnight = () => {
   }, [setQuery, resetBuild]);
 
   return (
-    <div className="wrapper" ref={ref}>
-      <div
-        style={{
-          display: "flex",
-          gap: 16,
-          justifyContent: "space-around",
-          alignItems: "center",
-          marginTop: 16,
-          marginBottom: 48,
-        }}
-      >
-        <div className={classDiv}>
-          <img
-            src="./assets/lord-knight/lk_sprite.png"
-            alt="lk sprite"
-            style={{ position: "absolute", left: -25, zIndex: 1 }}
-          />
-          <img
-            src="./assets/lord-knight/lk_icon.png"
-            alt="lk class icon"
-            style={{ marginLeft: 20, marginRight: 20 }}
-          />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "flex-start",
-              gap: 6,
-            }}
-          >
-            <p style={{ fontSize: 12, margin: 0, fontWeight: 300 }}>
-              Swordsman
-            </p>
-            <p style={{ fontSize: 16, margin: 0 }}>Lord Knight</p>
-          </div>
-        </div>
-        <div style={{ width: "232px" }}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "start",
-              gap: 6,
-            }}
-          >
-            <label htmlFor="name" style={{ textAlign: "start", color: "#FFF" }}>
-              Build name
-            </label>
-            <input
-              name="name"
-              id="name"
-              className={input}
-              maxLength={40}
-              value={query?.BuildName || ""}
-              onChange={(e) =>
-                setQuery(
-                  (prev) => ({
-                    ...prev,
-                    BuildName: e?.target?.value ? e.target.value : undefined,
-                  }),
-                  "push"
-                )
-              }
-            />
-          </div>
-        </div>
-
+    <div
+      style={{ paddingBottom: 20, background: copyingBuild ? "#454647" : "" }}
+      ref={ref}
+    >
+      <div className="wrapper">
         <div
-          className="buttons"
-          style={{ display: "flex", width: "232px", gap: 16 }}
+          style={{
+            display: "flex",
+            gap: 16,
+            justifyContent: "space-around",
+            alignItems: "center",
+            padding: 16,
+            marginBottom: 48,
+          }}
         >
-          <div>
-            <Button
-              color="error"
-              onClick={() => setShowResetModal(true)}
-              icon={<img src="./assets/reset_icon.png" />}
-              showIcon
+          <div className={classDiv}>
+            <img
+              src="./assets/lord-knight/lk_sprite.png"
+              alt="lk sprite"
+              style={{ position: "absolute", left: -25, zIndex: 1 }}
+            />
+            <img
+              src="./assets/lord-knight/lk_icon.png"
+              alt="lk class icon"
+              style={{ marginLeft: 20, marginRight: 20 }}
+            />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                justifyContent: "flex-start",
+                gap: 6,
+              }}
             >
-              Reset
-            </Button>
-            {showResetModal &&
-              createPortal(
-                <ResetModal
-                  setShowResetModal={setShowResetModal}
-                  setResetBuild={setResetBuild}
-                />,
-                document.body
-              )}
+              <p style={{ fontSize: 12, margin: 0, fontWeight: 300 }}>
+                Swordsman
+              </p>
+              <p style={{ fontSize: 16, margin: 0 }}>Lord Knight</p>
+            </div>
           </div>
-          <div>
-            <Button
-              color="success"
-              onClick={() => setShowShareModal(true)}
-              icon={<img src="./assets/share_icon.png" />}
-              showIcon
+          <div style={{ width: "232px" }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "start",
+                gap: 6,
+              }}
             >
-              Share
-            </Button>
-            {showShareModal &&
-              createPortal(
-                <ShareModal
-                  setShowShareModal={setShowShareModal}
-                  copyBuildImgToClipboard={copyBuildImgToClipboard}
-                  downloadBuildImg={downloadBuildImg}
-                  getCurrentUrl={getCurrentUrl}
-                />,
-                document.body
-              )}
+              <label
+                htmlFor="name"
+                style={{ textAlign: "start", color: "#FFF" }}
+              >
+                Build name
+              </label>
+              <input
+                name="name"
+                id="name"
+                className={input}
+                maxLength={40}
+                value={query?.BuildName || ""}
+                onChange={(e) =>
+                  setQuery(
+                    (prev) => ({
+                      ...prev,
+                      BuildName: e?.target?.value ? e.target.value : undefined,
+                    }),
+                    "push"
+                  )
+                }
+              />
+            </div>
+          </div>
+
+          <div
+            className="buttons"
+            style={{ display: "flex", width: "232px", gap: 16 }}
+          >
+            <div>
+              <Button
+                color="error"
+                onClick={() => setShowResetModal(true)}
+                icon={<img src="./assets/reset_icon.png" />}
+                showIcon
+              >
+                Reset
+              </Button>
+              {showResetModal &&
+                createPortal(
+                  <ResetModal
+                    setShowResetModal={setShowResetModal}
+                    setResetBuild={setResetBuild}
+                  />,
+                  document.body
+                )}
+            </div>
+            <div>
+              <Button
+                color="success"
+                onClick={() => setShowShareModal(true)}
+                icon={<img src="./assets/share_icon.png" />}
+                showIcon
+              >
+                Share
+              </Button>
+              {showShareModal &&
+                createPortal(
+                  <ShareModal
+                    setShowShareModal={setShowShareModal}
+                    copyBuildImgToClipboard={copyBuildImgToClipboard}
+                    downloadBuildImg={downloadBuildImg}
+                    getCurrentUrl={getCurrentUrl}
+                  />,
+                  document.body
+                )}
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-        }}
-      >
-        <Swordsman
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <Knight
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <div>
-          <div
-            style={{ display: "flex", alignItems: "center", marginBottom: 25 }}
-          >
-            <div style={{ color: "#FFF", fontWeight: 500 }}>
-              Lord Knight Skills
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+          }}
+        >
+          <Swordsman
+            handleKeyPress={handleKeyPress}
+            isHovered={isHovered}
+            setIsHovered={setIsHovered}
+          />
+          <Knight
+            handleKeyPress={handleKeyPress}
+            isHovered={isHovered}
+            setIsHovered={setIsHovered}
+          />
+          <div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                marginBottom: 25,
+              }}
+            >
+              <div style={{ color: "#FFF", fontWeight: 500 }}>
+                Lord Knight Skills
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  color: "#FFF",
+                  fontWeight: 600,
+                  marginLeft: "auto",
+                  background: skillPoints > 54 ? "#410002" : "#007336",
+                  borderRadius: "8px 0px 0px 8px",
+                  width: "46px",
+                  height: "25px",
+                  boxShadow:
+                    "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+                }}
+              >
+                {skillPoints}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  color: "#0F1417",
+                  fontWeight: 600,
+                  background: "#fff",
+                  borderRadius: "0px 8px 8px 0px",
+                  width: "46px",
+                  height: "25px",
+                  boxShadow:
+                    "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+                }}
+              >
+                54
+              </div>
             </div>
             <div
               style={{
                 display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                color: "#FFF",
-                fontWeight: 600,
-                marginLeft: "auto",
-                background: skillPoints > 54 ? "#410002" : "#007336",
-                borderRadius: "8px 0px 0px 8px",
-                width: "46px",
-                height: "25px",
-                boxShadow:
-                  "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+                flexDirection: "column",
+                gap: 12,
               }}
             >
-              {skillPoints}
+              <SkillComponent
+                skill={aerialAssault}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={auraBlade}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={berserk}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={clashingSpiral}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={concentration}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={defensiveStance}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={headCrush}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={ignitionBreak}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={jointBeat}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={majesticSword}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={parry}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={phantomThrust}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={tensionRelax}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={vendetta}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
             </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                color: "#0F1417",
-                fontWeight: 600,
-                background: "#fff",
-                borderRadius: "0px 8px 8px 0px",
-                width: "46px",
-                height: "25px",
-                boxShadow:
-                  "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
-              }}
-            >
-              54
-            </div>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 12,
-            }}
-          >
-            <SkillComponent
-              skill={aerialAssault}
-              handleKeyPress={handleKeyPress}
-              isHovered={isHovered}
-              setIsHovered={setIsHovered}
-            />
-            <SkillComponent
-              skill={auraBlade}
-              handleKeyPress={handleKeyPress}
-              isHovered={isHovered}
-              setIsHovered={setIsHovered}
-            />
-            <SkillComponent
-              skill={berserk}
-              handleKeyPress={handleKeyPress}
-              isHovered={isHovered}
-              setIsHovered={setIsHovered}
-            />
-            <SkillComponent
-              skill={clashingSpiral}
-              handleKeyPress={handleKeyPress}
-              isHovered={isHovered}
-              setIsHovered={setIsHovered}
-            />
-            <SkillComponent
-              skill={concentration}
-              handleKeyPress={handleKeyPress}
-              isHovered={isHovered}
-              setIsHovered={setIsHovered}
-            />
-            <SkillComponent
-              skill={defensiveStance}
-              handleKeyPress={handleKeyPress}
-              isHovered={isHovered}
-              setIsHovered={setIsHovered}
-            />
-            <SkillComponent
-              skill={headCrush}
-              handleKeyPress={handleKeyPress}
-              isHovered={isHovered}
-              setIsHovered={setIsHovered}
-            />
-            <SkillComponent
-              skill={ignitionBreak}
-              handleKeyPress={handleKeyPress}
-              isHovered={isHovered}
-              setIsHovered={setIsHovered}
-            />
-            <SkillComponent
-              skill={jointBeat}
-              handleKeyPress={handleKeyPress}
-              isHovered={isHovered}
-              setIsHovered={setIsHovered}
-            />
-            <SkillComponent
-              skill={majesticSword}
-              handleKeyPress={handleKeyPress}
-              isHovered={isHovered}
-              setIsHovered={setIsHovered}
-            />
-            <SkillComponent
-              skill={parry}
-              handleKeyPress={handleKeyPress}
-              isHovered={isHovered}
-              setIsHovered={setIsHovered}
-            />
-            <SkillComponent
-              skill={phantomThrust}
-              handleKeyPress={handleKeyPress}
-              isHovered={isHovered}
-              setIsHovered={setIsHovered}
-            />
-            <SkillComponent
-              skill={tensionRelax}
-              handleKeyPress={handleKeyPress}
-              isHovered={isHovered}
-              setIsHovered={setIsHovered}
-            />
-            <SkillComponent
-              skill={vendetta}
-              handleKeyPress={handleKeyPress}
-              isHovered={isHovered}
-              setIsHovered={setIsHovered}
-            />
           </div>
         </div>
       </div>

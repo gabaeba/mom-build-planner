@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export const Sniper = () => {
-  return (
-    <div>sniper</div>
-  )
-}
+  return <div></div>;
+};

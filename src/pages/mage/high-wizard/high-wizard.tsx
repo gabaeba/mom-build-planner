@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export const HighWizard = () => {
-  return (
-    <div>high-wizard</div>
-  )
-}
+  return <div></div>;
+};

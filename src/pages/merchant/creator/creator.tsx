@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export const Creator = () => {
-  return (
-    <div>creator</div>
-  )
-}
+  return <div></div>;
+};
