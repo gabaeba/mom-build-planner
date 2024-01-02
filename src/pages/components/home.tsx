@@ -9,6 +9,9 @@ const useStyles = createUseStyles({
     width: "220px",
     height: "72px",
     padding: "0px 16px",
+    "@media (max-width: 600px)": {
+      display: "none",
+    },
   },
   classDivSuccess: {
     position: "relative",
@@ -27,6 +30,11 @@ const useStyles = createUseStyles({
       cursor: "pointer",
       backgroundColor: globalColors.success,
     },
+    "@media (max-width: 600px)": {
+      width: "300px",
+      marginLeft: "auto",
+      marginRight: "auto",
+    },
   },
   classDivError: {
     position: "relative",
@@ -43,8 +51,12 @@ const useStyles = createUseStyles({
     boxShadow:
       "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
     "&:hover, &:active, &:focus": {
-      // cursor: "pointer",
       backgroundColor: globalColors.error,
+    },
+    "@media (max-width: 600px)": {
+      marginLeft: "auto",
+      marginRight: "auto",
+      width: "300px",
     },
   },
   hero: {
@@ -100,6 +112,7 @@ const Home = () => {
             gap: 12,
             justifyContent: "space-between",
             marginTop: 24,
+            flexWrap: "wrap",
           }}
         >
           <div
@@ -231,6 +244,7 @@ const Home = () => {
             gap: 12,
             justifyContent: "space-between",
             marginTop: 24,
+            flexWrap: "wrap",
           }}
         >
           <div
@@ -354,6 +368,7 @@ const Home = () => {
             gap: 12,
             justifyContent: "space-between",
             marginTop: 24,
+            flexWrap: "wrap",
           }}
         >
           <div
@@ -477,6 +492,7 @@ const Home = () => {
             gap: 12,
             justifyContent: "space-between",
             marginTop: 24,
+            flexWrap: "wrap",
           }}
         >
           <div
@@ -608,6 +624,7 @@ const Home = () => {
             gap: 12,
             justifyContent: "space-between",
             marginTop: 24,
+            flexWrap: "wrap",
           }}
         >
           <div
@@ -739,6 +756,7 @@ const Home = () => {
             gap: 12,
             justifyContent: "space-between",
             marginTop: 24,
+            flexWrap: "wrap",
           }}
         >
           <div
@@ -862,6 +880,7 @@ const Home = () => {
             gap: 12,
             justifyContent: "space-between",
             marginTop: 24,
+            flexWrap: "wrap",
           }}
         >
           <div className={emptyClassDiv}></div>
@@ -930,6 +949,7 @@ const Home = () => {
             gap: 12,
             justifyContent: "space-around",
             marginTop: 36,
+            flexWrap: "wrap",
           }}
         >
           <div

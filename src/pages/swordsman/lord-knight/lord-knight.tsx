@@ -227,6 +227,7 @@ export const LordKnight = () => {
             alignItems: "center",
             padding: 16,
             marginBottom: 48,
+            flexWrap: "wrap",
           }}
         >
           <div className={classDiv}>
@@ -337,6 +338,8 @@ export const LordKnight = () => {
           style={{
             display: "flex",
             justifyContent: "space-around",
+            flexWrap: "wrap",
+            gap: 16,
           }}
         >
           <Swordsman
