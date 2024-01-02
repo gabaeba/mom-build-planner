@@ -219,6 +219,7 @@ export const LordKnight = () => {
     if (ref.current === null) {
       return;
     }
+    setCopyingBuild(true);
 
     toPng(ref.current, { cacheBust: true, filter })
       .then(async (dataUrl) => {
@@ -229,6 +230,9 @@ export const LordKnight = () => {
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setCopyingBuild(false);
       });
   }, [ref]);
 
