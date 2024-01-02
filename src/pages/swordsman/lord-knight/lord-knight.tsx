@@ -59,6 +59,17 @@ const useStyles = createUseStyles({
       border: "#FFF solid 2px",
     },
   },
+  skillsCounter: {
+    display: "flex",
+    alignItems: "center",
+    marginBottom: 25,
+    "@media (max-width: 640px)": {
+      position: "sticky",
+      top: 0,
+      padding: "12px 0px",
+      background: globalColors.background,
+    },
+  },
 });
 
 export type LordKnightSkillParams = KnightSkills & {
@@ -80,7 +91,7 @@ export type LordKnightSkillParams = KnightSkills & {
 };
 
 export const LordKnight = () => {
-  const { classDiv, input } = useStyles();
+  const { classDiv, input, skillsCounter } = useStyles();
   const [query, setQuery] = useQueryParams<LordKnightSkillParams>({
     Bash: NumberParam,
     Provoke: NumberParam,
@@ -234,7 +245,11 @@ export const LordKnight = () => {
 
   return (
     <div
-      style={{ paddingBottom: 20, background: copyingBuild ? "#454647" : "", pointerEvents: showShareModal ? 'none' : 'all' }}
+      style={{
+        paddingBottom: 20,
+        background: copyingBuild ? "#454647" : "",
+        pointerEvents: showShareModal ? "none" : "all",
+      }}
       ref={ref}
     >
       <div className="wrapper">
@@ -372,13 +387,7 @@ export const LordKnight = () => {
             setIsHovered={setIsHovered}
           />
           <div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                marginBottom: 25,
-              }}
-            >
+            <div className={skillsCounter}>
               <div style={{ color: "#FFF", fontWeight: 500 }}>
                 Lord Knight Skills
               </div>

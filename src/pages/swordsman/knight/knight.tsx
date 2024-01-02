@@ -19,6 +19,22 @@ import { useEffect, useState } from "react";
 import { checkHowManySkillPoints } from "../../../common/helpers/check-skill-points";
 import { SkillWithoutLevel } from "../../../common/skill-without-level";
 import { useLocation } from "react-router-dom";
+import { createUseStyles } from "react-jss";
+import { globalColors } from "../../../common/helpers/style-variables";
+
+const useStyles = createUseStyles({
+  skillsCounter: {
+    display: "flex",
+    alignItems: "center",
+    marginBottom: 25,
+    "@media (max-width: 640px)": {
+      position: "sticky",
+      top: 0,
+      padding: "12px 0px",
+      background: globalColors.background,
+    },
+  },
+});
 
 export type KnightSkills = SwordsmanSkills & {
   "Twohand Quicken": typeof NumberParam;
@@ -60,6 +76,7 @@ export const Knight = ({
   isHovered,
   setIsHovered,
 }: KnightProps) => {
+  const { skillsCounter } = useStyles();
   const [skillPoints, setSkillPoints] = useState(0);
   const skillNames = knightSkills?.map((e) => e.name);
   const location = useLocation();
@@ -71,7 +88,7 @@ export const Knight = ({
   }, [skillNames, urlParams]);
   return (
     <div>
-      <div style={{ display: "flex", alignItems: "center", marginBottom: 25 }}>
+      <div className={skillsCounter}>
         <div style={{ color: "#FFF", fontWeight: 500 }}>Knight Skills</div>
         <div
           style={{

@@ -78,23 +78,43 @@ const useStyles = createUseStyles({
     "& h1": {
       color: globalColors.fontPrimary,
       fontWeight: 400,
-      fontSize: 57,
+      fontSize: 60,
       textShadow: "8px 6px 32px rgba(0, 0, 0, 0.65)",
+      "@media (max-width: 640px)": {
+        fontSize: 36,
+      },
     },
     "& h2": {
       color: globalColors.fontPrimary,
       fontWeight: 400,
       fontSize: 24,
       textShadow: "8px 6px 32px rgba(0, 0, 0, 0.65)",
+      "@media (max-width: 640px)": {
+        fontSize: 20,
+      },
     },
     "& .title": {
       paddingTop: 50,
+      "@media (max-width: 640px)": {
+        textAlign: "center",
+      },
+    },
+  },
+  classFlexDiv: {
+    display: "flex",
+    gap: 12,
+    justifyContent: "space-between",
+    marginTop: 24,
+    flexWrap: "wrap",
+    "@media (max-width: 640px)": {
+      gap: 24,
     },
   },
 });
 
 const Home = () => {
-  const { emptyClassDiv, classDivSuccess, classDivError, hero } = useStyles();
+  const { emptyClassDiv, classDivSuccess, classDivError, hero, classFlexDiv } =
+    useStyles();
   const history = useHistory();
   return (
     <div className="wrapper">
@@ -106,15 +126,7 @@ const Home = () => {
         <img src="./assets/hero.png" alt="" />
       </div>
       <div style={{ marginTop: "-400px" }}>
-        <div
-          style={{
-            display: "flex",
-            gap: 12,
-            justifyContent: "space-between",
-            marginTop: 24,
-            flexWrap: "wrap",
-          }}
-        >
+        <div className={classFlexDiv}>
           <div
             className={classDivSuccess}
             onClick={() => history.push("lordKnight")}
@@ -238,15 +250,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            gap: 12,
-            justifyContent: "space-between",
-            marginTop: 24,
-            flexWrap: "wrap",
-          }}
-        >
+        <div className={classFlexDiv}>
           <div
             className={classDivSuccess}
             onClick={() => history.push("highWizard")}
@@ -362,15 +366,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            gap: 12,
-            justifyContent: "space-between",
-            marginTop: 24,
-            flexWrap: "wrap",
-          }}
-        >
+        <div className={classFlexDiv}>
           <div
             className={classDivSuccess}
             onClick={() => history.push("assassinCross")}
@@ -486,15 +482,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            gap: 12,
-            justifyContent: "space-between",
-            marginTop: 24,
-            flexWrap: "wrap",
-          }}
-        >
+        <div className={classFlexDiv}>
           <div
             className={classDivSuccess}
             onClick={() => history.push("whitesmith")}
@@ -618,15 +606,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            gap: 12,
-            justifyContent: "space-between",
-            marginTop: 24,
-            flexWrap: "wrap",
-          }}
-        >
+        <div className={classFlexDiv}>
           <div
             className={classDivSuccess}
             onClick={() => history.push("highPriest")}
@@ -750,15 +730,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            gap: 12,
-            justifyContent: "space-between",
-            marginTop: 24,
-            flexWrap: "wrap",
-          }}
-        >
+        <div className={classFlexDiv}>
           <div
             className={classDivSuccess}
             onClick={() => history.push("sniper")}
@@ -874,15 +846,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            gap: 12,
-            justifyContent: "space-between",
-            marginTop: 24,
-            flexWrap: "wrap",
-          }}
-        >
+        <div className={classFlexDiv}>
           <div className={emptyClassDiv}></div>
           <div
             className={classDivSuccess}
@@ -943,15 +907,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            gap: 12,
-            justifyContent: "space-around",
-            marginTop: 36,
-            flexWrap: "wrap",
-          }}
-        >
+        <div className={classFlexDiv}>
           <div
             className={classDivSuccess}
             onClick={() => history.push("superNovice")}
