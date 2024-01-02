@@ -9,7 +9,7 @@ const useStyles = createUseStyles({
     width: "220px",
     height: "72px",
     padding: "0px 16px",
-    "@media (max-width: 600px)": {
+    "@media (max-width: 640px)": {
       display: "none",
     },
   },
@@ -30,7 +30,7 @@ const useStyles = createUseStyles({
       cursor: "pointer",
       backgroundColor: globalColors.success,
     },
-    "@media (max-width: 600px)": {
+    "@media (max-width: 640px)": {
       width: "300px",
       marginLeft: "auto",
       marginRight: "auto",
@@ -53,7 +53,7 @@ const useStyles = createUseStyles({
     "&:hover, &:active, &:focus": {
       backgroundColor: globalColors.error,
     },
-    "@media (max-width: 600px)": {
+    "@media (max-width: 640px)": {
       marginLeft: "auto",
       marginRight: "auto",
       width: "300px",

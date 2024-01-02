@@ -21,12 +21,40 @@ const useStyles = createUseStyles({
       textDecoration: "underline",
       textUnderlineOffset: "5px",
     },
+    "@media (max-width: 640px)": {
+      flexDirection: "column",
+      textDecoration: "none",
+      "&:hover": {
+        color: "#FFF",
+        textDecoration: "none",
+      },
+    },
   },
   requirementRed: {
     background: "#410002 !important",
   },
   requirementGreen: {
     background: "#007336 !important",
+  },
+  skillInfo: {
+    display: "flex",
+    "@media (max-width: 640px)": {
+      display: "flex",
+      flexGrow: 1,
+      alignItems: "center",
+      textDecoration: "none",
+    },
+  },
+  skillLevel: {
+    marginLeft: "auto",
+    "@media (max-width: 640px)": {
+      display: "flex !important",
+      marginLeft: 0,
+      flexGrow: 1,
+      alignItems: "center",
+      textDecoration: "none !important",
+      gap: 12,
+    },
   },
 });
 
@@ -35,13 +63,17 @@ interface SkillProps {
 }
 
 export const SkillWithoutLevel = ({ skill }: SkillProps) => {
-  const { skillBase } = useStyles();
+  const { skillBase, skillInfo, skillLevel } = useStyles();
 
   return (
     <div id={skill.name} className={`${skillBase}`}>
-      <img src={skill.icon} alt={skill.name} style={{ marginRight: 10 }} />
-      <div style={{ marginRight: 5 }}>{skill.name}</div>
-      <div style={{ marginLeft: "auto" }}>1/{skill.maxLevel}</div>
+      <div className={skillInfo}>
+        <img src={skill.icon} alt={skill.name} style={{ marginRight: 10 }} />
+        <div style={{ marginRight: 5 }}>{skill.name}</div>
+      </div>
+      <div className={skillLevel}>
+        <div>1/{skill.maxLevel}</div>
+      </div>
     </div>
   );
 };

@@ -2,6 +2,7 @@
 import { createUseStyles } from "react-jss";
 import { Skill } from "./types";
 import { useLocation } from "react-router-dom";
+import useIsMobile from "./helpers/use-mobile";
 
 function flattenReqs(preReq: { skill: Skill; level: number }) {
   const { preRequisites, ...rest } = preReq.skill;
@@ -35,6 +36,14 @@ const useStyles = createUseStyles({
       textDecoration: "underline",
       textUnderlineOffset: "5px",
     },
+    "@media (max-width: 640px)": {
+      flexDirection: "column",
+      textDecoration: "none",
+      "&:hover": {
+        color: "#FFF",
+        textDecoration: "none",
+      },
+    },
   },
   requirementRed: {
     background: "#410002 !important",
@@ -42,11 +51,42 @@ const useStyles = createUseStyles({
   requirementGreen: {
     background: "#007336 !important",
   },
+  skillInfo: {
+    display: "flex",
+    "@media (max-width: 640px)": {
+      display: "flex",
+      flexGrow: 1,
+      alignItems: "center",
+      textDecoration: "none",
+    },
+  },
+  skillLevel: {
+    marginLeft: "auto",
+    "@media (max-width: 640px)": {
+      display: "flex !important",
+      marginLeft: 0,
+      flexGrow: 1,
+      alignItems: "center",
+      textDecoration: "none !important",
+      gap: 12,
+    },
+  },
+  levelUp: {
+    fontWeight: 700,
+    fontSize: 20,
+    "@media (min-width: 640px)": {
+      display: "none",
+    },
+  },
 });
 
 interface SkillProps {
   skill: Skill;
-  handleKeyPress: (e: React.MouseEvent<HTMLDivElement>, skill: Skill) => void;
+  handleKeyPress: (
+    e: React.MouseEvent<HTMLDivElement>,
+    skill: Skill,
+    action?: "levelUp" | "levelDown" | boolean
+  ) => void;
   isHovered:
     | {
         skill: Skill;
@@ -70,7 +110,14 @@ export const SkillComponent = ({
   isHovered,
   setIsHovered,
 }: SkillProps) => {
-  const { skillBase, requirementRed, requirementGreen } = useStyles();
+  const {
+    skillBase,
+    requirementRed,
+    requirementGreen,
+    skillInfo,
+    skillLevel,
+    levelUp,
+  } = useStyles();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const skillName = searchParams.get(skill.name);
@@ -89,20 +136,36 @@ export const SkillComponent = ({
     return "";
   };
 
+  const { isMobile } = useIsMobile(640);
+
   return (
     <div
       id={skill.name}
       className={`${skillBase} ${skillTeste(preReqs)}`}
       onMouseEnter={() => setIsHovered(skill.preRequisites)}
       onMouseLeave={() => setIsHovered([])}
-      onClick={(e) => handleKeyPress(e, skill)}
-      onContextMenu={(e) => handleKeyPress(e, skill)}
+      onClick={(e) => handleKeyPress(e, skill, isMobile)}
+      onContextMenu={(e) => handleKeyPress(e, skill, isMobile)}
     >
-      <img src={skill.icon} alt={skill.name} style={{ marginRight: 10 }} />
-      <div style={{ marginRight: 5 }}>{skill.name}</div>
-      <div>{skillExist ? `(${skillExist.level})` : ""}</div>
-      <div style={{ marginLeft: "auto" }}>
+      <div className={skillInfo}>
+        <img src={skill.icon} alt={skill.name} style={{ marginRight: 10 }} />
+        <div style={{ marginRight: 5 }}>{skill.name}</div>
+        <div>{skillExist ? `(${skillExist.level})` : ""}</div>
+      </div>
+      <div className={skillLevel}>
+        <div
+          className={levelUp}
+          onClick={(e) => handleKeyPress(e, skill, "levelDown")}
+        >
+          -
+        </div>
         {searchParams.has(skill.name) ? skillName : 0} /{skill.maxLevel}
+        <div
+          className={levelUp}
+          onClick={(e) => handleKeyPress(e, skill, "levelUp")}
+        >
+          +
+        </div>
       </div>
     </div>
   );

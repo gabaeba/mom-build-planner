@@ -122,12 +122,31 @@ export const LordKnight = () => {
   const [copyingBuild, setCopyingBuild] = useState(false);
 
   const handleKeyPress = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>, skill: Skill) => {
+    (
+      e: React.MouseEvent<HTMLDivElement>,
+      skill: Skill,
+      action?: "levelUp" | "levelDown" | boolean
+    ) => {
       e.preventDefault();
-      if (e.button === 0) {
+      let mouseClick: number | undefined = e.button;
+      if (action) {
+        mouseClick = undefined;
+      }
+      if (action === "levelUp") {
         levelUpSkill(skill);
-      } else if (e.button === 2) {
+        return;
+      }
+      if (!action && mouseClick === 0) {
+        levelUpSkill(skill);
+        return;
+      }
+      if (action === "levelDown") {
         downgradeSkill(skill);
+        return;
+      }
+      if (!action && mouseClick === 2) {
+        downgradeSkill(skill);
+        return;
       }
     },
     [levelUpSkill, downgradeSkill]

@@ -32,7 +32,11 @@ export type KnightSkills = SwordsmanSkills & {
 };
 
 type KnightProps = {
-  handleKeyPress: (e: React.MouseEvent<HTMLDivElement>, skill: Skill) => void;
+  handleKeyPress: (
+    e: React.MouseEvent<HTMLDivElement>,
+    skill: Skill,
+    action?: "levelUp" | "levelDown" | boolean
+  ) => void;
   isHovered:
     | {
         skill: Skill;
