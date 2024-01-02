@@ -12,12 +12,14 @@ const useStyles = createUseStyles({
     border: "1px solid black",
     borderRadius: "8px",
     padding: "16px",
-    position: "absolute",
-    width: "250px",
+    position: "fixed",
+    width: "100%",
+    maxWidth: "250px",
     height: "150px",
-    top: "70px",
-    left: "calc(50% - 125px)",
-    bottom: "70px",
+    top: "50%",
+    transform: 'translate(-50%, -50%)',
+    left: "50%",
+    zIndex: '1000',
   },
   modalContent: {
     flex: 1,
@@ -30,6 +32,15 @@ const useStyles = createUseStyles({
     justifyContent: "flex-end",
     gap: 12,
   },
+  backdrop: {
+    position: 'fixed',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    zIndex: 990,
+  }
 });
 
 type ResetModalProps = {
@@ -41,7 +52,7 @@ export default function ResetModal({
   setShowResetModal,
   setResetBuild,
 }: ResetModalProps) {
-  const { resetModal, modalContent, buttonContainer } = useStyles();
+  const { resetModal, modalContent, buttonContainer, backdrop } = useStyles();
   const yesBtn = useRef<HTMLButtonElement>(null);
   const noBtn = useRef<HTMLButtonElement>(null);
 
@@ -70,6 +81,7 @@ export default function ResetModal({
   }, [setShowResetModal, setResetBuild]);
 
   return (
+    <>
     <div className={resetModal}>
       <div className={modalContent}>
         <div style={{ display: "flex" }}>
@@ -124,5 +136,7 @@ export default function ResetModal({
         </div>
       </div>
     </div>
+    <div className={backdrop} onClick={() => setShowResetModal(false)}></div>
+    </>
   );
 }

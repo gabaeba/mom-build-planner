@@ -234,7 +234,7 @@ export const LordKnight = () => {
 
   return (
     <div
-      style={{ paddingBottom: 20, background: copyingBuild ? "#454647" : "" }}
+      style={{ paddingBottom: 20, background: copyingBuild ? "#454647" : "", pointerEvents: showShareModal ? 'none' : 'all' }}
       ref={ref}
     >
       <div className="wrapper">
