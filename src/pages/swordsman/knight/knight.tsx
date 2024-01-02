@@ -1,5 +1,6 @@
 import {
   autoCounter,
+  bowlingBash,
   brandishSpear,
   chargeAttack,
   knightSkills,
@@ -128,19 +129,19 @@ export const Knight = ({
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={movementMastery}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={brandishSpear}
+          skill={bowlingBash}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
           skill={pecoPecoRide}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={movementMastery}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
@@ -159,6 +160,12 @@ export const Knight = ({
         />
         <SkillComponent
           skill={spearStab}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={brandishSpear}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}

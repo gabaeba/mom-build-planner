@@ -438,13 +438,7 @@ export const LordKnight = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={berserk}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={clashingSpiral}
+                skill={majesticSword}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
@@ -462,25 +456,7 @@ export const LordKnight = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={headCrush}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={ignitionBreak}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
                 skill={jointBeat}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={majesticSword}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
@@ -504,7 +480,31 @@ export const LordKnight = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
+                skill={ignitionBreak}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={headCrush}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
                 skill={vendetta}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={berserk}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={clashingSpiral}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
