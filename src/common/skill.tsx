@@ -49,7 +49,7 @@ const useStyles = createUseStyles({
     background: "#410002 !important",
   },
   requirementGreen: {
-    background: "#007336 !important",
+    background: "#1677ff !important",
   },
   skillInfo: {
     display: "flex",
@@ -143,6 +143,7 @@ export const SkillComponent = ({
       id={skill.name}
       className={`${skillBase} ${skillTeste(preReqs)}`}
       onMouseEnter={() => setIsHovered(skill.preRequisites)}
+      style={{ background: Number(skillName) > 0 ? "#007336" : "" }}
       onMouseLeave={() => setIsHovered([])}
       onClick={(e) => handleKeyPress(e, skill, isMobile)}
       onContextMenu={(e) => handleKeyPress(e, skill, isMobile)}
