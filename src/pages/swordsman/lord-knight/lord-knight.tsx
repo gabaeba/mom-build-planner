@@ -31,6 +31,7 @@ import { globalColors } from "../../../common/helpers/style-variables";
 import { createPortal } from "react-dom";
 import ResetModal from "../../../common/reset-modal";
 import ShareModal from "../../../common/share-modal";
+import ClassButton from "../../../common/class-button";
 
 const useStyles = createUseStyles({
   classDiv: {
@@ -38,9 +39,10 @@ const useStyles = createUseStyles({
     display: "flex",
     width: "220px",
     height: "72px",
+    marginLeft: "16px",
     padding: "0px 16px",
     borderRadius: "8px",
-    background: globalColors.foreground,
+    background: "#b5c6f3",
     color: globalColors.fontPrimary,
     alignItems: "center",
     flexShrink: 0,
@@ -50,13 +52,13 @@ const useStyles = createUseStyles({
   input: {
     padding: "16px",
     width: "100%",
-    background: "#454647",
-    color: "#FFF",
+    background: "#FFF",
+    color: "#111111",
     border: "#938f99 solid 2px",
     borderRadius: "8px",
     "&:focus": {
       outline: "none",
-      border: "#FFF solid 2px",
+      border: "#111111 solid 2px",
     },
   },
   skillsCounter: {
@@ -67,7 +69,34 @@ const useStyles = createUseStyles({
       position: "sticky",
       top: 0,
       padding: "12px 0px",
-      background: globalColors.background,
+      background: "#d2d2d2",
+      zIndex: 100,
+    },
+  },
+  skillTreeHeader: {
+    display: "flex",
+    gap: 16,
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 72,
+    marginTop: 24,
+    flexWrap: "wrap",
+    "@media (max-width: 640px)": {
+      justifyContent: "space-around",
+      gap: 28,
+    },
+    "& > :first-child": {
+      marginLeft: "16px",
+    },
+  },
+  skillTree: {
+    display: "flex",
+    justifyContent: "space-between",
+    flexWrap: "wrap",
+    gap: 16,
+    "@media (max-width: 640px)": {
+      justifyContent: "space-around",
+      gap: 28,
     },
   },
 });
@@ -91,7 +120,7 @@ export type LordKnightSkillParams = KnightSkills & {
 };
 
 export const LordKnight = () => {
-  const { classDiv, input, skillsCounter } = useStyles();
+  const { input, skillsCounter, skillTreeHeader, skillTree } = useStyles();
   const [query, setQuery] = useQueryParams<LordKnightSkillParams>({
     Bash: NumberParam,
     Provoke: NumberParam,
@@ -251,49 +280,19 @@ export const LordKnight = () => {
     <div
       style={{
         paddingBottom: 20,
-        background: copyingBuild ? "#454647" : "",
+        background: copyingBuild ? "#d2d2d2" : "",
         pointerEvents: showShareModal ? "none" : "all",
       }}
       ref={ref}
     >
       <div className="wrapper">
-        <div
-          style={{
-            display: "flex",
-            gap: 16,
-            justifyContent: "space-around",
-            alignItems: "center",
-            padding: 16,
-            marginBottom: 48,
-            flexWrap: "wrap",
-          }}
-        >
-          <div className={classDiv}>
-            <img
-              src="./assets/lord-knight/lk_sprite.png"
-              alt="lk sprite"
-              style={{ position: "absolute", left: -25, zIndex: 1 }}
-            />
-            <img
-              src="./assets/lord-knight/lk_icon.png"
-              alt="lk class icon"
-              style={{ marginLeft: 20, marginRight: 20 }}
-            />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-start",
-                justifyContent: "flex-start",
-                gap: 6,
-              }}
-            >
-              <p style={{ fontSize: 12, margin: 0, fontWeight: 300 }}>
-                Swordsman
-              </p>
-              <p style={{ fontSize: 16, margin: 0 }}>Lord Knight</p>
-            </div>
-          </div>
+        <div className={skillTreeHeader}>
+          <ClassButton
+            available
+            notHome
+            baseJobName="Swordsman"
+            jobName="Lord Knight"
+          />
           <div style={{ width: "232px" }}>
             <div
               style={{
@@ -305,7 +304,7 @@ export const LordKnight = () => {
             >
               <label
                 htmlFor="name"
-                style={{ textAlign: "start", color: "#FFF" }}
+                style={{ textAlign: "start", color: "#111111" }}
               >
                 Build name
               </label>
@@ -327,16 +326,12 @@ export const LordKnight = () => {
               />
             </div>
           </div>
-
-          <div
-            className="buttons"
-            style={{ display: "flex", width: "232px", gap: 16 }}
-          >
+          <div className="buttons" style={{ display: "flex", gap: 16 }}>
             <div>
               <Button
                 color="error"
                 onClick={() => setShowResetModal(true)}
-                icon={<img src="./assets/reset_icon.png" />}
+                icon={<img src="./assets/reset.svg" />}
                 showIcon
               >
                 Reset
@@ -354,7 +349,7 @@ export const LordKnight = () => {
               <Button
                 color="success"
                 onClick={() => setShowShareModal(true)}
-                icon={<img src="./assets/share_icon.png" />}
+                icon={<img src="./assets/share.svg" />}
                 showIcon
               >
                 Share
@@ -372,14 +367,7 @@ export const LordKnight = () => {
             </div>
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            flexWrap: "wrap",
-            gap: 16,
-          }}
-        >
+        <div className={skillTree}>
           <Swordsman
             handleKeyPress={handleKeyPress}
             isHovered={isHovered}
@@ -392,7 +380,7 @@ export const LordKnight = () => {
           />
           <div>
             <div className={skillsCounter}>
-              <div style={{ color: "#FFF", fontWeight: 500 }}>
+              <div style={{ color: "#111111", fontWeight: 500 }}>
                 Lord Knight Skills
               </div>
               <div
@@ -400,10 +388,10 @@ export const LordKnight = () => {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  color: "#FFF",
+                  color: "#111111",
                   fontWeight: 600,
                   marginLeft: "auto",
-                  background: skillPoints > 54 ? "#410002" : "#007336",
+                  background: skillPoints > 54 ? "#F0A199" : "#ABD973",
                   borderRadius: "8px 0px 0px 8px",
                   width: "46px",
                   height: "25px",

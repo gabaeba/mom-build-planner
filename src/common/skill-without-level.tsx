@@ -9,15 +9,15 @@ const useStyles = createUseStyles({
     height: "60px",
     padding: "0px 16px",
     borderRadius: "8px",
-    background: "#0F1417",
-    color: "#FFF",
+    background: "#FFF",
+    color: "#111111",
     alignItems: "center",
     userSelect: "none",
     flexShrink: 0,
     boxShadow:
       "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
     "&:hover": {
-      color: "#FFF",
+      color: "#111111",
       textDecoration: "underline",
       textUnderlineOffset: "5px",
     },
@@ -38,6 +38,7 @@ const useStyles = createUseStyles({
   },
   skillInfo: {
     display: "flex",
+    alignItems: "center",
     "@media (max-width: 640px)": {
       display: "flex",
       flexGrow: 1,

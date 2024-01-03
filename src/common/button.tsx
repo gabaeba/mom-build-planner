@@ -11,18 +11,35 @@ const useStyles = createUseStyles({
     padding: "12px 16px",
     border: "none",
     outline: "1px solid transparent",
+    boxShadow:
+      "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
   },
   success: {
-    backgroundColor: globalColors.success,
+    backgroundColor: "#D4EDB7",
+    border: "1px solid #D4EDB7",
     color: globalColors.fontPrimary,
+    "&:hover": {
+      backgroundColor: "#ABD973",
+      border: "1px solid #ABD973",
+    },
   },
   error: {
-    backgroundColor: globalColors.error,
+    backgroundColor: "#EDC2B7",
+    border: "1px solid #EDC2B7",
     color: globalColors.fontPrimary,
+    "&:hover": {
+      backgroundColor: "#F0A199",
+      border: "1px solid #F0A199",
+    },
   },
   accent: {
-    backgroundColor: globalColors.accent,
+    backgroundColor: "#b5c6f3",
+    border: "1px solid #b5c6f3",
     color: globalColors.fontPrimary,
+    "&:hover": {
+      backgroundColor: "#8f9cc0",
+      border: "1px solid #8f9cc0",
+    },
   },
   white: {
     backgroundColor: globalColors.fontPrimary,

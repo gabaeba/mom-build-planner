@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const styles = createUseStyles({
   links: {
     textDecoration: "none",
-    color: "#FFF",
+    color: "#111111",
     "&:hover": {
-      color: "#FFF",
+      color: "#111111",
       textDecoration: "underline",
       textUnderlineOffset: "5px",
     },

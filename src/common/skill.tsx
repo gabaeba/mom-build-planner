@@ -24,15 +24,14 @@ const useStyles = createUseStyles({
     height: "60px",
     padding: "0px 16px",
     borderRadius: "8px",
-    background: "#0F1417",
-    color: "#FFF",
+    background: "#FFF",
+    color: "#111111",
     alignItems: "center",
     userSelect: "none",
-    flexShrink: 0,
     boxShadow:
       "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
     "&:hover": {
-      color: "#FFF",
+      color: "#111111",
       textDecoration: "underline",
       textUnderlineOffset: "5px",
     },
@@ -40,19 +39,28 @@ const useStyles = createUseStyles({
       flexDirection: "column",
       textDecoration: "none",
       "&:hover": {
-        color: "#FFF",
+        color: "#111111",
         textDecoration: "none",
       },
     },
   },
   requirementRed: {
-    background: "#410002 !important",
+    background: "#EDC2B7 !important",
+    color: "#111111 !important",
+    "& img": {
+      opacity: "1 !important",
+    },
   },
   requirementGreen: {
-    background: "#1677ff !important",
+    background: "#D4EDB7 !important",
+    color: "#111111 !important",
+    "& img": {
+      opacity: "1 !important",
+    },
   },
   skillInfo: {
     display: "flex",
+    alignItems: "center",
     "@media (max-width: 640px)": {
       display: "flex",
       flexGrow: 1,
@@ -143,13 +151,23 @@ export const SkillComponent = ({
       id={skill.name}
       className={`${skillBase} ${skillTeste(preReqs)}`}
       onMouseEnter={() => setIsHovered(skill.preRequisites)}
-      style={{ background: Number(skillName) > 0 ? "#007336" : "" }}
+      style={{
+        color: Number(skillName) === 0 ? "#848484" : "",
+        background: Number(skillName) === 0 ? "#F0F0F0" : "",
+      }}
       onMouseLeave={() => setIsHovered([])}
       onClick={(e) => handleKeyPress(e, skill, isMobile)}
       onContextMenu={(e) => handleKeyPress(e, skill, isMobile)}
     >
       <div className={skillInfo}>
-        <img src={skill.icon} alt={skill.name} style={{ marginRight: 10 }} />
+        <img
+          src={skill.icon}
+          alt={skill.name}
+          style={{
+            marginRight: 10,
+            opacity: Number(skillName) === 0 ? "0.5" : "",
+          }}
+        />
         <div style={{ marginRight: 5 }}>{skill.name}</div>
         <div>{skillExist ? `(${skillExist.level})` : ""}</div>
       </div>

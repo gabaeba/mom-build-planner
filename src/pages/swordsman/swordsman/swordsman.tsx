@@ -21,7 +21,6 @@ import { checkHowManySkillPoints } from "../../../common/helpers/check-skill-poi
 import { SkillWithoutLevel } from "../../../common/skill-without-level";
 import { useLocation } from "react-router-dom";
 import { createUseStyles } from "react-jss";
-import { globalColors } from "../../../common/helpers/style-variables";
 
 const useStyles = createUseStyles({
   skillsCounter: {
@@ -32,7 +31,8 @@ const useStyles = createUseStyles({
       position: "sticky",
       top: 0,
       padding: "12px 0px",
-      background: globalColors.background,
+      background: "#d2d2d2",
+      zIndex: 100,
     },
   },
 });
@@ -90,16 +90,18 @@ export const Swordsman = ({
   return (
     <div>
       <div className={skillsCounter}>
-        <div style={{ color: "#FFF", fontWeight: 500 }}>Swordsman Skills</div>
+        <div style={{ color: "#111111", fontWeight: 500 }}>
+          Swordsman Skills
+        </div>
         <div
           style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            color: "#FFF",
+            color: "#111111",
             fontWeight: 600,
             marginLeft: "auto",
-            background: skillPoints > 54 ? "#410002" : "#007336",
+            background: skillPoints > 54 ? "#F0A199" : "#ABD973",
             borderRadius: "8px 0px 0px 8px",
             width: "46px",
             height: "25px",
