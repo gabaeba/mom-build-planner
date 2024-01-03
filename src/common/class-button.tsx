@@ -139,6 +139,11 @@ const ClassButton = ({
         <p className={firstJobParagraph}>{baseJobName}</p>
         <p className={finalJobParagraph}>{jobName}</p>
       </div>
+      {!available && (
+        <div className="tooltip">
+          <div className="tooltip-text tooltip-top">Not released yet</div>
+        </div>
+      )}
     </div>
   );
 };

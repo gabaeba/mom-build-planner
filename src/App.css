@@ -41,8 +41,8 @@ body {
 
 .tooltip .tooltip-text {
   align-items: center;
-  background-color: #3c5666;
-  border: 1px solid #fff;
+  background-color: #111111;
+  border: 1px solid #111111;
   color: white;
   font-weight: 300;
   display: none;
@@ -68,7 +68,7 @@ body {
   top: 100%;
   left: 50%;
   margin-left: -5px;
-  border-color: #fff transparent transparent transparent;
+  border-color: #111111 transparent transparent transparent;
 }
 
 .tooltip .tooltip-right {
@@ -80,7 +80,7 @@ body {
   top: 50%;
   right: 100%;
   margin-top: -5px;
-  border-color: transparent #3c5666 transparent transparent;
+  border-color: transparent #111111 transparent transparent;
 }
 
 .tooltip .tooltip-bottom {
@@ -91,7 +91,7 @@ body {
   bottom: 100%;
   left: 50%;
   margin-left: -5px;
-  border-color: transparent transparent #3c5666 transparent;
+  border-color: transparent transparent #111111 transparent;
 }
 
 .tooltip .tooltip-left {
@@ -103,7 +103,7 @@ body {
   top: 50%;
   left: 100%;
   margin-top: -5px;
-  border-color: transparent transparent transparent #3c5666;
+  border-color: transparent transparent transparent #111111;
 }
 
 .tooltip:hover .tooltip-text {
