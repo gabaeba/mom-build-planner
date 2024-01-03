@@ -9,7 +9,7 @@ const useStyles = createUseStyles({
     width: "220px",
     height: "72px",
     padding: "0px 16px",
-    "@media (max-width: 640px)": {
+    "@media (max-width: 1024px)": {
       display: "none",
     },
   },
@@ -30,7 +30,7 @@ const useStyles = createUseStyles({
       cursor: "pointer",
       backgroundColor: "#8f9cc0",
     },
-    "@media (max-width: 640px)": {
+    "@media (max-width: 1024px)": {
       width: "300px",
       marginLeft: "auto",
       marginRight: "auto",
@@ -50,7 +50,7 @@ const useStyles = createUseStyles({
     flexShrink: 0,
     boxShadow:
       "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
-    "@media (max-width: 640px)": {
+    "@media (max-width: 1024px)": {
       marginLeft: "auto",
       marginRight: "auto",
       width: "300px",
@@ -77,7 +77,7 @@ const useStyles = createUseStyles({
       fontWeight: 400,
       fontSize: 60,
       textShadow: "8px 6px 32px rgba(0, 0, 0, 0.65)",
-      "@media (max-width: 640px)": {
+      "@media (max-width: 1024px)": {
         fontSize: 36,
       },
     },
@@ -86,13 +86,13 @@ const useStyles = createUseStyles({
       fontWeight: 400,
       fontSize: 24,
       textShadow: "8px 6px 32px rgba(0, 0, 0, 0.65)",
-      "@media (max-width: 640px)": {
+      "@media (max-width: 1024px)": {
         fontSize: 20,
       },
     },
     "& .title": {
       paddingTop: 50,
-      "@media (max-width: 640px)": {
+      "@media (max-width: 1024px)": {
         textAlign: "center",
       },
     },
@@ -103,7 +103,7 @@ const useStyles = createUseStyles({
     justifyContent: "space-between",
     marginTop: 24,
     flexWrap: "wrap",
-    "@media (max-width: 640px)": {
+    "@media (max-width: 1024px)": {
       gap: 24,
     },
   },

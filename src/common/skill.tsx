@@ -35,7 +35,7 @@ const useStyles = createUseStyles({
       textDecoration: "underline",
       textUnderlineOffset: "5px",
     },
-    "@media (max-width: 640px)": {
+    "@media (max-width: 1024px)": {
       flexDirection: "column",
       textDecoration: "none",
       "&:hover": {
@@ -61,7 +61,7 @@ const useStyles = createUseStyles({
   skillInfo: {
     display: "flex",
     alignItems: "center",
-    "@media (max-width: 640px)": {
+    "@media (max-width: 1024px)": {
       display: "flex",
       flexGrow: 1,
       alignItems: "center",
@@ -70,7 +70,7 @@ const useStyles = createUseStyles({
   },
   skillLevel: {
     marginLeft: "auto",
-    "@media (max-width: 640px)": {
+    "@media (max-width: 1024px)": {
       display: "flex !important",
       marginLeft: 0,
       flexGrow: 1,
@@ -82,7 +82,7 @@ const useStyles = createUseStyles({
   levelUp: {
     fontWeight: 700,
     fontSize: 20,
-    "@media (min-width: 640px)": {
+    "@media (min-width: 1024px)": {
       display: "none",
     },
   },
@@ -144,7 +144,7 @@ export const SkillComponent = ({
     return "";
   };
 
-  const { isMobile } = useIsMobile(640);
+  const { isMobile } = useIsMobile(1024);
 
   return (
     <div

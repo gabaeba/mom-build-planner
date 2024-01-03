@@ -129,14 +129,15 @@ body {
   gap: 8px;
   padding: 8px 24px;
   background-color: #0F1417;
-  color: #FFF;
+  align-items: center;
+  color: #111111;
   min-width: 200px;
-  border-radius: 100px;
+  border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .toast.success {
-  background-color: #007336;
+  background-color: #ABD973;
 }
 .toast.warning {
   background-color: #f5b642;
@@ -145,5 +146,5 @@ body {
   background-color: #1677ff;
 }
 .toast.error {
-  background-color: #410002;
+  background-color: #F0A199;
 }

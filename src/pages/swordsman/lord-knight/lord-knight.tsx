@@ -32,6 +32,7 @@ import { createPortal } from "react-dom";
 import ResetModal from "../../../common/reset-modal";
 import ShareModal from "../../../common/share-modal";
 import ClassButton from "../../../common/class-button";
+import { useToast } from "../../../common/toast/use-toast";
 
 const useStyles = createUseStyles({
   classDiv: {
@@ -65,7 +66,7 @@ const useStyles = createUseStyles({
     display: "flex",
     alignItems: "center",
     marginBottom: 25,
-    "@media (max-width: 640px)": {
+    "@media (max-width: 1024px)": {
       position: "sticky",
       top: 0,
       padding: "12px 0px",
@@ -76,17 +77,18 @@ const useStyles = createUseStyles({
   skillTreeHeader: {
     display: "flex",
     gap: 16,
+    padding: "16px 0px",
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 72,
     marginTop: 24,
     flexWrap: "wrap",
-    "@media (max-width: 640px)": {
+    "& > :first-child": {
+      ...(window.innerWidth > 1024 ? { marginLeft: "16px" } : {}),
+    },
+    "@media (max-width: 1024px)": {
       justifyContent: "space-around",
       gap: 28,
-    },
-    "& > :first-child": {
-      marginLeft: "16px",
     },
   },
   skillTree: {
@@ -94,7 +96,7 @@ const useStyles = createUseStyles({
     justifyContent: "space-between",
     flexWrap: "wrap",
     gap: 16,
-    "@media (max-width: 640px)": {
+    "@media (max-width: 1024px)": {
       justifyContent: "space-around",
       gap: 28,
     },
@@ -121,6 +123,7 @@ export type LordKnightSkillParams = KnightSkills & {
 
 export const LordKnight = () => {
   const { input, skillsCounter, skillTreeHeader, skillTree } = useStyles();
+  const toast = useToast();
   const [query, setQuery] = useQueryParams<LordKnightSkillParams>({
     Bash: NumberParam,
     Provoke: NumberParam,
@@ -217,8 +220,11 @@ export const LordKnight = () => {
       await navigator.clipboard.writeText(currentUrl);
     } catch (error) {
       console.error(error);
+      toast?.error("DEU RUIM");
+    } finally {
+      toast?.success("Successfuly copied");
     }
-  }, []);
+  }, [toast]);
 
   const copyBuildImgToClipboard = useCallback(() => {
     if (ref.current === null) {
@@ -238,11 +244,13 @@ export const LordKnight = () => {
         ]);
       } catch (error) {
         console.error(error);
+        toast?.error("DEU RUIM");
       } finally {
         setCopyingBuild(false);
+        toast?.success("Successfuly copied");
       }
     });
-  }, [ref]);
+  }, [ref, toast]);
 
   const downloadBuildImg = useCallback(() => {
     if (ref.current === null) {
@@ -259,11 +267,13 @@ export const LordKnight = () => {
       })
       .catch((err) => {
         console.log(err);
+        toast?.error("DEU RUIM");
       })
       .finally(() => {
         setCopyingBuild(false);
+        toast?.success("Successfuly copied");
       });
-  }, [ref]);
+  }, [ref, toast]);
 
   const [showResetModal, setShowResetModal] = useState(false);
   const [showShareModal, setShowShareModal] = useState(false);
@@ -274,7 +284,8 @@ export const LordKnight = () => {
 
     setQuery({}, "push");
     setResetBuild(false);
-  }, [setQuery, resetBuild]);
+    toast?.success("Build reseted");
+  }, [setQuery, resetBuild, toast]);
 
   return (
     <div
