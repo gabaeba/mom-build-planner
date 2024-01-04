@@ -84,6 +84,12 @@ const useStyles = createUseStyles({
         flexDirection: "row",
         gap: 12,
       },
+    "@media all and (device-width: 1194px) and (device-height: 834px) and (orientation:landscape)":
+      {
+        display: "flex",
+        flexDirection: "row",
+        gap: 12,
+      },
     "@media all and (device-width: 1366px) and (device-height: 1024px) and (orientation:landscape)":
       {
         display: "flex",
@@ -97,6 +103,10 @@ const useStyles = createUseStyles({
     fontSize: 20,
     display: isMobile ? "flex" : "none",
     "@media all and (device-width: 1024px) and (device-height: 1366px) and (orientation:portrait)":
+      {
+        display: "flex",
+      },
+    "@media all and (device-width: 1194px) and (device-height: 834px) and (orientation:landscape)":
       {
         display: "flex",
       },
