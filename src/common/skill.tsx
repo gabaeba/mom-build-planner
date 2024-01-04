@@ -2,7 +2,8 @@
 import { createUseStyles } from "react-jss";
 import { Skill } from "./types";
 import { useLocation } from "react-router-dom";
-import { isMobile } from "react-device-detect";
+import { detectDevice, hasTouchSupport } from "./helpers/detect-device";
+// import { isMobile } from "react-device-detect";
 
 function flattenReqs(preReq: { skill: Skill; level: number }) {
   const { preRequisites, ...rest } = preReq.skill;
@@ -16,6 +17,8 @@ function flattenReqs(preReq: { skill: Skill; level: number }) {
   }
   return res;
 }
+
+const isMobile = detectDevice() || hasTouchSupport();
 
 const useStyles = createUseStyles({
   skillBase: {
@@ -42,6 +45,9 @@ const useStyles = createUseStyles({
         color: "#111111",
         textDecoration: "none",
       },
+    },
+    "@media (min-width: 1025px) and (max-width: 1366px)": {
+      textDecoration: "none !important",
     },
   },
   requirementRed: {
@@ -78,45 +84,52 @@ const useStyles = createUseStyles({
       textDecoration: "none !important",
       gap: 12,
     },
-    "@media all and (device-width: 1024px) and (device-height: 1366px) and (orientation:portrait)":
-      {
-        display: "flex",
-        flexDirection: "row",
-        textDecoration: "none !important",
-        gap: 12,
+    "@media (min-width: 1025px) and (max-width: 1366px)": {
+      display: "flex !important",
+      marginLeft: "auto",
+      flexGrow: 1,
+      alignItems: "center",
+      textDecoration: "none !important",
+      gap: 12,
+      "& > :first-child": {
+        marginLeft: "auto",
       },
-    "@media all and (device-width: 1194px) and (device-height: 834px) and (orientation:landscape)":
-      {
-        display: "flex",
-        flexDirection: "row",
-        textDecoration: "none !important",
-        gap: 12,
-      },
-    "@media all and (device-width: 1366px) and (device-height: 1024px) and (orientation:landscape)":
-      {
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        textDecoration: "none !important",
-        gap: 12,
-      },
+    },
+    // "@media all and (device-width: 1024px) and (device-height: 1366px) and (orientation:portrait)":
+    //   {
+    //     display: "flex",
+    //     flexDirection: "row",
+    //     textDecoration: "none !important",
+    //     gap: 12,
+    //   },
+    // "@media all and (device-width: 1194px) and (device-height: 834px) and (orientation:landscape)":
+    //   {
+    //     display: "flex",
+    //     flexDirection: "row",
+    //     textDecoration: "none !important",
+    //     gap: 12,
+    //   },
+    // "@media all and (device-width: 1366px) and (device-height: 1024px) and (orientation:landscape)":
+    //   {
+    //     display: "flex",
+    //     flexDirection: "row",
+    //     alignItems: "center",
+    //     textDecoration: "none !important",
+    //     gap: 12,
+    //   },
   },
   levelUp: {
     fontWeight: 700,
     fontSize: 20,
     display: isMobile ? "flex" : "none",
-    "@media all and (device-width: 1024px) and (device-height: 1366px) and (orientation:portrait)":
-      {
-        display: "flex",
-      },
-    "@media all and (device-width: 1194px) and (device-height: 834px) and (orientation:landscape)":
-      {
-        display: "flex",
-      },
-    "@media all and (device-width: 1366px) and (device-height: 1024px) and (orientation:landscape)":
-      {
-        display: "flex",
-      },
+    // "@media all and (device-width: 1194px) and (device-height: 834px) and (orientation:landscape)":
+    //   {
+    //     display: "flex",
+    //   },
+    // "@media all and (device-width: 1366px) and (device-height: 1024px) and (orientation:landscape)":
+    //   {
+    //     display: "flex",
+    //   },
   },
 });
 
@@ -176,10 +189,10 @@ export const SkillComponent = ({
     return "";
   };
 
-  const isPadProLandscape =
-    window.innerWidth === 1366 && window.innerHeight === 1024;
-  const isPadProPortrait =
-    window.innerWidth === 1024 && window.innerHeight === 1366;
+  // const isPadProLandscape =
+  //   window.innerWidth === 1366 && window.innerHeight === 1024;
+  // const isPadProPortrait =
+  //   window.innerWidth === 1024 && window.innerHeight === 1366;
 
   return (
     <div
@@ -191,20 +204,8 @@ export const SkillComponent = ({
         background: Number(skillName) === 0 ? "#F0F0F0" : "",
       }}
       onMouseLeave={() => setIsHovered([])}
-      onClick={(e) =>
-        handleKeyPress(
-          e,
-          skill,
-          isMobile || isPadProLandscape || isPadProPortrait
-        )
-      }
-      onContextMenu={(e) =>
-        handleKeyPress(
-          e,
-          skill,
-          isMobile || isPadProLandscape || isPadProPortrait
-        )
-      }
+      onClick={(e) => handleKeyPress(e, skill, isMobile)}
+      onContextMenu={(e) => handleKeyPress(e, skill, isMobile)}
     >
       <div className={skillInfo}>
         <img

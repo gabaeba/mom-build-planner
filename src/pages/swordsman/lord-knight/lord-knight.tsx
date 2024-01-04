@@ -261,7 +261,9 @@ export const LordKnight = () => {
     toPng(ref.current, { cacheBust: true, filter })
       .then(async (dataUrl) => {
         const link = document.createElement("a");
-        link.download = `${query?.BuildName}.png` || "build.png";
+        link.download = query?.BuildName
+          ? `${query?.BuildName}.png`
+          : "build.png";
         link.href = dataUrl;
         link.click();
       })
