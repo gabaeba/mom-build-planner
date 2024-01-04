@@ -261,7 +261,7 @@ export const LordKnight = () => {
     toPng(ref.current, { cacheBust: true, filter })
       .then(async (dataUrl) => {
         const link = document.createElement("a");
-        link.download = "my-image-name.png";
+        link.download = `${query?.BuildName}.png` || "build.png";
         link.href = dataUrl;
         link.click();
       })
@@ -273,7 +273,7 @@ export const LordKnight = () => {
         setCopyingBuild(false);
         toast?.success("Successfuly copied");
       });
-  }, [ref, toast]);
+  }, [ref, toast, query?.BuildName]);
 
   const [showResetModal, setShowResetModal] = useState(false);
   const [showShareModal, setShowShareModal] = useState(false);
