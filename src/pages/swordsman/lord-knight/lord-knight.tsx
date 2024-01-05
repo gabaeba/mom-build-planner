@@ -70,7 +70,6 @@ const useStyles = createUseStyles({
       position: "sticky",
       top: 0,
       padding: "12px 0px",
-      background: "#d2d2d2",
       zIndex: 100,
     },
   },
@@ -101,6 +100,33 @@ const useStyles = createUseStyles({
       gap: 28,
     },
   },
+  hero: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    height: "100vh",
+    width: "100%",
+    backgroundImage: "url('./assets/prontera.webp')",
+    opacity: 0.2,
+    backgroundSize: "cover",
+    zIndex: -1,
+  },
+  wrapperScreenshot: {
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      display: "block",
+      width: "100%",
+      top: "0px",
+      right: "0px",
+      bottom: "0px",
+      left: "0px",
+      backgroundColor: "#d2d2d2",
+      zIndex: -1,
+    },
+  },
 });
 
 export type LordKnightSkillParams = KnightSkills & {
@@ -122,7 +148,14 @@ export type LordKnightSkillParams = KnightSkills & {
 };
 
 export const LordKnight = () => {
-  const { input, skillsCounter, skillTreeHeader, skillTree } = useStyles();
+  const {
+    input,
+    skillsCounter,
+    skillTreeHeader,
+    skillTree,
+    hero,
+    wrapperScreenshot,
+  } = useStyles();
   const toast = useToast();
   const [query, setQuery] = useQueryParams<LordKnightSkillParams>({
     Bash: NumberParam,
@@ -291,10 +324,14 @@ export const LordKnight = () => {
 
   return (
     <div
+      className={wrapperScreenshot}
       style={{
-        paddingBottom: 20,
-        background: copyingBuild ? "#d2d2d2" : "",
+        // backgroundColor: copyingBuild ? "#fff" : "",
         pointerEvents: showShareModal ? "none" : "all",
+        maxWidth: copyingBuild ? "1320px" : "",
+        margin: copyingBuild ? "0 auto" : "",
+        overflow: "hidden",
+        zIndex: -101,
       }}
       ref={ref}
     >
@@ -317,7 +354,12 @@ export const LordKnight = () => {
             >
               <label
                 htmlFor="name"
-                style={{ textAlign: "start", color: "#111111" }}
+                style={{
+                  textAlign: "start",
+                  color: "#111111",
+                  textShadow: "0px 0px 2px #fff",
+                  fontWeight: 600,
+                }}
               >
                 Build name
               </label>
@@ -393,7 +435,13 @@ export const LordKnight = () => {
           />
           <div>
             <div className={skillsCounter}>
-              <div style={{ color: "#111111", fontWeight: 500 }}>
+              <div
+                style={{
+                  color: "#111111",
+                  textShadow: "0px 0px 2px #fff",
+                  fontWeight: 600,
+                }}
+              >
                 Lord Knight Skills
               </div>
               <div
@@ -436,7 +484,6 @@ export const LordKnight = () => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: 12,
               }}
             >
               <SkillComponent
@@ -527,6 +574,7 @@ export const LordKnight = () => {
           </div>
         </div>
       </div>
+      <div className={hero}></div>
     </div>
   );
 };

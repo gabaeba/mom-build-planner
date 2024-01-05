@@ -16,7 +16,6 @@ function App() {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: 40,
         minHeight: "100vh",
       }}
     >
@@ -72,7 +71,6 @@ function App() {
             <Home />
           </Route>
         </Switch>
-        
       </div>
       <Footer />
     </div>

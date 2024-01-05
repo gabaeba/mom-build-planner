@@ -74,9 +74,9 @@ const useStyles = createUseStyles({
     },
     "& h1": {
       color: globalColors.fontPrimary,
-      fontWeight: 400,
+      fontWeight: 700,
       fontSize: 60,
-      textShadow: "8px 6px 32px rgba(0, 0, 0, 0.65)",
+      fontFamily: "Inter Tight",
       "@media (max-width: 1024px)": {
         fontSize: 36,
       },
@@ -85,7 +85,7 @@ const useStyles = createUseStyles({
       color: globalColors.fontPrimary,
       fontWeight: 400,
       fontSize: 24,
-      textShadow: "8px 6px 32px rgba(0, 0, 0, 0.65)",
+      fontFamily: "Inter Tight",
       "@media (max-width: 1024px)": {
         fontSize: 20,
       },
@@ -117,127 +117,170 @@ const useStyles = createUseStyles({
     margin: 0,
     fontWeight: 500,
   },
+  backgroundHero: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    height: "100vh",
+    width: "100%",
+    backgroundImage: "url('./assets/alberta.webp')",
+    opacity: 0.2,
+    backgroundSize: "cover",
+    zIndex: -1,
+  },
 });
 
 const Home = () => {
-  const { hero, classFlexDiv } = useStyles();
+  const { hero, classFlexDiv, backgroundHero } = useStyles();
   return (
-    <div className="wrapper">
-      <div className={hero}>
-        <div className="title">
-          <h2>Mythos of Midgard</h2>
-          <h1>Skill Calculator</h1>
+    <>
+      <div className="wrapper">
+        <div className={hero}>
+          <div className="title">
+            <h2>Mythos of Midgard</h2>
+            <h1>Skill Calculator</h1>
+          </div>
         </div>
-        <img src="./assets/hero.png" alt="" />
+        <div style={{ marginTop: "-400px" }}>
+          <div className={classFlexDiv}>
+            <ClassButton
+              available
+              jobName="Lord Knight"
+              baseJobName="Swordsman"
+            />
+            <ClassButton available jobName="Paladin" baseJobName="Swordsman" />
+            <ClassButton
+              available={false}
+              jobName="Rune Knight"
+              baseJobName="Swordsman"
+            />
+            <ClassButton
+              available={false}
+              jobName="Royal Guard"
+              baseJobName="Swordsman"
+            />
+          </div>
+          <div className={classFlexDiv}>
+            <ClassButton available jobName="High Wizard" baseJobName="Mage" />
+            <ClassButton available jobName="Professor" baseJobName="Mage" />
+            <ClassButton
+              available={false}
+              jobName="Warlock"
+              baseJobName="Mage"
+            />
+            <ClassButton
+              available={false}
+              jobName="Sorceror"
+              baseJobName="Mage"
+            />
+          </div>
+          <div className={classFlexDiv}>
+            <ClassButton
+              available
+              jobName="Assassin Cross"
+              baseJobName="Thief"
+            />
+            <ClassButton available jobName="Stalker" baseJobName="Thief" />
+            <ClassButton
+              available={false}
+              jobName="Guillotine Cross"
+              baseJobName="Thief"
+            />
+            <ClassButton
+              available={false}
+              jobName="Shadow Chaser"
+              baseJobName="Thief"
+            />
+          </div>
+          <div className={classFlexDiv}>
+            <ClassButton
+              available
+              jobName="Whitesmith"
+              baseJobName="Merchant"
+            />
+            <ClassButton available jobName="Creator" baseJobName="Merchant" />
+            <ClassButton
+              available={false}
+              jobName="Mechanic"
+              baseJobName="Merchant"
+            />
+            <ClassButton
+              available={false}
+              jobName="Geneticist"
+              baseJobName="Merchant"
+            />
+          </div>
+          <div className={classFlexDiv}>
+            <ClassButton
+              available
+              jobName="High Priest"
+              baseJobName="Acolyte"
+            />
+            <ClassButton available jobName="Champion" baseJobName="Acolyte" />
+            <ClassButton
+              available={false}
+              jobName="Arch Bishop"
+              baseJobName="Acolyte"
+            />
+            <ClassButton
+              available={false}
+              jobName="Sura"
+              baseJobName="Acolyte"
+            />
+          </div>
+          <div className={classFlexDiv}>
+            <ClassButton available jobName="Sniper" baseJobName="Archer" />
+            <ClassButton available jobName="Gypsy" baseJobName="Archer" />
+            <ClassButton
+              available={false}
+              jobName="Ranger"
+              baseJobName="Archer"
+            />
+            <ClassButton
+              available={false}
+              jobName="Wanderer"
+              baseJobName="Archer"
+            />
+          </div>
+          <div className={classFlexDiv}>
+            <ClassButton empty />
+            <ClassButton available jobName="Clown" baseJobName="Archer" />
+            <ClassButton empty />
+            <ClassButton
+              available={false}
+              jobName="Minstrel"
+              baseJobName="Archer"
+            />
+          </div>
+          <div className={classFlexDiv}>
+            <ClassButton
+              available
+              jobName="Super Novice"
+              baseJobName="Novice"
+            />
+            <ClassButton
+              available
+              jobName="Kagerou/Oboro"
+              baseJobName="Ninja"
+            />
+            <ClassButton available jobName="Rebel" baseJobName="Gunslinger" />
+            <ClassButton
+              available={false}
+              jobName="Star Emperor"
+              baseJobName="Taekwon"
+            />
+            <ClassButton
+              available={false}
+              jobName="Soul Reaper"
+              baseJobName="Soul Linker"
+            />
+          </div>
+        </div>
       </div>
-      <div style={{ marginTop: "-400px" }}>
-        <div className={classFlexDiv}>
-          <ClassButton
-            available
-            jobName="Lord Knight"
-            baseJobName="Swordsman"
-          />
-          <ClassButton available jobName="Paladin" baseJobName="Swordsman" />
-          <ClassButton
-            available={false}
-            jobName="Rune Knight"
-            baseJobName="Swordsman"
-          />
-          <ClassButton
-            available={false}
-            jobName="Royal Guard"
-            baseJobName="Swordsman"
-          />
-        </div>
-        <div className={classFlexDiv}>
-          <ClassButton available jobName="High Wizard" baseJobName="Mage" />
-          <ClassButton available jobName="Professor" baseJobName="Mage" />
-          <ClassButton available={false} jobName="Warlock" baseJobName="Mage" />
-          <ClassButton
-            available={false}
-            jobName="Sorceror"
-            baseJobName="Mage"
-          />
-        </div>
-        <div className={classFlexDiv}>
-          <ClassButton available jobName="Assassin Cross" baseJobName="Thief" />
-          <ClassButton available jobName="Stalker" baseJobName="Thief" />
-          <ClassButton
-            available={false}
-            jobName="Guillotine Cross"
-            baseJobName="Thief"
-          />
-          <ClassButton
-            available={false}
-            jobName="Shadow Chaser"
-            baseJobName="Thief"
-          />
-        </div>
-        <div className={classFlexDiv}>
-          <ClassButton available jobName="Whitesmith" baseJobName="Merchant" />
-          <ClassButton available jobName="Creator" baseJobName="Merchant" />
-          <ClassButton
-            available={false}
-            jobName="Mechanic"
-            baseJobName="Merchant"
-          />
-          <ClassButton
-            available={false}
-            jobName="Geneticist"
-            baseJobName="Merchant"
-          />
-        </div>
-        <div className={classFlexDiv}>
-          <ClassButton available jobName="High Priest" baseJobName="Acolyte" />
-          <ClassButton available jobName="Champion" baseJobName="Acolyte" />
-          <ClassButton
-            available={false}
-            jobName="Arch Bishop"
-            baseJobName="Acolyte"
-          />
-          <ClassButton available={false} jobName="Sura" baseJobName="Acolyte" />
-        </div>
-        <div className={classFlexDiv}>
-          <ClassButton available jobName="Sniper" baseJobName="Archer" />
-          <ClassButton available jobName="Gypsy" baseJobName="Archer" />
-          <ClassButton
-            available={false}
-            jobName="Ranger"
-            baseJobName="Archer"
-          />
-          <ClassButton
-            available={false}
-            jobName="Wanderer"
-            baseJobName="Archer"
-          />
-        </div>
-        <div className={classFlexDiv}>
-          <ClassButton empty />
-          <ClassButton available jobName="Clown" baseJobName="Archer" />
-          <ClassButton empty />
-          <ClassButton
-            available={false}
-            jobName="Minstrel"
-            baseJobName="Archer"
-          />
-        </div>
-        <div className={classFlexDiv}>
-          <ClassButton available jobName="Super Novice" baseJobName="Novice" />
-          <ClassButton available jobName="Kagerou/Oboro" baseJobName="Ninja" />
-          <ClassButton available jobName="Rebel" baseJobName="Gunslinger" />
-          <ClassButton
-            available={false}
-            jobName="Star Emperor"
-            baseJobName="Taekwon"
-          />
-          <ClassButton
-            available={false}
-            jobName="Soul Reaper"
-            baseJobName="Soul Linker"
-          />
-        </div>
-      </div>
-    </div>
+      <div className={backgroundHero}></div>
+    </>
   );
 };
 

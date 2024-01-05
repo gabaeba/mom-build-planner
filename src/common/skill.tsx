@@ -3,7 +3,6 @@ import { createUseStyles } from "react-jss";
 import { Skill } from "./types";
 import { useLocation } from "react-router-dom";
 import { detectDevice, hasTouchSupport } from "./helpers/detect-device";
-// import { isMobile } from "react-device-detect";
 
 function flattenReqs(preReq: { skill: Skill; level: number }) {
   const { preRequisites, ...rest } = preReq.skill;
@@ -26,7 +25,6 @@ const useStyles = createUseStyles({
     width: "360px",
     height: "60px",
     padding: "0px 16px",
-    borderRadius: "8px",
     background: "#FFF",
     color: "#111111",
     alignItems: "center",
@@ -39,6 +37,8 @@ const useStyles = createUseStyles({
       textUnderlineOffset: "5px",
     },
     "@media (max-width: 1024px)": {
+      padding: "12px 16px",
+      height: "auto",
       flexDirection: "column",
       textDecoration: "none",
       "&:hover": {
@@ -95,41 +95,11 @@ const useStyles = createUseStyles({
         marginLeft: "auto",
       },
     },
-    // "@media all and (device-width: 1024px) and (device-height: 1366px) and (orientation:portrait)":
-    //   {
-    //     display: "flex",
-    //     flexDirection: "row",
-    //     textDecoration: "none !important",
-    //     gap: 12,
-    //   },
-    // "@media all and (device-width: 1194px) and (device-height: 834px) and (orientation:landscape)":
-    //   {
-    //     display: "flex",
-    //     flexDirection: "row",
-    //     textDecoration: "none !important",
-    //     gap: 12,
-    //   },
-    // "@media all and (device-width: 1366px) and (device-height: 1024px) and (orientation:landscape)":
-    //   {
-    //     display: "flex",
-    //     flexDirection: "row",
-    //     alignItems: "center",
-    //     textDecoration: "none !important",
-    //     gap: 12,
-    //   },
   },
   levelUp: {
     fontWeight: 700,
     fontSize: 20,
     display: isMobile ? "flex" : "none",
-    // "@media all and (device-width: 1194px) and (device-height: 834px) and (orientation:landscape)":
-    //   {
-    //     display: "flex",
-    //   },
-    // "@media all and (device-width: 1366px) and (device-height: 1024px) and (orientation:landscape)":
-    //   {
-    //     display: "flex",
-    //   },
   },
 });
 
@@ -188,11 +158,6 @@ export const SkillComponent = ({
     if (exist) return requirementRed;
     return "";
   };
-
-  // const isPadProLandscape =
-  //   window.innerWidth === 1366 && window.innerHeight === 1024;
-  // const isPadProPortrait =
-  //   window.innerWidth === 1024 && window.innerHeight === 1366;
 
   return (
     <div

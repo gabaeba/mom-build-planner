@@ -27,11 +27,10 @@ const useStyles = createUseStyles({
     display: "flex",
     alignItems: "center",
     marginBottom: 25,
-    "@media (max-width: 640px)": {
+    "@media (max-width: 1024px)": {
       position: "sticky",
       top: 0,
       padding: "12px 0px",
-      background: "#d2d2d2",
       zIndex: 100,
     },
   },
@@ -90,7 +89,13 @@ export const Swordsman = ({
   return (
     <div>
       <div className={skillsCounter}>
-        <div style={{ color: "#111111", fontWeight: 500 }}>
+        <div
+          style={{
+            color: "#111111",
+            textShadow: "0px 0px 2px #fff",
+            fontWeight: 600,
+          }}
+        >
           Swordsman Skills
         </div>
         <div
@@ -133,7 +138,6 @@ export const Swordsman = ({
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: 12,
         }}
       >
         <SkillComponent
