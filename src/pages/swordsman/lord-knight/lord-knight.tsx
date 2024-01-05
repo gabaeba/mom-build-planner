@@ -240,7 +240,7 @@ export const LordKnight = () => {
   const ref = useRef<HTMLDivElement>(null);
 
   const filter = (node: HTMLElement) => {
-    const exclusionClasses = ["buttons"];
+    const exclusionClasses = ["buttons", "hero"];
     return !exclusionClasses.some((classname) =>
       node.classList?.contains(classname)
     );
@@ -265,9 +265,11 @@ export const LordKnight = () => {
     }
     setCopyingBuild(true);
 
-    toBlob(ref.current, { cacheBust: true, filter }).then(async function (
-      blob
-    ) {
+    toBlob(ref.current, {
+      cacheBust: true,
+      filter,
+      backgroundColor: "#d2d2d2",
+    }).then(async function (blob) {
       try {
         await navigator.clipboard.write([
           //@ts-expect-error - typescript doesn't know about ClipboardItem yet
@@ -291,7 +293,7 @@ export const LordKnight = () => {
     }
     setCopyingBuild(true);
 
-    toPng(ref.current, { cacheBust: true, filter })
+    toPng(ref.current, { cacheBust: true, filter, backgroundColor: "#d2d2d2" })
       .then(async (dataUrl) => {
         const link = document.createElement("a");
         link.download = query?.BuildName
@@ -573,7 +575,14 @@ export const LordKnight = () => {
           </div>
         </div>
       </div>
-      <div className={hero}></div>
+      <div
+        className={hero}
+        style={{
+          backgroundImage: copyingBuild
+            ? "url('')"
+            : "url('./assets/prontera.webp')",
+        }}
+      ></div>
     </div>
   );
 };
