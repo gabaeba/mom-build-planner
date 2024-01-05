@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { createUseStyles } from "react-jss";
 import Button from "./button";
+import { detectDevice, hasTouchSupport } from "./helpers/detect-device";
 
 const useStyles = createUseStyles({
   shareModal: {
@@ -17,9 +18,9 @@ const useStyles = createUseStyles({
     maxWidth: "350px",
     height: "150px",
     top: "50%",
-    transform: 'translate(-50%, -50%)',
+    transform: "translate(-50%, -50%)",
     left: "50%",
-    zIndex: '1000',
+    zIndex: "1000",
   },
   modalContent: {
     flex: 1,
@@ -33,14 +34,14 @@ const useStyles = createUseStyles({
     gap: 12,
   },
   backdrop: {
-    position: 'fixed',
+    position: "fixed",
     top: 0,
     right: 0,
     bottom: 0,
     left: 0,
-    backgroundColor: 'rgba(0,0,0,0.7)',
+    backgroundColor: "rgba(0,0,0,0.7)",
     zIndex: 990,
-  }
+  },
 });
 
 type ShareModalProps = {
@@ -59,6 +60,8 @@ export default function ShareModal({
   const { shareModal, modalContent, buttonContainer, backdrop } = useStyles();
   const yesBtn = useRef<HTMLButtonElement>(null);
   const downloadBtn = useRef<HTMLButtonElement>(null);
+
+  const isMobile = detectDevice() || hasTouchSupport();
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
@@ -86,56 +89,57 @@ export default function ShareModal({
 
   return (
     <>
-    <div className={shareModal}>
-      <div className={modalContent}>
-        <div style={{ display: "flex" }}>
-          <div>Share this build</div>
-          <div
-            style={{
-              marginLeft: "auto",
-              cursor: "pointer",
-              userSelect: "none",
-            }}
-            onClick={() => setShowShareModal(false)}
-          >
-            X
+      <div className={shareModal}>
+        <div className={modalContent}>
+          <div style={{ display: "flex" }}>
+            <div>Share this build</div>
+            <div
+              style={{
+                marginLeft: "auto",
+                cursor: "pointer",
+                userSelect: "none",
+              }}
+              onClick={() => setShowShareModal(false)}
+            >
+              X
+            </div>
+          </div>
+          <div className={buttonContainer}>
+            <Button
+              style={{ display: isMobile ? "none" : "" }}
+              reference={yesBtn}
+              color="accent"
+              onClick={() => {
+                copyBuildImgToClipboard();
+                setShowShareModal(false);
+              }}
+            >
+              Copy image to clipboard
+            </Button>
+            <Button
+              reference={downloadBtn}
+              color="accent"
+              onClick={() => {
+                downloadBuildImg();
+                setShowShareModal(false);
+              }}
+            >
+              Save to image
+            </Button>
+            <Button
+              reference={downloadBtn}
+              color="accent"
+              onClick={() => {
+                getCurrentUrl();
+                setShowShareModal(false);
+              }}
+            >
+              Copy url to clipboard
+            </Button>
           </div>
         </div>
-        <div className={buttonContainer}>
-          <Button
-            reference={yesBtn}
-            color="accent"
-            onClick={() => {
-              copyBuildImgToClipboard();
-              setShowShareModal(false);
-            }}
-          >
-            Copy image to clipboard
-          </Button>
-          <Button
-            reference={downloadBtn}
-            color="accent"
-            onClick={() => {
-              downloadBuildImg();
-              setShowShareModal(false);
-            }}
-          >
-            Save to image
-          </Button>
-          <Button
-            reference={downloadBtn}
-            color="accent"
-            onClick={() => {
-              getCurrentUrl();
-              setShowShareModal(false);
-            }}
-          >
-            Copy url to clipboard
-          </Button>
-        </div>
       </div>
-    </div>
-    <div className={backdrop} onClick={() => setShowShareModal(false)}></div>
+      <div className={backdrop} onClick={() => setShowShareModal(false)}></div>
     </>
   );
 }

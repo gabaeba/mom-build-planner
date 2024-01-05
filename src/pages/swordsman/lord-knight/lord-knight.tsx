@@ -326,7 +326,6 @@ export const LordKnight = () => {
     <div
       className={wrapperScreenshot}
       style={{
-        // backgroundColor: copyingBuild ? "#fff" : "",
         pointerEvents: showShareModal ? "none" : "all",
         maxWidth: copyingBuild ? "1320px" : "",
         margin: copyingBuild ? "0 auto" : "",
