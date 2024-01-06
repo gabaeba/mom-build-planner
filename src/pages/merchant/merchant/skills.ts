@@ -75,16 +75,6 @@ export const efficiency: Skill = {
   preRequisites: [],
 };
 
-export const findingOre: Skill = {
-  name: "Finding Ore",
-  description:
-    "Adds a chance of finding various minerals when killing monsters.",
-  maxLevel: 1,
-  type: SkillType.passive,
-  icon: "./assets/merchant/finding_ore.png",
-  preRequisites: [],
-};
-
 export const crazyUproar: Skill = {
   name: "Crazy Uproar",
   description: "A self-buff that grants +4 Strength.",
@@ -113,7 +103,6 @@ export const merchantSkills = [
   cartRevolution,
   cursedTomahawk,
   efficiency,
-  findingOre,
   crazyUproar,
   findersFee,
 ];

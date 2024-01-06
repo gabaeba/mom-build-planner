@@ -108,7 +108,7 @@ export const maximizePower: Skill = {
 };
 
 export const basicMechanics: Skill = {
-  name: "Maximize Power",
+  name: "Basic Mechanics",
   description: "Prepares the Blacksmith to forge basic machinery.",
   maxLevel: 1,
   type: SkillType.passive,
@@ -127,7 +127,7 @@ export const forgeAutomaton: Skill = {
 };
 
 export const destroyMachine: Skill = {
-  name: "Maximize Power",
+  name: "Destroy Machine",
   description:
     "Destroys any active automaton, dealing damage to all enemies in a 9x9 area around the automaton.",
   maxLevel: 5,
