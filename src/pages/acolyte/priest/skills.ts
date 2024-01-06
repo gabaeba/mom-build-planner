@@ -137,15 +137,6 @@ export const suffragium: Skill = {
   preRequisites: [{ skill: impositioManus, level: 2 }],
 };
 
-export const redemptio: Skill = {
-  name: "Redemptio",
-  description: "Resurrects all nearby party members with half HP.",
-  maxLevel: 1,
-  type: SkillType.supportive,
-  icon: "./assets/priest/redemptio.png",
-  preRequisites: [],
-};
-
 export const safetyWallPriest: Skill = {
   name: "Safety Wall",
   description:
@@ -172,11 +163,20 @@ export const exorcismus: Skill = {
 export const magnusExorcismus: Skill = {
   name: "Magnus Exorcismus",
   description:
-    "Summons a holy cross on the ground that lasts 5~14 seconds, damaging all enemies for 1~10 MATK×1 hits at 2-second intervals. Monsters not of the Demon race, Shadow, Ghost, and Undead element receive greatly reduced damage.",
+    "Summons a holy cross on the ground that lasts 5~14 seconds, damaging all enemies for 1~10 MATKx1 hits at 2-second intervals. Monsters not of the Demon race, Shadow, Ghost, and Undead element receive greatly reduced damage.",
   maxLevel: 10,
   type: SkillType.offensive,
   icon: "./assets/priest/magnus_exorcismus.png",
   preRequisites: [{ skill: exorcismus, level: 1 }],
+};
+
+export const redemptio: Skill = {
+  name: "Redemptio",
+  description: "Resurrects all nearby party members with half HP.",
+  maxLevel: 1,
+  type: SkillType.supportive,
+  icon: "./assets/priest/redemptio.png",
+  preRequisites: [],
 };
 
 export const priestSkills = [

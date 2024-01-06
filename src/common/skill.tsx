@@ -152,7 +152,7 @@ export const SkillComponent = ({
     (e: { name: string }) => e?.name === skill.name
   );
 
-  const skillTeste = (preReq: typeof preReqs) => {
+  const checkSkillPreReq = (preReq: typeof preReqs) => {
     const exist = preReq?.find((e: { name: string }) => e?.name === skill.name);
     if (Number(skillName) >= (exist?.level ?? 100)) return requirementGreen;
     if (exist) return requirementRed;
@@ -162,7 +162,7 @@ export const SkillComponent = ({
   return (
     <div
       id={skill.name}
-      className={`${skillBase} ${skillTeste(preReqs)}`}
+      className={`${skillBase} ${checkSkillPreReq(preReqs)}`}
       onMouseEnter={() => setIsHovered(skill.preRequisites)}
       style={{
         color: Number(skillName) === 0 ? "#848484" : "",

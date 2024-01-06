@@ -23,7 +23,7 @@ export const maceMastery: Skill = {
 export const ruwach: Skill = {
   name: "Ruwach",
   description:
-    "Reveal hidden enemies in a 5×5 area around the user and deal 145% MATK damage to revealed enemies.",
+    "Reveal hidden enemies in a 5x5 area around the user and deal 145% MATK damage to revealed enemies.",
   maxLevel: 1,
   type: SkillType.offensive,
   icon: "./assets/acolyte/ruwach.png",
@@ -131,7 +131,7 @@ export const teleport: Skill = {
 
 export const pneuma: Skill = {
   name: "Pneuma",
-  description: "Protects a 3×3 area from incoming ranged attacks.",
+  description: "Protects a 3x3 area from incoming ranged attacks.",
   maxLevel: 2,
   type: SkillType.supportive,
   icon: "./assets/acolyte/teleport.png",
