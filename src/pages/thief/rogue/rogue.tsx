@@ -1,19 +1,25 @@
 import {
-  coldBolt,
-  energyCoat,
-  fireBall,
-  fireBolt,
-  fireWall,
-  frostDiver,
-  increaseSpRecovery,
-  lightningBolt,
-  mageSkills,
-  napalmBeat,
-  safetyWallMage,
-  sight,
-  soulStrike,
-  stoneCurse,
-  thunderstorm,
+  arrowCrafting,
+  backStab,
+  closeConfine,
+  coinSap,
+  doubleStrafing,
+  gangstersParadise,
+  graffiti,
+  intimidate,
+  plagiarism,
+  preserve,
+  raid,
+  removeTrap,
+  rogueSkills,
+  snatcher,
+  stripArmor,
+  stripHelm,
+  stripShield,
+  stripWeapon,
+  swordMastery,
+  tunnelDrive,
+  vulturesEye,
 } from "./skills";
 import { SkillComponent } from "../../../common/skill";
 import { NumberParam } from "use-query-params";
@@ -23,6 +29,7 @@ import { checkHowManySkillPoints } from "../../../common/helpers/check-skill-poi
 import { SkillWithoutLevel } from "../../../common/skill-without-level";
 import { useLocation } from "react-router-dom";
 import { createUseStyles } from "react-jss";
+import { ThiefSkills } from "../thief/thief";
 
 const useStyles = createUseStyles({
   skillsCounter: {
@@ -38,23 +45,28 @@ const useStyles = createUseStyles({
   },
 });
 
-export type MageSkills = {
-  "Cold Bolt": typeof NumberParam;
-  "Fire Bolt": typeof NumberParam;
-  "Fire Ball": typeof NumberParam;
-  Sight: typeof NumberParam;
-  "Fire Wall": typeof NumberParam;
-  "Frost Diver": typeof NumberParam;
-  "Increase SP Recovery": typeof NumberParam;
-  "Lightning Bolt": typeof NumberParam;
-  "Napalm Beat": typeof NumberParam;
-  "Soul Strike": typeof NumberParam;
-  "Safety Wall": typeof NumberParam;
-  "Stone Curse": typeof NumberParam;
-  Thunderstorm: typeof NumberParam;
+export type RogueSkills = ThiefSkills & {
+  "Sword Mastery": typeof NumberParam;
+  Snatcher: typeof NumberParam;
+  "Coin Sap": typeof NumberParam;
+  "Back Stab": typeof NumberParam;
+  "Strip Helm": typeof NumberParam;
+  "Strip Shield": typeof NumberParam;
+  "Strip Armor": typeof NumberParam;
+  "Strip Weapon": typeof NumberParam;
+  "Vulture's Eye": typeof NumberParam;
+  "Double Strafing": typeof NumberParam;
+  "Tunnel Drive": typeof NumberParam;
+  Raid: typeof NumberParam;
+  Intimidate: typeof NumberParam;
+  Plagiarism: typeof NumberParam;
+  "Remove Trap": typeof NumberParam;
+  Graffiti: typeof NumberParam;
+  "Gangster's Paradise": typeof NumberParam;
+  Preserve: typeof NumberParam;
 };
 
-type MageProps = {
+type RogueProps = {
   handleKeyPress: (
     e: React.MouseEvent<HTMLDivElement>,
     skill: Skill,
@@ -77,14 +89,14 @@ type MageProps = {
   >;
 };
 
-export const Mage = ({
+export const Rogue = ({
   handleKeyPress,
   isHovered,
   setIsHovered,
-}: MageProps) => {
+}: RogueProps) => {
   const { skillsCounter } = useStyles();
   const [skillPoints, setSkillPoints] = useState(0);
-  const skillNames = mageSkills?.map((e) => e.name);
+  const skillNames = rogueSkills?.map((e) => e.name);
   const location = useLocation();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const urlParams = new URLSearchParams(location.search);
@@ -102,7 +114,7 @@ export const Mage = ({
             fontWeight: 600,
           }}
         >
-          Mage Skills
+          Rogue Skills
         </div>
         <div
           style={{
@@ -147,84 +159,115 @@ export const Mage = ({
         }}
       >
         <SkillComponent
-          skill={coldBolt}
+          skill={swordMastery}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={fireBolt}
+          skill={snatcher}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={fireBall}
+          skill={coinSap}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={sight}
+          skill={backStab}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={fireWall}
+          skill={stripHelm}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={frostDiver}
+          skill={stripShield}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={increaseSpRecovery}
+          skill={stripArmor}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={lightningBolt}
+          skill={stripWeapon}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={napalmBeat}
+          skill={vulturesEye}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={soulStrike}
+          skill={doubleStrafing}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={safetyWallMage}
+          skill={tunnelDrive}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={stoneCurse}
+          skill={raid}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={thunderstorm}
+          skill={intimidate}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
-        <SkillWithoutLevel skill={energyCoat} />
+        <SkillComponent
+          skill={plagiarism}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={removeTrap}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={graffiti}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={gangstersParadise}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={preserve}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillWithoutLevel skill={closeConfine} />
+        <SkillWithoutLevel skill={arrowCrafting} />
       </div>
     </div>
   );

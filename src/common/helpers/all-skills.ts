@@ -18,6 +18,9 @@ import { knightSkills } from "../../pages/swordsman/knight/skills";
 import { lordKnightSkills } from "../../pages/swordsman/lord-knight/skills";
 import { paladinSkills } from "../../pages/swordsman/paladin/skills";
 import { swordsmanSkills } from "../../pages/swordsman/swordsman/skills";
+import { assassinCrossSkills } from "../../pages/thief/assassin-cross/skills";
+import { assassinSkills } from "../../pages/thief/assassin/skills";
+import { rogueSkills } from "../../pages/thief/rogue/skills";
 import { thiefSkills } from "../../pages/thief/thief/skills";
 
 export const allSkills = [
@@ -32,6 +35,9 @@ export const allSkills = [
   ...highWizardSkills,
   ...professorSkills,
   ...thiefSkills,
+  ...assassinSkills,
+  ...rogueSkills,
+  ...assassinCrossSkills,
   ...merchantSkills,
   ...blacksmithSkills,
   ...alchemistSkills,

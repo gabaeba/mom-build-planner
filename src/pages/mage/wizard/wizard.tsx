@@ -158,6 +158,12 @@ export const Wizard = ({
           setIsHovered={setIsHovered}
         />
         <SkillComponent
+          skill={iceWall}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
           skill={frostNova}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
@@ -165,12 +171,6 @@ export const Wizard = ({
         />
         <SkillComponent
           skill={heavensDrive}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={iceWall}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
@@ -188,6 +188,12 @@ export const Wizard = ({
           setIsHovered={setIsHovered}
         />
         <SkillComponent
+          skill={sightrasher}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
           skill={meteorStorm}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
@@ -195,12 +201,6 @@ export const Wizard = ({
         />
         <SkillComponent
           skill={quagmire}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={sightrasher}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}

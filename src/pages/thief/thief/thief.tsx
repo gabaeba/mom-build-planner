@@ -1,19 +1,17 @@
 import {
-  coldBolt,
-  energyCoat,
-  fireBall,
-  fireBolt,
-  fireWall,
-  frostDiver,
-  increaseSpRecovery,
-  lightningBolt,
-  mageSkills,
-  napalmBeat,
-  safetyWallMage,
-  sight,
-  soulStrike,
-  stoneCurse,
-  thunderstorm,
+  backSliding,
+  detoxify,
+  doubleAttack,
+  envenom,
+  hiding,
+  improveDodge,
+  increaseSpeed,
+  pickStone,
+  quickStrike,
+  steal,
+  thiefSkills,
+  throwSand,
+  throwStone,
 } from "./skills";
 import { SkillComponent } from "../../../common/skill";
 import { NumberParam } from "use-query-params";
@@ -38,20 +36,16 @@ const useStyles = createUseStyles({
   },
 });
 
-export type MageSkills = {
-  "Cold Bolt": typeof NumberParam;
-  "Fire Bolt": typeof NumberParam;
-  "Fire Ball": typeof NumberParam;
-  Sight: typeof NumberParam;
-  "Fire Wall": typeof NumberParam;
-  "Frost Diver": typeof NumberParam;
-  "Increase SP Recovery": typeof NumberParam;
-  "Lightning Bolt": typeof NumberParam;
-  "Napalm Beat": typeof NumberParam;
-  "Soul Strike": typeof NumberParam;
-  "Safety Wall": typeof NumberParam;
-  "Stone Curse": typeof NumberParam;
-  Thunderstorm: typeof NumberParam;
+export type ThiefSkills = {
+  "Double Attack": typeof NumberParam;
+  "Improve Dodge": typeof NumberParam;
+  Envenom: typeof NumberParam;
+  Detoxify: typeof NumberParam;
+  Steal: typeof NumberParam;
+  Hiding: typeof NumberParam;
+  "Increase Speed": typeof NumberParam;
+  "Throw Sand": typeof NumberParam;
+  "Quick Strike": typeof NumberParam;
 };
 
 type MageProps = {
@@ -77,14 +71,14 @@ type MageProps = {
   >;
 };
 
-export const Mage = ({
+export const Thief = ({
   handleKeyPress,
   isHovered,
   setIsHovered,
 }: MageProps) => {
   const { skillsCounter } = useStyles();
   const [skillPoints, setSkillPoints] = useState(0);
-  const skillNames = mageSkills?.map((e) => e.name);
+  const skillNames = thiefSkills?.map((e) => e.name);
   const location = useLocation();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const urlParams = new URLSearchParams(location.search);
@@ -102,7 +96,7 @@ export const Mage = ({
             fontWeight: 600,
           }}
         >
-          Mage Skills
+          Thief Skills
         </div>
         <div
           style={{
@@ -147,84 +141,62 @@ export const Mage = ({
         }}
       >
         <SkillComponent
-          skill={coldBolt}
+          skill={doubleAttack}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={fireBolt}
+          skill={improveDodge}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={fireBall}
+          skill={envenom}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={sight}
+          skill={detoxify}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={fireWall}
+          skill={steal}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={frostDiver}
+          skill={hiding}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={increaseSpRecovery}
+          skill={increaseSpeed}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={lightningBolt}
+          skill={throwSand}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={napalmBeat}
+          skill={quickStrike}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
-        <SkillComponent
-          skill={soulStrike}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={safetyWallMage}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={stoneCurse}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={thunderstorm}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillWithoutLevel skill={energyCoat} />
+        <SkillWithoutLevel skill={backSliding} />
+        <SkillWithoutLevel skill={pickStone} />
+        <SkillWithoutLevel skill={throwStone} />
       </div>
     </div>
   );

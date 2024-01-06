@@ -498,37 +498,7 @@ export const HighWizard = () => {
               }}
             >
               <SkillComponent
-                skill={chainLightning}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={crimsonRock}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={earthStrain}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
                 skill={ganbantein}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={jackFrost}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={mindExpansion}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
@@ -540,7 +510,19 @@ export const HighWizard = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
+                skill={release}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
                 skill={readingSpellbook}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={mindExpansion}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
@@ -552,13 +534,13 @@ export const HighWizard = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={release}
+                skill={summonFireOrb}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={summonFireOrb}
+                skill={summonWaterOrb}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
@@ -576,7 +558,25 @@ export const HighWizard = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={summonWaterOrb}
+                skill={crimsonRock}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={jackFrost}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={chainLightning}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={earthStrain}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}

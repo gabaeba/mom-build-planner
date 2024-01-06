@@ -162,19 +162,7 @@ export const Sage = ({
         }}
       >
         <SkillComponent
-          skill={abracadabra}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
           skill={advancedBook}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={autoSpell}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
@@ -186,7 +174,55 @@ export const Sage = ({
           setIsHovered={setIsHovered}
         />
         <SkillComponent
+          skill={flameLauncher}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={seismicWeapon}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={lightningLoader}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={frostWeapon}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
           skill={deluge}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={volcano}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={violentGale}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={magicRod}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={spellBreaker}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
@@ -210,7 +246,7 @@ export const Sage = ({
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={flameLauncher}
+          skill={freeCast}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
@@ -222,13 +258,7 @@ export const Sage = ({
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={freeCast}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={frostWeapon}
+          skill={autoSpell}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
@@ -240,37 +270,7 @@ export const Sage = ({
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={lightningLoader}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={magicRod}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={seismicWeapon}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={spellBreaker}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={violentGale}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={volcano}
+          skill={abracadabra}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}

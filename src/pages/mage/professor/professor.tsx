@@ -508,13 +508,7 @@ export const Professor = () => {
               }}
             >
               <SkillComponent
-                skill={blizzardTome}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={cycloneTome}
+                skill={doubleCasting}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
@@ -526,25 +520,19 @@ export const Professor = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={doubleCasting}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
                 skill={earthGrave}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={electricWalk}
+                skill={varetyrSpear}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={elementalAura}
+                skill={electricWalk}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
@@ -562,6 +550,12 @@ export const Professor = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
+                skill={elementalAura}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
                 skill={mindBreaker}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
@@ -574,31 +568,37 @@ export const Professor = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={spellFist}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
                 skill={spiderWeb}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={tremorTome}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={varetyrSpear}
+                skill={spellFist}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
                 skill={volcanicTome}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={blizzardTome}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={cycloneTome}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={tremorTome}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
