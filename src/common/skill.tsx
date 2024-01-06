@@ -6,11 +6,11 @@ import { detectDevice, hasTouchSupport } from "./helpers/detect-device";
 
 function flattenReqs(preReq: { skill: Skill; level: number }) {
   const { preRequisites, ...rest } = preReq.skill;
-  const teste = {
+  const combined = {
     ...rest,
     level: preReq.level,
   };
-  const res = [teste];
+  const res = [combined];
   if (preRequisites?.length) {
     res.push(...preRequisites.flatMap((x) => flattenReqs(x)));
   }
@@ -145,9 +145,10 @@ export const SkillComponent = ({
   const searchParams = new URLSearchParams(location.search);
   const skillName = searchParams.get(skill.name);
 
-  const preReqs = isHovered?.flatMap((x: { skill: Skill; level: number }) =>
-    flattenReqs(x)
-  );
+  const preReqs = isHovered
+    ?.flatMap((x: { skill: Skill; level: number }) => flattenReqs(x))
+    ?.sort((a, b) => b.level - a.level);
+
   const skillExist = preReqs?.find(
     (e: { name: string }) => e?.name === skill.name
   );

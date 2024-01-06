@@ -1,6 +1,5 @@
 import { Skill, SkillType } from "../../../common/types";
 import { attentionConcentrate } from "../archer/skills";
-
 import {
   dancingLesson,
   encore,

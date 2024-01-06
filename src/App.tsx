@@ -9,6 +9,7 @@ import { AssassinCross, Stalker } from "./pages/thief";
 import { Champion, HighPriest } from "./pages/acolyte";
 import Navbar from "./pages/components/navbar";
 import Footer from "./pages/components/footer";
+import { SuperNovice } from "./pages/super-novice/expanded-super-novice/expanded-super-novice";
 
 function App() {
   return (
@@ -34,6 +35,24 @@ function App() {
           <Route path="/professor">
             <Professor />
           </Route>
+          <Route path="/assassinCross">
+            <AssassinCross />
+          </Route>
+          <Route path="/stalker">
+            <Stalker />
+          </Route>
+          <Route path="/whitesmith">
+            <Whitesmith />
+          </Route>
+          <Route path="/creator">
+            <Creator />
+          </Route>
+          <Route path="/highPriest">
+            <HighPriest />
+          </Route>
+          <Route path="/champion">
+            <Champion />
+          </Route>
           <Route path="/sniper">
             <Sniper />
           </Route>
@@ -43,23 +62,14 @@ function App() {
           <Route path="/gypsy">
             <Gypsy />
           </Route>
-          <Route path="/whitesmith">
-            <Whitesmith />
+          <Route path="/superNovice">
+            <SuperNovice />
           </Route>
-          <Route path="/creator">
-            <Creator />
+          <Route path="/kagerouOboro">
+            <Home />
           </Route>
-          <Route path="/assassinCross">
-            <AssassinCross />
-          </Route>
-          <Route path="/stalker">
-            <Stalker />
-          </Route>
-          <Route path="/highPriest">
-            <HighPriest />
-          </Route>
-          <Route path="/champion">
-            <Champion />
+          <Route path="/rebel">
+            <Home />
           </Route>
           {/* If none of the previous routes render anything,
             this route acts as a fallback.

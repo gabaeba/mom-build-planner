@@ -1,19 +1,48 @@
 import { SkillComponent } from "../../../common/skill";
 import {
-  arrowVulcan,
-  chaoticVoice,
-  dominionImpulse,
-  flameTongue,
-  gypsySkills,
-  improvisedSong,
-  moonlitWaterMill,
-  perfectRythm,
-  reverberation,
-  showmanship,
-  sirensCall,
-  soundOfDestruction,
-  tarotCardOfDate,
-  wandOfHermode,
+  acidTerror,
+  adrenalineRush,
+  angelHelpMe,
+  aspersio,
+  autoGuard,
+  autoSpell,
+  backStab,
+  blastMine,
+  bowlingBash,
+  breakthrough,
+  callSpirits,
+  claymoreTrap,
+  demonstration,
+  earthSpike,
+  enchantPoison,
+  expandedSuperNoviceSkills,
+  flameLauncher,
+  freezingTrap,
+  frostNova,
+  frostWeapon,
+  heavensDrive,
+  holyCross,
+  impositioManus,
+  investigate,
+  jupitelThunder,
+  kyrieEleison,
+  landMine,
+  lexAeterna,
+  lightningLoader,
+  lordOfVermilion,
+  magnusExorcismus,
+  meteorStorm,
+  novicesFury,
+  overThrust,
+  potionPitcher,
+  quagmire,
+  raid,
+  seismicWeapon,
+  shieldCharge,
+  stormGust,
+  transcendence,
+  tripleAttack,
+  tunnelDrive,
 } from "./skills";
 import { useSkill } from "../../../common/helpers/handle-skill-change";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -30,8 +59,7 @@ import ResetModal from "../../../common/reset-modal";
 import ShareModal from "../../../common/share-modal";
 import ClassButton from "../../../common/class-button";
 import { useToast } from "../../../common/toast/use-toast";
-import { Archer } from "../archer/archer";
-import { Dancer, DancerSkills } from "../dancer/dancer";
+import { Novice, SuperNoviceSkills } from "../super-novice/super-novice";
 
 const useStyles = createUseStyles({
   classDiv: {
@@ -128,24 +156,53 @@ const useStyles = createUseStyles({
   },
 });
 
-export type GypsySkillParams = DancerSkills & {
-  Showmanship: typeof NumberParam;
-  "Arrow Vulcan": typeof NumberParam;
-  "Chaotic Voice": typeof NumberParam;
-  "Sound of Destruction": typeof NumberParam;
-  Reverberation: typeof NumberParam;
-  "Dominion Impulse": typeof NumberParam;
-  "Flame Tongue": typeof NumberParam;
-  "Moonlit Water Mill": typeof NumberParam;
-  "Wand of Hermode": typeof NumberParam;
-  "Tarot Card of Fate": typeof NumberParam;
-  "Improvised Song": typeof NumberParam;
-  "Siren's Call": typeof NumberParam;
-  "Perfect Rythm": typeof NumberParam;
+export type ExpandedSuperNoviceSkillParams = SuperNoviceSkills & {
+  Breakthrough: typeof NumberParam;
+  "Angel Help Me": typeof NumberParam;
+  Transcendence: typeof NumberParam;
+  "Novice's Fury": typeof NumberParam;
+  "Bowling Bash": typeof NumberParam;
+  "Auto Guard": typeof NumberParam;
+  "Shield Charge": typeof NumberParam;
+  "Holy Cross": typeof NumberParam;
+  "Earth Spike": typeof NumberParam;
+  "Frost Nova": typeof NumberParam;
+  "Heaven's Drive": typeof NumberParam;
+  "Jupitel Thunder": typeof NumberParam;
+  "Lord of Vermilion": typeof NumberParam;
+  "Meteor Storm": typeof NumberParam;
+  Quagmire: typeof NumberParam;
+  "Storm Gust": typeof NumberParam;
+  "Auto Spell": typeof NumberParam;
+  "Flame Launcher": typeof NumberParam;
+  "Seismic Weapon": typeof NumberParam;
+  "Lightning Loader": typeof NumberParam;
+  "Frost Weapon": typeof NumberParam;
+  "Impositio Manus": typeof NumberParam;
+  Aspersio: typeof NumberParam;
+  "Kyrie Eleison": typeof NumberParam;
+  "Lex Aeterna": typeof NumberParam;
+  "Magnus Exorcismus": typeof NumberParam;
+  "Call Spirits": typeof NumberParam;
+  Investigate: typeof NumberParam;
+  "Triple Attack": typeof NumberParam;
+  "Adrenaline Rush": typeof NumberParam;
+  "Over Thrust": typeof NumberParam;
+  Demonstration: typeof NumberParam;
+  "Acid Terror": typeof NumberParam;
+  "Potion Pitcher": typeof NumberParam;
+  "Enchant Poison": typeof NumberParam;
+  "Tunnel Drive": typeof NumberParam;
+  "Back Stab": typeof NumberParam;
+  Raid: typeof NumberParam;
+  "Land Mine": typeof NumberParam;
+  "Freezing Trap": typeof NumberParam;
+  "Blast Mine": typeof NumberParam;
+  "Claymore Trap": typeof NumberParam;
   BuildName: typeof StringParam;
 };
 
-export const Gypsy = () => {
+export const SuperNovice = () => {
   const {
     input,
     skillsCounter,
@@ -155,46 +212,102 @@ export const Gypsy = () => {
     wrapperScreenshot,
   } = useStyles();
   const toast = useToast();
-  const [query, setQuery] = useQueryParams<GypsySkillParams>({
+  const [query, setQuery] = useQueryParams<ExpandedSuperNoviceSkillParams>({
+    Bash: NumberParam,
+    Provoke: NumberParam,
+    Endure: NumberParam,
+    "Increase HP Recovery": NumberParam,
+    "Magnum Break": NumberParam,
+    "Sword Mastery": NumberParam,
+    "Spear Mastery": NumberParam,
+    "Iron Defense": NumberParam,
+    "One-Hand Quicken": NumberParam,
+    "Repel Evil": NumberParam,
+    Ruwach: NumberParam,
+    "Holy Light": NumberParam,
+    Angelus: NumberParam,
+    Blessing: NumberParam,
+    Heal: NumberParam,
+    Cure: NumberParam,
+    "Increase AGI": NumberParam,
+    "Decrease AGI": NumberParam,
+    Teleport: NumberParam,
+    Pneuma: NumberParam,
+    "Aqua Benedicta": NumberParam,
+    "Double Attack": NumberParam,
+    "Improve Dodge": NumberParam,
+    Envenom: NumberParam,
+    Detoxify: NumberParam,
+    Steal: NumberParam,
+    Hiding: NumberParam,
+    "Increase Speed": NumberParam,
+    "Throw Sand": NumberParam,
+    "Quick Strike": NumberParam,
     "Owl's Eye": NumberParam,
-    "Vulture's Eye": NumberParam,
     "Attention Concentrate": NumberParam,
-    "Double Strafing": NumberParam,
-    "Arrow Shower": NumberParam,
-    "Charge Arrow": NumberParam,
-    Precision: NumberParam,
-    "Heavy Arrow": NumberParam,
-    "Adaption to Circumstances": NumberParam,
-    Encore: NumberParam,
-    Scream: NumberParam,
-    "Dancing Lesson": NumberParam,
-    "Throw Arrow": NumberParam,
-    "Ugly Dance": NumberParam,
-    "Longing for Freedom": NumberParam,
-    Humming: NumberParam,
-    "Service for You": NumberParam,
-    "Fortune's Kiss": NumberParam,
-    "Please Don't Forget Me": NumberParam,
-    "Invulnerable Siegfried": NumberParam,
-    "A Drum on the Battlefield": NumberParam,
-    "The Ring of Nibelungen": NumberParam,
-    "Loki's Veil": NumberParam,
-    "Eternal Chaos": NumberParam,
-    Lullaby: NumberParam,
-    "Into the Abyss": NumberParam,
-    Showmanship: NumberParam,
-    "Arrow Vulcan": NumberParam,
-    "Chaotic Voice": NumberParam,
-    "Sound of Destruction": NumberParam,
-    Reverberation: NumberParam,
-    "Dominion Impulse": NumberParam,
-    "Flame Tongue": NumberParam,
-    "Moonlit Water Mill": NumberParam,
-    "Wand of Hermode": NumberParam,
-    "Tarot Card of Fate": NumberParam,
-    "Improvised Song": NumberParam,
-    "Siren's Call": NumberParam,
-    "Perfect Rythm": NumberParam,
+    "Axe Mastery": NumberParam,
+    "Enlarge Weight Limit": NumberParam,
+    "Item Appraisal": NumberParam,
+    Mammonite: NumberParam,
+    "Pushcart Mastery": NumberParam,
+    "Cart Revolution": NumberParam,
+    "Cursed Tomahawk": NumberParam,
+    Efficiency: NumberParam,
+    "Cold Bolt": NumberParam,
+    "Fire Bolt": NumberParam,
+    "Fire Ball": NumberParam,
+    Sight: NumberParam,
+    "Fire Wall": NumberParam,
+    "Frost Diver": NumberParam,
+    "Increase SP Recovery": NumberParam,
+    "Lightning Bolt": NumberParam,
+    "Napalm Beat": NumberParam,
+    "Soul Strike": NumberParam,
+    "Safety Wall": NumberParam,
+    "Stone Curse": NumberParam,
+    Thunderstorm: NumberParam,
+    Breakthrough: NumberParam,
+    "Angel Help Me": NumberParam,
+    Transcendence: NumberParam,
+    "Novice's Fury": NumberParam,
+    "Bowling Bash": NumberParam,
+    "Auto Guard": NumberParam,
+    "Shield Charge": NumberParam,
+    "Holy Cross": NumberParam,
+    "Earth Spike": NumberParam,
+    "Frost Nova": NumberParam,
+    "Heaven's Drive": NumberParam,
+    "Jupitel Thunder": NumberParam,
+    "Lord of Vermilion": NumberParam,
+    "Meteor Storm": NumberParam,
+    Quagmire: NumberParam,
+    "Storm Gust": NumberParam,
+    "Auto Spell": NumberParam,
+    "Flame Launcher": NumberParam,
+    "Seismic Weapon": NumberParam,
+    "Lightning Loader": NumberParam,
+    "Frost Weapon": NumberParam,
+    "Impositio Manus": NumberParam,
+    Aspersio: NumberParam,
+    "Kyrie Eleison": NumberParam,
+    "Lex Aeterna": NumberParam,
+    "Magnus Exorcismus": NumberParam,
+    "Call Spirits": NumberParam,
+    Investigate: NumberParam,
+    "Triple Attack": NumberParam,
+    "Adrenaline Rush": NumberParam,
+    "Over Thrust": NumberParam,
+    Demonstration: NumberParam,
+    "Acid Terror": NumberParam,
+    "Potion Pitcher": NumberParam,
+    "Enchant Poison": NumberParam,
+    "Tunnel Drive": NumberParam,
+    "Back Stab": NumberParam,
+    Raid: NumberParam,
+    "Land Mine": NumberParam,
+    "Freezing Trap": NumberParam,
+    "Blast Mine": NumberParam,
+    "Claymore Trap": NumberParam,
     BuildName: StringParam,
   });
 
@@ -234,7 +347,7 @@ export const Gypsy = () => {
   );
 
   const [skillPoints, setSkillPoints] = useState(0);
-  const skillNames = gypsySkills?.map((e) => e.name);
+  const skillNames = expandedSuperNoviceSkills?.map((e) => e.name);
   const location = useLocation();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const urlParams = new URLSearchParams(location.search);
@@ -343,7 +456,12 @@ export const Gypsy = () => {
     >
       <div className="wrapper">
         <div className={skillTreeHeader}>
-          <ClassButton available notHome baseJobName="Archer" jobName="Gypsy" />
+          <ClassButton
+            available
+            notHome
+            baseJobName="Novice"
+            jobName="Super Novice"
+          />
           <div style={{ width: "232px" }}>
             <div
               style={{
@@ -424,12 +542,7 @@ export const Gypsy = () => {
           </div>
         </div>
         <div className={skillTree}>
-          <Archer
-            handleKeyPress={handleKeyPress}
-            isHovered={isHovered}
-            setIsHovered={setIsHovered}
-          />
-          <Dancer
+          <Novice
             handleKeyPress={handleKeyPress}
             isHovered={isHovered}
             setIsHovered={setIsHovered}
@@ -443,7 +556,7 @@ export const Gypsy = () => {
                   fontWeight: 600,
                 }}
               >
-                Gypsy Skills
+                Expanded Super Novice Skills
               </div>
               <div
                 style={{
@@ -453,7 +566,7 @@ export const Gypsy = () => {
                   color: "#111111",
                   fontWeight: 600,
                   marginLeft: "auto",
-                  background: skillPoints > 54 ? "#F0A199" : "#ABD973",
+                  background: skillPoints > 103 ? "#F0A199" : "#ABD973",
                   borderRadius: "8px 0px 0px 8px",
                   width: "46px",
                   height: "25px",
@@ -478,7 +591,7 @@ export const Gypsy = () => {
                     "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
                 }}
               >
-                54
+                103
               </div>
             </div>
             <div
@@ -488,79 +601,253 @@ export const Gypsy = () => {
               }}
             >
               <SkillComponent
-                skill={showmanship}
+                skill={breakthrough}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={arrowVulcan}
+                skill={angelHelpMe}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={chaoticVoice}
+                skill={transcendence}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={soundOfDestruction}
+                skill={novicesFury}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={reverberation}
+                skill={bowlingBash}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={dominionImpulse}
+                skill={autoGuard}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={flameTongue}
+                skill={holyCross}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={moonlitWaterMill}
+                skill={shieldCharge}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={wandOfHermode}
+                skill={earthSpike}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={tarotCardOfDate}
+                skill={frostNova}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={improvisedSong}
+                skill={heavensDrive}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={sirensCall}
+                skill={jupitelThunder}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={perfectRythm}
+                skill={lordOfVermilion}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={meteorStorm}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={quagmire}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={stormGust}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={autoSpell}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={flameLauncher}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={seismicWeapon}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={lightningLoader}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={frostWeapon}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={impositioManus}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={aspersio}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={kyrieEleison}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={lexAeterna}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={magnusExorcismus}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={callSpirits}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={investigate}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={tripleAttack}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={adrenalineRush}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={overThrust}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={demonstration}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={acidTerror}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={potionPitcher}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={enchantPoison}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={tunnelDrive}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={backStab}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={raid}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={landMine}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={freezingTrap}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={blastMine}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={claymoreTrap}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}

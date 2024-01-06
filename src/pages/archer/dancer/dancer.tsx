@@ -48,7 +48,7 @@ export type DancerSkills = ArcherSkills & {
   "Adaption to Circumstances": typeof NumberParam;
   Encore: typeof NumberParam;
   Scream: typeof NumberParam;
-  "Music Lessons": typeof NumberParam;
+  "Dancing Lesson": typeof NumberParam;
   "Throw Arrow": typeof NumberParam;
   "Ugly Dance": typeof NumberParam;
   "Longing for Freedom": typeof NumberParam;
