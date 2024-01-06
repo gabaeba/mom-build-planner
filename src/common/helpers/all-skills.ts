@@ -4,7 +4,12 @@ import { highPriestSkills } from "../../pages/acolyte/high-priest/skills";
 import { monkSkills } from "../../pages/acolyte/monk/skills";
 import { priestSkills } from "../../pages/acolyte/priest/skills";
 import { archerSkills } from "../../pages/archer/archer/skills";
+import { bardSkills } from "../../pages/archer/bard/skills";
+import { clownSkills } from "../../pages/archer/clown/skills";
+import { dancerSkills } from "../../pages/archer/dancer/skills";
+import { gypsySkills } from "../../pages/archer/gypsy/skills";
 import { hunterSkills } from "../../pages/archer/hunter/skills";
+import { sniperSkills } from "../../pages/archer/sniper/skills";
 import { highWizardSkills } from "../../pages/mage/high-wizard/skills";
 import { mageSkills } from "../../pages/mage/mage/skills";
 import { professorSkills } from "../../pages/mage/professor/skills";
@@ -22,6 +27,7 @@ import { swordsmanSkills } from "../../pages/swordsman/swordsman/skills";
 import { assassinCrossSkills } from "../../pages/thief/assassin-cross/skills";
 import { assassinSkills } from "../../pages/thief/assassin/skills";
 import { rogueSkills } from "../../pages/thief/rogue/skills";
+import { stalkerSkills } from "../../pages/thief/stalker/skills";
 import { thiefSkills } from "../../pages/thief/thief/skills";
 
 export const allSkills = [
@@ -39,6 +45,7 @@ export const allSkills = [
   ...assassinSkills,
   ...rogueSkills,
   ...assassinCrossSkills,
+  ...stalkerSkills,
   ...merchantSkills,
   ...blacksmithSkills,
   ...alchemistSkills,
@@ -49,5 +56,10 @@ export const allSkills = [
   ...championSkills,
   ...archerSkills,
   ...hunterSkills,
+  ...bardSkills,
+  ...dancerSkills,
+  ...sniperSkills,
+  ...clownSkills,
+  ...gypsySkills,
   ...superNoviceSkills,
 ];
