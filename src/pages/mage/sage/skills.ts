@@ -7,7 +7,7 @@ export const advancedBook: Skill = {
     "Mastery damage, percentage physical damage, and ASPD per skill level with Book weapons.",
   maxLevel: 10,
   type: SkillType.passive,
-  icon: "./assets/sage/advanced_spellbook.png",
+  icon: "./assets/sage/advanced_book.png",
   preRequisites: [],
 };
 

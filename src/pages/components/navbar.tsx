@@ -48,12 +48,14 @@ export default function Navbar() {
             justifyContent: "center",
           }}
         >
-          <img
-            src="./assets/mom_logo.png"
-            alt="mom logo"
-            style={{ height: "50px", marginRight: "auto" }}
-          />
           {/* Internal Link */}
+          <Link to="/" style={{ marginRight: "auto" }}>
+            <img
+              src="./assets/mom_logo.png"
+              alt="mom logo"
+              style={{ height: "50px" }}
+            />
+          </Link>
           <Link to="/" className={links}>
             Home
           </Link>
