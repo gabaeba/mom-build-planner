@@ -149,6 +149,36 @@ export const Acolyte = ({
         }}
       >
         <SkillComponent
+          skill={repelEvil}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={maceMastery}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={increaseSpRecovery}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={holyLight}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={signumCrucis}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
           skill={angelus}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
@@ -161,25 +191,13 @@ export const Acolyte = ({
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={cure}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={decreaseAgi}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
           skill={heal}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={holyLight}
+          skill={cure}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
@@ -191,25 +209,7 @@ export const Acolyte = ({
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={increaseSpRecovery}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={maceMastery}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={pneuma}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={repelEvil}
+          skill={decreaseAgi}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
@@ -221,13 +221,13 @@ export const Acolyte = ({
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={signumCrucis}
+          skill={teleport}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={teleport}
+          skill={pneuma}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}

@@ -502,6 +502,12 @@ export const HighPriest = () => {
               }}
             >
               <SkillComponent
+                skill={clementia}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
                 skill={ancilla}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
@@ -526,13 +532,13 @@ export const HighPriest = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={clearance}
+                skill={vituperatum}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={clementia}
+                skill={clearance}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
@@ -550,13 +556,13 @@ export const HighPriest = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={epiclesis}
+                skill={highHeal}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={highHeal}
+                skill={epiclesis}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
@@ -581,12 +587,6 @@ export const HighPriest = () => {
               />
               <SkillComponent
                 skill={sacrament}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={vituperatum}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}

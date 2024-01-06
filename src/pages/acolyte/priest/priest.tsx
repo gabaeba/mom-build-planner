@@ -152,31 +152,13 @@ export const Priest = ({
         }}
       >
         <SkillComponent
-          skill={aspersio}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={bsSacramenti}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={exorcismus}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={gloria}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
           skill={impositioManus}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={aspersio}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
@@ -188,7 +170,7 @@ export const Priest = ({
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={lexAeterna}
+          skill={magnificat}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
@@ -200,31 +182,19 @@ export const Priest = ({
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={magnificat}
+          skill={lexAeterna}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={magnusExorcismus}
+          skill={gloria}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={resurrection}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={safetyWallPriest}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={sanctuary}
+          skill={bsSacramenti}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
@@ -236,7 +206,37 @@ export const Priest = ({
           setIsHovered={setIsHovered}
         />
         <SkillComponent
+          skill={resurrection}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={sanctuary}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
           skill={suffragium}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={safetyWallPriest}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={exorcismus}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={magnusExorcismus}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}

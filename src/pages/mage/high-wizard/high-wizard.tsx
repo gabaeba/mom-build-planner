@@ -141,6 +141,7 @@ export type HighWizardSkillParams = WizardSkills & {
   "Summon Water Orb": typeof NumberParam;
   "Summon Lightning Orb": typeof NumberParam;
   "Summon Stone Orb": typeof NumberParam;
+  "Jack Frost": typeof NumberParam;
   "Crimson Rock": typeof NumberParam;
   "Chain Lightning": typeof NumberParam;
   "Earth Strain": typeof NumberParam;
@@ -194,6 +195,7 @@ export const HighWizard = () => {
     "Summon Water Orb": NumberParam,
     "Summon Lightning Orb": NumberParam,
     "Summon Stone Orb": NumberParam,
+    "Jack Frost": NumberParam,
     "Crimson Rock": NumberParam,
     "Chain Lightning": NumberParam,
     "Earth Strain": NumberParam,

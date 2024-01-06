@@ -20,16 +20,6 @@ export const maceMastery: Skill = {
   preRequisites: [],
 };
 
-export const ruwach: Skill = {
-  name: "Ruwach",
-  description:
-    "Reveal hidden enemies in a 5x5 area around the user and deal 145% MATK damage to revealed enemies.",
-  maxLevel: 1,
-  type: SkillType.offensive,
-  icon: "./assets/acolyte/ruwach.png",
-  preRequisites: [],
-};
-
 export const increaseSpRecovery: Skill = {
   name: "Increase SP Recovery",
   description:
@@ -119,6 +109,16 @@ export const decreaseAgi: Skill = {
   preRequisites: [{ skill: increaseAgi, level: 1 }],
 };
 
+export const ruwach: Skill = {
+  name: "Ruwach",
+  description:
+    "Reveal hidden enemies in a 5x5 area around the user and deal 145% MATK damage to revealed enemies.",
+  maxLevel: 1,
+  type: SkillType.offensive,
+  icon: "./assets/acolyte/ruwach.png",
+  preRequisites: [],
+};
+
 export const teleport: Skill = {
   name: "Teleport",
   description:
@@ -132,9 +132,9 @@ export const teleport: Skill = {
 export const pneuma: Skill = {
   name: "Pneuma",
   description: "Protects a 3x3 area from incoming ranged attacks.",
-  maxLevel: 2,
+  maxLevel: 1,
   type: SkillType.supportive,
-  icon: "./assets/acolyte/teleport.png",
+  icon: "./assets/acolyte/pneuma.png",
   preRequisites: [{ skill: teleport, level: 2 }],
 };
 
