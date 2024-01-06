@@ -1,32 +1,32 @@
+import {
+  absorbSpirits,
+  asuraStrike,
+  bladeStop,
+  bodyRelocation,
+  callSpirits,
+  chainCombo,
+  comboFinish,
+  dodge,
+  fingerOffensive,
+  fury,
+  investigate,
+  ironHand,
+  kiExplosion,
+  kiTranslation,
+  monkSkills,
+  spiritsRecovery,
+  steelBody,
+  tripleAttack,
+} from "./skills";
 import { SkillComponent } from "../../../common/skill";
 import { NumberParam } from "use-query-params";
 import { Skill } from "../../../common/types";
-import { SwordsmanSkills } from "../swordsman/swordsman";
 import { useEffect, useState } from "react";
 import { checkHowManySkillPoints } from "../../../common/helpers/check-skill-points";
 import { SkillWithoutLevel } from "../../../common/skill-without-level";
 import { useLocation } from "react-router-dom";
 import { createUseStyles } from "react-jss";
-import {
-  crusaderSkills,
-  movementMastery,
-  pecoPecoRide,
-  autoGuard,
-  cure,
-  defender,
-  devotion,
-  faith,
-  grandCross,
-  heal,
-  holyCross,
-  providence,
-  reflectShield,
-  repelEvil,
-  shieldBoomerang,
-  shieldCharge,
-  spearQuicken,
-  shrink,
-} from "./skills";
+import { AcolyteSkills } from "../acolyte/acolyte";
 
 const useStyles = createUseStyles({
   skillsCounter: {
@@ -42,26 +42,25 @@ const useStyles = createUseStyles({
   },
 });
 
-export type CrusaderSkills = SwordsmanSkills & {
-  "Peco Peco Ride": typeof NumberParam;
-  "Movement Mastery": typeof NumberParam;
-  "Auto Guard": typeof NumberParam;
-  "Shield Charge": typeof NumberParam;
-  "Shield Boomerang": typeof NumberParam;
-  "Holy Cross": typeof NumberParam;
-  Cure: typeof NumberParam;
-  Defender: typeof NumberParam;
-  "Repel Evil": typeof NumberParam;
-  Faith: typeof NumberParam;
-  "Grand Cross": typeof NumberParam;
-  Heal: typeof NumberParam;
-  Providence: typeof NumberParam;
-  "Reflect Shield": typeof NumberParam;
-  Devotion: typeof NumberParam;
-  "Spear Quicken": typeof NumberParam;
+export type MonkSkills = AcolyteSkills & {
+  "Iron Hand": typeof NumberParam;
+  "Call Spirits": typeof NumberParam;
+  "Absorb Spirits": typeof NumberParam;
+  Dodge: typeof NumberParam;
+  Fury: typeof NumberParam;
+  Investigate: typeof NumberParam;
+  "Finger Offensive": typeof NumberParam;
+  "Asura Strike": typeof NumberParam;
+  "Triple Attack": typeof NumberParam;
+  "Chain Combo": typeof NumberParam;
+  "Combo Finish": typeof NumberParam;
+  "Steel Body": typeof NumberParam;
+  "Blade Stop": typeof NumberParam;
+  "Spirits Recovery": typeof NumberParam;
+  "Body Relocation": typeof NumberParam;
 };
 
-type CrusaderProps = {
+type MonkProps = {
   handleKeyPress: (
     e: React.MouseEvent<HTMLDivElement>,
     skill: Skill,
@@ -84,14 +83,14 @@ type CrusaderProps = {
   >;
 };
 
-export const Crusader = ({
+export const Monk = ({
   handleKeyPress,
   isHovered,
   setIsHovered,
-}: CrusaderProps) => {
+}: MonkProps) => {
   const { skillsCounter } = useStyles();
   const [skillPoints, setSkillPoints] = useState(0);
-  const skillNames = crusaderSkills?.map((e) => e.name);
+  const skillNames = monkSkills?.map((e) => e.name);
   const location = useLocation();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const urlParams = new URLSearchParams(location.search);
@@ -109,7 +108,7 @@ export const Crusader = ({
             fontWeight: 600,
           }}
         >
-          Crusader Skills
+          Monk Skills
         </div>
         <div
           style={{
@@ -154,102 +153,97 @@ export const Crusader = ({
         }}
       >
         <SkillComponent
-          skill={pecoPecoRide}
+          skill={ironHand}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={movementMastery}
+          skill={callSpirits}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={autoGuard}
+          skill={absorbSpirits}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={shieldCharge}
+          skill={dodge}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={shieldBoomerang}
+          skill={fury}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={holyCross}
+          skill={investigate}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={cure}
+          skill={fingerOffensive}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={defender}
+          skill={asuraStrike}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={repelEvil}
+          skill={tripleAttack}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={faith}
+          skill={chainCombo}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={grandCross}
+          skill={comboFinish}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={heal}
+          skill={steelBody}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={providence}
+          skill={bladeStop}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={reflectShield}
+          skill={spiritsRecovery}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={devotion}
+          skill={bodyRelocation}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
-        <SkillComponent
-          skill={spearQuicken}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillWithoutLevel skill={shrink} />
+        <SkillWithoutLevel skill={kiTranslation} />
+        <SkillWithoutLevel skill={kiExplosion} />
       </div>
     </div>
   );

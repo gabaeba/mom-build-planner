@@ -497,7 +497,19 @@ export const Paladin = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
+                skill={pinpointAttack}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
                 skill={cannonSpear}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={inspiration}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
@@ -527,12 +539,6 @@ export const Paladin = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={inspiration}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
                 skill={moonSlasher}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
@@ -545,19 +551,13 @@ export const Paladin = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={rayOfGenesis}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={pinpointAttack}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
                 skill={pressure}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={rayOfGenesis}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
