@@ -4,6 +4,7 @@ import { highPriestSkills } from "../../pages/acolyte/high-priest/skills";
 import { monkSkills } from "../../pages/acolyte/monk/skills";
 import { priestSkills } from "../../pages/acolyte/priest/skills";
 import { archerSkills } from "../../pages/archer/archer/skills";
+import { hunterSkills } from "../../pages/archer/hunter/skills";
 import { highWizardSkills } from "../../pages/mage/high-wizard/skills";
 import { mageSkills } from "../../pages/mage/mage/skills";
 import { professorSkills } from "../../pages/mage/professor/skills";
@@ -47,5 +48,6 @@ export const allSkills = [
   ...highPriestSkills,
   ...championSkills,
   ...archerSkills,
+  ...hunterSkills,
   ...superNoviceSkills,
 ];
