@@ -60,6 +60,7 @@ import { useEffect, useState } from "react";
 import { checkHowManySkillPoints } from "../../../common/helpers/check-skill-points";
 import { useLocation } from "react-router-dom";
 import { createUseStyles } from "react-jss";
+import { SkillWithoutLevel } from "../../../common/skill-without-level";
 
 const useStyles = createUseStyles({
   skillsCounter: {
@@ -109,7 +110,6 @@ export type SuperNoviceSkills = {
   "Decrease AGI": typeof NumberParam;
   Teleport: typeof NumberParam;
   Pneuma: typeof NumberParam;
-  "Aqua Benedicta": typeof NumberParam;
   "Double Attack": typeof NumberParam;
   "Improve Dodge": typeof NumberParam;
   Envenom: typeof NumberParam;
@@ -202,7 +202,7 @@ export const Novice = ({
             color: "#111111",
             fontWeight: 600,
             marginLeft: "auto",
-            background: skillPoints > 104 ? "#F0A199" : "#ABD973",
+            background: skillPoints > 108 ? "#F0A199" : "#ABD973",
             borderRadius: "8px 0px 0px 8px",
             width: "46px",
             height: "25px",
@@ -227,7 +227,7 @@ export const Novice = ({
               "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
           }}
         >
-          104
+          108
         </div>
       </div>
       <div className={skillGrid}>
@@ -291,12 +291,7 @@ export const Novice = ({
           isHovered={isHovered}
           setIsHovered={setIsHovered}
         />
-        <SkillComponent
-          skill={aquaBenedicta}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
+        <SkillWithoutLevel skill={aquaBenedicta} />
         <SkillComponent
           skill={blessing}
           handleKeyPress={handleKeyPress}

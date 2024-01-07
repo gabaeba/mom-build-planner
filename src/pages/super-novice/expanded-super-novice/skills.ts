@@ -1,7 +1,6 @@
 import { Skill, SkillType } from "../../../common/types";
 import {
   angelus,
-  aquaBenedicta,
   bash,
   coldBolt,
   envenom,
@@ -253,10 +252,7 @@ export const aspersio: Skill = {
   maxLevel: 1,
   type: SkillType.supportive,
   icon: "./assets/priest/aspersio.png",
-  preRequisites: [
-    { skill: aquaBenedicta, level: 1 },
-    { skill: impositioManus, level: 3 },
-  ],
+  preRequisites: [{ skill: impositioManus, level: 3 }],
 };
 
 export const kyrieEleison: Skill = {

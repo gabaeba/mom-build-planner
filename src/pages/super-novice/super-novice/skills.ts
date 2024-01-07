@@ -472,7 +472,7 @@ export const napalmBeat: Skill = {
   name: "Napalm Beat",
   description:
     "Deal up to 275% MATK Ghost-element damage to target and all enemies in a 3x3 area around it.",
-  maxLevel: 10,
+  maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/mage/napalm_beat.png",
   preRequisites: [],
