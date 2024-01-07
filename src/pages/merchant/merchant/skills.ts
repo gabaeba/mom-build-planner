@@ -41,7 +41,7 @@ export const mammonite: Skill = {
 export const pushcartMastery: Skill = {
   name: "Pushcart Mastery",
   description: "Restore lost movement speed from carrying a Pushcart.",
-  maxLevel: 10,
+  maxLevel: 5,
   type: SkillType.passive,
   icon: "./assets/merchant/pushcart_mastery.png",
   preRequisites: [],

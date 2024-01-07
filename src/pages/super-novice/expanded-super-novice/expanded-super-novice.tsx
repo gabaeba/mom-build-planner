@@ -118,11 +118,9 @@ const useStyles = createUseStyles({
     },
   },
   skillTree: {
-    display: "flex",
-    justifyContent: "space-between",
-    flexWrap: "wrap",
-    gap: 16,
     "@media (max-width: 1024px)": {
+      display: "flex",
+      flexWrap: "wrap",
       justifyContent: "space-around",
       gap: 28,
     },
@@ -152,6 +150,19 @@ const useStyles = createUseStyles({
       left: "0px",
       backgroundColor: "#d2d2d2",
       zIndex: -1,
+    },
+  },
+  skillGrid: {
+    display: "grid",
+    gridTemplateRows: "repeat(3, auto)",
+    gridTemplateColumns: "repeat(3, 360px)",
+    columnGap: "30px",
+    justifyContent: "space-between",
+    gridAutoFlow: "row",
+    marginBottom: 26,
+    "@media (max-width: 1024px)": {
+      display: "flex",
+      flexDirection: "column",
     },
   },
 });
@@ -210,6 +221,7 @@ export const SuperNovice = () => {
     skillTree,
     hero,
     wrapperScreenshot,
+    skillGrid,
   } = useStyles();
   const toast = useToast();
   const [query, setQuery] = useQueryParams<ExpandedSuperNoviceSkillParams>({
@@ -594,12 +606,7 @@ export const SuperNovice = () => {
                 103
               </div>
             </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
+            <div className={skillGrid}>
               <SkillComponent
                 skill={breakthrough}
                 handleKeyPress={handleKeyPress}

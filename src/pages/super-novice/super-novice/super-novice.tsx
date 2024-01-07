@@ -73,6 +73,19 @@ const useStyles = createUseStyles({
       zIndex: 100,
     },
   },
+  skillGrid: {
+    display: "grid",
+    gridTemplateRows: "repeat(3, auto)",
+    gridTemplateColumns: "repeat(3, 360px)",
+    columnGap: "30px",
+    justifyContent: "space-between",
+    gridAutoFlow: "row",
+    marginBottom: 26,
+    "@media (max-width: 1024px)": {
+      display: "flex",
+      flexDirection: "column",
+    },
+  },
 });
 
 export type SuperNoviceSkills = {
@@ -159,7 +172,7 @@ export const Novice = ({
   isHovered,
   setIsHovered,
 }: SuperNoviceProps) => {
-  const { skillsCounter } = useStyles();
+  const { skillsCounter, skillGrid } = useStyles();
   const [skillPoints, setSkillPoints] = useState(0);
   const skillNames = superNoviceSkills?.map((e) => e.name);
   const location = useLocation();
@@ -214,15 +227,10 @@ export const Novice = ({
               "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
           }}
         >
-          54
+          104
         </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
+      <div className={skillGrid}>
         <SkillComponent
           skill={swordMastery}
           handleKeyPress={handleKeyPress}

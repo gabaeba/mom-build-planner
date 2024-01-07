@@ -115,7 +115,7 @@ export const frostNova: Skill = {
   name: "Frost Nova",
   description:
     "Strikes an area with water elemental damage, knocking back with a massive chance to freeze on the second hit.",
-  maxLevel: 10,
+  maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/wizard/frost_nova.png",
   preRequisites: [{ skill: frostDiver, level: 1 }],
