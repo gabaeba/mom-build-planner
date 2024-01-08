@@ -59,6 +59,18 @@ export const adrenalineRush: Skill = {
   preRequisites: [{ skill: hammerFall, level: 2 }],
 };
 
+export const weaponPerfection: Skill = {
+  name: "Weapon Perfection",
+  description: "Nullifies any recution in damage resulting from monster size",
+  maxLevel: 5,
+  type: SkillType.supportive,
+  icon: "./assets/blacksmith/weapon_perfection.png",
+  preRequisites: [
+    { skill: adrenalineRush, level: 2 },
+    { skill: weaponryResearch, level: 2 },
+  ],
+};
+
 export const powerSwing: Skill = {
   name: "Power Swing",
   description:
@@ -69,18 +81,7 @@ export const powerSwing: Skill = {
   preRequisites: [
     { skill: adrenalineRush, level: 2 },
     { skill: weaponryResearch, level: 2 },
-  ],
-};
-
-export const weaponPerfection: Skill = {
-  name: "Weapon Perfection",
-  description: "Nullifies any recution in damage resulting from monster size",
-  maxLevel: 5,
-  type: SkillType.supportive,
-  icon: "./assets/blacksmith/weapon_perfection.png",
-  preRequisites: [
-    { skill: adrenalineRush, level: 2 },
-    { skill: weaponryResearch, level: 2 },
+    { skill: weaponPerfection, level: 5 },
   ],
 };
 
@@ -143,8 +144,8 @@ export const blacksmithSkills = [
   skinTempering,
   hammerFall,
   adrenalineRush,
-  powerSwing,
   weaponPerfection,
+  powerSwing,
   overThrust,
   maximizePower,
   basicMechanics,

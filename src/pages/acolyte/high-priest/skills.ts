@@ -1,6 +1,7 @@
 import { Skill, SkillType } from "../../../common/types";
 import {
   angelus,
+  blessing,
   heal,
   increaseAgi,
   increaseSpRecovery,
@@ -22,7 +23,7 @@ export const clementia: Skill = {
   maxLevel: 5,
   type: SkillType.passive,
   icon: "./assets/highPriest/clementia.png",
-  preRequisites: [],
+  preRequisites: [{ skill: blessing, level: 10 }],
 };
 
 export const ancilla: Skill = {
@@ -44,7 +45,7 @@ export const assumptio: Skill = {
   preRequisites: [
     { skill: angelus, level: 5 },
     { skill: increaseSpRecovery, level: 5 },
-    { skill: impositioManus, level: 5 },
+    { skill: impositioManus, level: 3 },
   ],
 };
 
@@ -135,7 +136,7 @@ export const epiclesis: Skill = {
   type: SkillType.supportive,
   icon: "./assets/highPriest/epiclesis.png",
   preRequisites: [
-    { skill: ancilla, level: 3 },
+    { skill: ancilla, level: 1 },
     { skill: highHeal, level: 3 },
   ],
 };
@@ -160,17 +161,14 @@ export const offertorium: Skill = {
   maxLevel: 5,
   type: SkillType.active,
   icon: "./assets/highPriest/offertorium.png",
-  preRequisites: [
-    { skill: highHeal, level: 2 },
-    { skill: magnificat, level: 3 },
-  ],
+  preRequisites: [{ skill: highHeal, level: 2 }],
 };
 
 export const praefatio: Skill = {
   name: "Praefatio",
   description:
     "Casts Kyrie Eleison on party members in a 18-cell radius around you.",
-  maxLevel: 5,
+  maxLevel: 10,
   type: SkillType.active,
   icon: "./assets/highPriest/praefatio.png",
   preRequisites: [{ skill: kyrieEleison, level: 10 }],
@@ -180,7 +178,7 @@ export const sacrament: Skill = {
   name: "Sacrament",
   description:
     "Causes Suffragium to also provide a bonus 15~45% aftercast delay reduction.",
-  maxLevel: 5,
+  maxLevel: 3,
   type: SkillType.passive,
   icon: "./assets/highPriest/sacrament.png",
   preRequisites: [{ skill: suffragium, level: 3 }],
