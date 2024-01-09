@@ -221,12 +221,6 @@ export const Ninja = ({
           setIsHovered={setIsHovered}
         />
         <SkillComponent
-          skill={illusionaryShadow}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
           skill={shadowJump}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
@@ -252,6 +246,12 @@ export const Ninja = ({
         />
         <SkillComponent
           skill={shadowSlash}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={illusionaryShadow}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}

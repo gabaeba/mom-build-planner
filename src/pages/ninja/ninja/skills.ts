@@ -79,16 +79,6 @@ export const lightningCrash: Skill = {
   preRequisites: [],
 };
 
-export const illusionaryShadow: Skill = {
-  name: "Illusionary Shadow",
-  description:
-    "Completely evade up to 50 physical attacks over a short duration.",
-  maxLevel: 5,
-  type: SkillType.active,
-  icon: "./assets/ninja/illusionary_shadow.png",
-  preRequisites: [],
-};
-
 export const shadowJump: Skill = {
   name: "Shadow Jump",
   description: "Teleport to a target location from the Cloaking status.",
@@ -137,6 +127,16 @@ export const shadowSlash: Skill = {
     { skill: mistSlash, level: 1 },
     { skill: shadowJump, level: 1 },
   ],
+};
+
+export const illusionaryShadow: Skill = {
+  name: "Illusionary Shadow",
+  description:
+    "Completely evade up to 50 physical attacks over a short duration.",
+  maxLevel: 5,
+  type: SkillType.active,
+  icon: "./assets/ninja/illusionary_shadow.png",
+  preRequisites: [{ skill: shadowSlash, level: 1 }],
 };
 
 export const finalStrike: Skill = {
@@ -250,12 +250,12 @@ export const ninjaSkills = [
   waterEscapeTechnique,
   windBlade,
   lightningCrash,
-  illusionaryShadow,
   shadowJump,
   illusionThrust,
   mistSlash,
   zephyrStrike,
   shadowSlash,
+  illusionaryShadow,
   finalStrike,
   soul,
   flipTatami,
