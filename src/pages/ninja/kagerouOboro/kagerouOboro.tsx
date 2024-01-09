@@ -158,24 +158,24 @@ export type KagerouOboroSkillParams = NinjaSkills & {
   Kaihou: typeof NumberParam;
   Zenkai: typeof NumberParam;
   "Cross Strike": typeof NumberParam;
-  "Bewitched Cicada": typeof StringParam;
+  "Bewitched Cicada": typeof NumberParam;
   "Shock Illusion": typeof NumberParam;
   "Death Illusion": typeof NumberParam;
-  Makibishi: typeof StringParam;
+  Makibishi: typeof NumberParam;
   Izayoi: typeof NumberParam;
   "Pure Soul": typeof NumberParam;
-  "Ninja Shroud": typeof StringParam;
+  "Ninja Shroud": typeof NumberParam;
   "Soul Cutter": typeof NumberParam;
   "Kunai Explode": typeof NumberParam;
-  "Kunai Splash": typeof StringParam;
+  "Kunai Splash": typeof NumberParam;
   "Swirling Petal": typeof NumberParam;
   "Right Hand Mastery": typeof NumberParam;
-  "Left Hand Mastery": typeof StringParam;
-  "Shadow Dance": typeof StringParam;
-  "Trample Shadows": typeof StringParam;
-  "Shadow Warrior": typeof StringParam;
-  "Ominous Moonlight": typeof StringParam;
-  "Moonlight Fantasy": typeof StringParam;
+  "Left Hand Mastery": typeof NumberParam;
+  "Shadow Dance": typeof NumberParam;
+  "Trample Shadows": typeof NumberParam;
+  "Shadow Warrior": typeof NumberParam;
+  "Ominous Moonlight": typeof NumberParam;
+  "Moonlight Fantasy": typeof NumberParam;
   BuildName: typeof StringParam;
 };
 
@@ -221,24 +221,24 @@ export const KagerouOboro = () => {
     Kaihou: NumberParam,
     Zenkai: NumberParam,
     "Cross Strike": NumberParam,
-    "Bewitched Cicada": StringParam,
+    "Bewitched Cicada": NumberParam,
     "Shock Illusion": NumberParam,
     "Death Illusion": NumberParam,
-    Makibishi: StringParam,
+    Makibishi: NumberParam,
     Izayoi: NumberParam,
     "Pure Soul": NumberParam,
-    "Ninja Shroud": StringParam,
+    "Ninja Shroud": NumberParam,
     "Soul Cutter": NumberParam,
     "Kunai Explode": NumberParam,
-    "Kunai Splash": StringParam,
+    "Kunai Splash": NumberParam,
     "Swirling Petal": NumberParam,
     "Right Hand Mastery": NumberParam,
-    "Left Hand Mastery": StringParam,
-    "Shadow Dance": StringParam,
-    "Trample Shadows": StringParam,
-    "Shadow Warrior": StringParam,
-    "Ominous Moonlight": StringParam,
-    "Moonlight Fantasy": StringParam,
+    "Left Hand Mastery": NumberParam,
+    "Shadow Dance": NumberParam,
+    "Trample Shadows": NumberParam,
+    "Shadow Warrior": NumberParam,
+    "Ominous Moonlight": NumberParam,
+    "Moonlight Fantasy": NumberParam,
     BuildName: StringParam,
   });
 
