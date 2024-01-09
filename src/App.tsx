@@ -10,6 +10,7 @@ import { Champion, HighPriest } from "./pages/acolyte";
 import Navbar from "./pages/components/navbar";
 import Footer from "./pages/components/footer";
 import { SuperNovice } from "./pages/super-novice/expanded-super-novice/expanded-super-novice";
+import { Rebel } from "./pages/gunslinger/rebel/rebel";
 
 function App() {
   return (
@@ -69,7 +70,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/rebel">
-            <Home />
+            <Rebel />
           </Route>
           {/* If none of the previous routes render anything,
             this route acts as a fallback.

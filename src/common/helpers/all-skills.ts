@@ -10,6 +10,8 @@ import { dancerSkills } from "../../pages/archer/dancer/skills";
 import { gypsySkills } from "../../pages/archer/gypsy/skills";
 import { hunterSkills } from "../../pages/archer/hunter/skills";
 import { sniperSkills } from "../../pages/archer/sniper/skills";
+import { gunslingerSkills } from "../../pages/gunslinger/gunslinger/skills";
+import { rebelSkills } from "../../pages/gunslinger/rebel/skills";
 import { highWizardSkills } from "../../pages/mage/high-wizard/skills";
 import { mageSkills } from "../../pages/mage/mage/skills";
 import { professorSkills } from "../../pages/mage/professor/skills";
@@ -20,6 +22,7 @@ import { blacksmithSkills } from "../../pages/merchant/blacksmith/skills";
 import { creatorSkills } from "../../pages/merchant/creator/skills";
 import { merchantSkills } from "../../pages/merchant/merchant/skills";
 import { whitesmithSkills } from "../../pages/merchant/whitesmith/skills";
+import { expandedSuperNoviceSkills } from "../../pages/super-novice/expanded-super-novice/skills";
 import { superNoviceSkills } from "../../pages/super-novice/super-novice/skills";
 import { crusaderSkills } from "../../pages/swordsman/crusader/skills";
 import { knightSkills } from "../../pages/swordsman/knight/skills";
@@ -66,4 +69,7 @@ export const allSkills = [
   ...clownSkills,
   ...gypsySkills,
   ...superNoviceSkills,
+  ...expandedSuperNoviceSkills,
+  ...gunslingerSkills,
+  ...rebelSkills,
 ];
