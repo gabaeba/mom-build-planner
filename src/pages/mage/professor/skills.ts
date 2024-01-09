@@ -98,7 +98,7 @@ export const elementalAura: Skill = {
   maxLevel: 5,
   type: SkillType.active,
   icon: "./assets/professor/elemental_aura.png",
-  preRequisites: [{ skill: loremaster, level: 7 }],
+  preRequisites: [{ skill: loremaster, level: 5 }],
 };
 
 export const mindBreaker: Skill = {

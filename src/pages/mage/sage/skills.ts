@@ -122,7 +122,7 @@ export const dispel: Skill = {
   name: "Dispel",
   description:
     "Use a Yellow Gemstone to remove all buffs from the target, with several exceptions.",
-  maxLevel: 3,
+  maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/sage/dispel.png",
   preRequisites: [{ skill: spellBreaker, level: 3 }],
