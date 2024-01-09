@@ -22,6 +22,8 @@ import { blacksmithSkills } from "../../pages/merchant/blacksmith/skills";
 import { creatorSkills } from "../../pages/merchant/creator/skills";
 import { merchantSkills } from "../../pages/merchant/merchant/skills";
 import { whitesmithSkills } from "../../pages/merchant/whitesmith/skills";
+import { kagerouOboroSkills } from "../../pages/ninja/kagerouOboro/skills";
+import { ninjaSkills } from "../../pages/ninja/ninja/skills";
 import { expandedSuperNoviceSkills } from "../../pages/super-novice/expanded-super-novice/skills";
 import { superNoviceSkills } from "../../pages/super-novice/super-novice/skills";
 import { crusaderSkills } from "../../pages/swordsman/crusader/skills";
@@ -70,6 +72,8 @@ export const allSkills = [
   ...gypsySkills,
   ...superNoviceSkills,
   ...expandedSuperNoviceSkills,
+  ...ninjaSkills,
+  ...kagerouOboroSkills,
   ...gunslingerSkills,
   ...rebelSkills,
 ];

@@ -11,6 +11,7 @@ import Navbar from "./pages/components/navbar";
 import Footer from "./pages/components/footer";
 import { SuperNovice } from "./pages/super-novice/expanded-super-novice/expanded-super-novice";
 import { Rebel } from "./pages/gunslinger/rebel/rebel";
+import { KagerouOboro } from "./pages/ninja/kagerouOboro/kagerouOboro";
 
 function App() {
   return (
@@ -67,7 +68,7 @@ function App() {
             <SuperNovice />
           </Route>
           <Route path="/kagerouOboro">
-            <Home />
+            <KagerouOboro />
           </Route>
           <Route path="/rebel">
             <Rebel />

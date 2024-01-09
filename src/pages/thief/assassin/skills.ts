@@ -86,7 +86,7 @@ export const poisonReact: Skill = {
 export const venomDust: Skill = {
   name: "Venom Dust",
   description: "Create a 2x2 Poison cloud for up to 120 seconds.",
-  maxLevel: 10,
+  maxLevel: 5,
   type: SkillType.active,
   icon: "./assets/assassin/venom_dust.png",
   preRequisites: [{ skill: enchantPoison, level: 5 }],
