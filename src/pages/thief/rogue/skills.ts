@@ -27,7 +27,10 @@ export const coinSap: Skill = {
   maxLevel: 10,
   type: SkillType.active,
   icon: "./assets/rogue/coin_sap.png",
-  preRequisites: [],
+  preRequisites: [
+    { skill: steal, level: 1 },
+    { skill: snatcher, level: 4 },
+  ],
 };
 
 export const backStab: Skill = {
@@ -38,8 +41,8 @@ export const backStab: Skill = {
   type: SkillType.offensive,
   icon: "./assets/rogue/back_stab.png",
   preRequisites: [
+    { skill: steal, level: 1 },
     { skill: snatcher, level: 4 },
-    { skill: coinSap, level: 4 },
   ],
 };
 
@@ -49,10 +52,7 @@ export const stripHelm: Skill = {
   maxLevel: 5,
   type: SkillType.active,
   icon: "./assets/rogue/strip_helm.png",
-  preRequisites: [
-    { skill: snatcher, level: 4 },
-    { skill: coinSap, level: 2 },
-  ],
+  preRequisites: [],
 };
 
 export const stripShield: Skill = {
@@ -61,7 +61,7 @@ export const stripShield: Skill = {
   maxLevel: 5,
   type: SkillType.active,
   icon: "./assets/rogue/strip_shield.png",
-  preRequisites: [{ skill: stripHelm, level: 5 }],
+  preRequisites: [],
 };
 
 export const stripArmor: Skill = {
@@ -70,7 +70,7 @@ export const stripArmor: Skill = {
   maxLevel: 5,
   type: SkillType.active,
   icon: "./assets/rogue/strip_armor.png",
-  preRequisites: [{ skill: stripShield, level: 5 }],
+  preRequisites: [],
 };
 
 export const stripWeapon: Skill = {
@@ -79,7 +79,7 @@ export const stripWeapon: Skill = {
   maxLevel: 5,
   type: SkillType.active,
   icon: "./assets/rogue/strip_weapon.png",
-  preRequisites: [{ skill: stripArmor, level: 5 }],
+  preRequisites: [],
 };
 
 export const vulturesEye: Skill = {
@@ -97,7 +97,7 @@ export const doubleStrafing: Skill = {
   maxLevel: 10,
   type: SkillType.offensive,
   icon: "./assets/rogue/double_strafing.png",
-  preRequisites: [{ skill: vulturesEye, level: 10 }],
+  preRequisites: [{ skill: vulturesEye, level: 5 }],
 };
 
 export const tunnelDrive: Skill = {

@@ -91,7 +91,7 @@ export const oneHandQuicken: Skill = {
   maxLevel: 10,
   type: SkillType.supportive,
   icon: "./assets/swordsman/one_hand_quicken.png",
-  preRequisites: [],
+  preRequisites: [{ skill: swordMastery, level: 1 }],
 };
 
 export const autoBerserk: Skill = {
