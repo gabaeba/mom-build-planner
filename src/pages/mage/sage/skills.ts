@@ -23,7 +23,7 @@ export const castCancel: Skill = {
 export const flameLauncher: Skill = {
   name: "Flame Launcher",
   description: "Endow a party member's weapon with the Fire-element.",
-  maxLevel: 1,
+  maxLevel: 3,
   type: SkillType.supportive,
   icon: "./assets/sage/flame_launcher.png",
   preRequisites: [
@@ -35,7 +35,7 @@ export const flameLauncher: Skill = {
 export const seismicWeapon: Skill = {
   name: "Seismic Weapon",
   description: "Endow a party member's weapon with the Earth-element.",
-  maxLevel: 1,
+  maxLevel: 3,
   type: SkillType.supportive,
   icon: "./assets/sage/seismic_weapon.png",
   preRequisites: [
@@ -47,7 +47,7 @@ export const seismicWeapon: Skill = {
 export const lightningLoader: Skill = {
   name: "Lightning Loader",
   description: "Endow a party member's weapon with the Wind-element.",
-  maxLevel: 1,
+  maxLevel: 3,
   type: SkillType.supportive,
   icon: "./assets/sage/lightning_loader.png",
   preRequisites: [
@@ -59,7 +59,7 @@ export const lightningLoader: Skill = {
 export const frostWeapon: Skill = {
   name: "Frost Weapon",
   description: "Endow a party member's weapon with the Water-element.",
-  maxLevel: 1,
+  maxLevel: 3,
   type: SkillType.supportive,
   icon: "./assets/sage/frost_weapon.png",
   preRequisites: [

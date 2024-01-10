@@ -1,6 +1,12 @@
 import { Skill, SkillType } from "../../../common/types";
 import { coinFlip } from "../../gunslinger/gunslinger/skills";
-import { ninpouTraining, shadowSlash, throwKunai } from "../ninja/skills";
+import {
+  castOffCicadaShell,
+  illusionThrust,
+  ninpouTraining,
+  shadowSlash,
+  throwKunai,
+} from "../ninja/skills";
 
 export const earthCharm: Skill = {
   name: "Earth Charm",
@@ -73,7 +79,7 @@ export const crossStrike: Skill = {
   maxLevel: 10,
   type: SkillType.offensive,
   icon: "./assets/kagerouOboro/cross_strike.png",
-  preRequisites: [],
+  preRequisites: [{ skill: illusionThrust, level: 10 }],
 };
 
 export const bewitchedCicada: Skill = {
@@ -82,7 +88,7 @@ export const bewitchedCicada: Skill = {
   maxLevel: 3,
   type: SkillType.active,
   icon: "./assets/kagerouOboro/bewitched_cicada.png",
-  preRequisites: [],
+  preRequisites: [{ skill: castOffCicadaShell, level: 3 }],
 };
 
 export const shockIllusion: Skill = {
