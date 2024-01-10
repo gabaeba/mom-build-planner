@@ -21,7 +21,7 @@ export const aspersio: Skill = {
   name: "Aspersio",
   description:
     "Temporarily enchant a target's weapon with the Holy property. Requires a Holy Water.",
-  maxLevel: 1,
+  maxLevel: 3,
   type: SkillType.supportive,
   icon: "./assets/priest/aspersio.png",
   preRequisites: [

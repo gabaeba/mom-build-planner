@@ -550,12 +550,6 @@ export const HighPriest = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={convenio}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
                 skill={highHeal}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
@@ -563,6 +557,12 @@ export const HighPriest = () => {
               />
               <SkillComponent
                 skill={epiclesis}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={convenio}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}

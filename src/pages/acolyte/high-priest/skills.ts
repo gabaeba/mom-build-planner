@@ -108,16 +108,6 @@ export const coluceoHeal: Skill = {
   ],
 };
 
-export const convenio: Skill = {
-  name: "Convenio",
-  description:
-    "Warps all party members to the High Priest's current location. Requires 1 Ancilla.",
-  maxLevel: 1,
-  type: SkillType.supportive,
-  icon: "./assets/highPriest/convenio.png",
-  preRequisites: [{ skill: clementia, level: 2 }],
-};
-
 export const highHeal: Skill = {
   name: "High Heal",
   description:
@@ -138,6 +128,19 @@ export const epiclesis: Skill = {
   preRequisites: [
     { skill: ancilla, level: 1 },
     { skill: highHeal, level: 3 },
+  ],
+};
+
+export const convenio: Skill = {
+  name: "Convenio",
+  description:
+    "Warps all party members to the High Priest's current location. Requires 1 Ancilla.",
+  maxLevel: 1,
+  type: SkillType.supportive,
+  icon: "./assets/highPriest/convenio.png",
+  preRequisites: [
+    { skill: clementia, level: 2 },
+    { skill: epiclesis, level: 1 },
   ],
 };
 
@@ -193,9 +196,9 @@ export const highPriestSkills = [
   vituperatum,
   clearance,
   coluceoHeal,
-  convenio,
   highHeal,
   epiclesis,
+  convenio,
   meditatio,
   offertorium,
   praefatio,
