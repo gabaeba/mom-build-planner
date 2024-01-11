@@ -33,7 +33,7 @@ export const firePillar: Skill = {
 export const iceWall: Skill = {
   name: "Ice Wall",
   description: "Summons a shield of ice 5 cells wide in front of the caster.",
-  maxLevel: 10,
+  maxLevel: 5,
   type: SkillType.active,
   icon: "./assets/wizard/ice_wall.png",
   preRequisites: [
@@ -46,7 +46,7 @@ export const frostNova: Skill = {
   name: "Frost Nova",
   description:
     "Strikes an area with water elemental damage, knocking back with a massive chance to freeze on the second hit.",
-  maxLevel: 10,
+  maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/wizard/frost_nova.png",
   preRequisites: [
