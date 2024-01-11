@@ -1,19 +1,4 @@
 import { Skill, SkillType } from "../../../common/types";
-import {
-  angelus,
-  bash,
-  coldBolt,
-  envenom,
-  fireBolt,
-  frostDiver,
-  hiding,
-  lightningBolt,
-  magnumBreak,
-  napalmBeat,
-  stoneCurse,
-  swordMastery,
-  thunderstorm,
-} from "../super-novice/skills";
 
 export const breakthrough: Skill = {
   name: "Breakthrough",
@@ -60,14 +45,7 @@ export const bowlingBash: Skill = {
   maxLevel: 10,
   type: SkillType.offensive,
   icon: "./assets/knight/bowling_bash.png",
-  preRequisites: [
-    {
-      skill: bash,
-      level: 10,
-    },
-    { skill: magnumBreak, level: 3 },
-    { skill: swordMastery, level: 5 },
-  ],
+  preRequisites: [],
 };
 
 export const autoGuard: Skill = {
@@ -97,7 +75,7 @@ export const shieldCharge: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/crusader/shield_charge.png",
-  preRequisites: [{ skill: autoGuard, level: 5 }],
+  preRequisites: [],
 };
 
 export const earthSpike: Skill = {
@@ -107,7 +85,7 @@ export const earthSpike: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/wizard/earth_spike.png",
-  preRequisites: [{ skill: stoneCurse, level: 1 }],
+  preRequisites: [],
 };
 
 export const frostNova: Skill = {
@@ -117,7 +95,7 @@ export const frostNova: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/wizard/frost_nova.png",
-  preRequisites: [{ skill: frostDiver, level: 1 }],
+  preRequisites: [],
 };
 
 export const heavensDrive: Skill = {
@@ -127,7 +105,7 @@ export const heavensDrive: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/wizard/heavens_drive.png",
-  preRequisites: [{ skill: earthSpike, level: 3 }],
+  preRequisites: [],
 };
 
 export const jupitelThunder: Skill = {
@@ -137,10 +115,7 @@ export const jupitelThunder: Skill = {
   maxLevel: 10,
   type: SkillType.offensive,
   icon: "./assets/wizard/jupitel_thunder.png",
-  preRequisites: [
-    { skill: lightningBolt, level: 1 },
-    { skill: napalmBeat, level: 1 },
-  ],
+  preRequisites: [],
 };
 
 export const lordOfVermilion: Skill = {
@@ -150,10 +125,7 @@ export const lordOfVermilion: Skill = {
   maxLevel: 10,
   type: SkillType.offensive,
   icon: "./assets/wizard/lord_of_vermilion.png",
-  preRequisites: [
-    { skill: jupitelThunder, level: 5 },
-    { skill: thunderstorm, level: 1 },
-  ],
+  preRequisites: [],
 };
 
 export const meteorStorm: Skill = {
@@ -163,7 +135,7 @@ export const meteorStorm: Skill = {
   maxLevel: 10,
   type: SkillType.offensive,
   icon: "./assets/wizard/meteor_storm.png",
-  preRequisites: [{ skill: thunderstorm, level: 1 }],
+  preRequisites: [],
 };
 
 export const quagmire: Skill = {
@@ -173,7 +145,7 @@ export const quagmire: Skill = {
   maxLevel: 5,
   type: SkillType.active,
   icon: "./assets/wizard/quagmire.png",
-  preRequisites: [{ skill: heavensDrive, level: 1 }],
+  preRequisites: [],
 };
 
 export const stormGust: Skill = {
@@ -183,10 +155,7 @@ export const stormGust: Skill = {
   maxLevel: 10,
   type: SkillType.offensive,
   icon: "./assets/wizard/storm_gust.png",
-  preRequisites: [
-    { skill: jupitelThunder, level: 3 },
-    { skill: frostDiver, level: 1 },
-  ],
+  preRequisites: [],
 };
 
 export const autoSpell: Skill = {
@@ -205,7 +174,7 @@ export const flameLauncher: Skill = {
   maxLevel: 3,
   type: SkillType.supportive,
   icon: "./assets/sage/flame_launcher.png",
-  preRequisites: [{ skill: fireBolt, level: 1 }],
+  preRequisites: [],
 };
 
 export const seismicWeapon: Skill = {
@@ -214,7 +183,7 @@ export const seismicWeapon: Skill = {
   maxLevel: 3,
   type: SkillType.supportive,
   icon: "./assets/sage/seismic_weapon.png",
-  preRequisites: [{ skill: stoneCurse, level: 1 }],
+  preRequisites: [],
 };
 
 export const lightningLoader: Skill = {
@@ -223,7 +192,7 @@ export const lightningLoader: Skill = {
   maxLevel: 3,
   type: SkillType.supportive,
   icon: "./assets/sage/lightning_loader.png",
-  preRequisites: [{ skill: lightningBolt, level: 1 }],
+  preRequisites: [],
 };
 
 export const frostWeapon: Skill = {
@@ -232,7 +201,7 @@ export const frostWeapon: Skill = {
   maxLevel: 3,
   type: SkillType.supportive,
   icon: "./assets/sage/frost_weapon.png",
-  preRequisites: [{ skill: coldBolt, level: 1 }],
+  preRequisites: [],
 };
 
 export const impositioManus: Skill = {
@@ -252,7 +221,7 @@ export const aspersio: Skill = {
   maxLevel: 3,
   type: SkillType.supportive,
   icon: "./assets/priest/aspersio.png",
-  preRequisites: [{ skill: impositioManus, level: 3 }],
+  preRequisites: [],
 };
 
 export const kyrieEleison: Skill = {
@@ -262,7 +231,7 @@ export const kyrieEleison: Skill = {
   maxLevel: 10,
   type: SkillType.supportive,
   icon: "./assets/priest/kyrie_eleison.png",
-  preRequisites: [{ skill: angelus, level: 2 }],
+  preRequisites: [],
 };
 
 export const lexAeterna: Skill = {
@@ -302,7 +271,7 @@ export const investigate: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/monk/finger_offensive.png",
-  preRequisites: [{ skill: callSpirits, level: 5 }],
+  preRequisites: [],
 };
 
 export const tripleAttack: Skill = {
@@ -332,7 +301,7 @@ export const overThrust: Skill = {
   maxLevel: 5,
   type: SkillType.supportive,
   icon: "./assets/blacksmith/over_thrust.png",
-  preRequisites: [{ skill: adrenalineRush, level: 3 }],
+  preRequisites: [],
 };
 
 export const demonstration: Skill = {
@@ -372,7 +341,7 @@ export const enchantPoison: Skill = {
   maxLevel: 5,
   type: SkillType.active,
   icon: "./assets/assassin/enchant_poison.png",
-  preRequisites: [{ skill: envenom, level: 1 }],
+  preRequisites: [],
 };
 
 export const tunnelDrive: Skill = {
@@ -381,7 +350,7 @@ export const tunnelDrive: Skill = {
   maxLevel: 5,
   type: SkillType.passive,
   icon: "./assets/rogue/tunnel_drive.png",
-  preRequisites: [{ skill: hiding, level: 1 }],
+  preRequisites: [],
 };
 
 export const backStab: Skill = {
@@ -401,10 +370,7 @@ export const raid: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/rogue/raid.png",
-  preRequisites: [
-    { skill: tunnelDrive, level: 2 },
-    { skill: backStab, level: 2 },
-  ],
+  preRequisites: [],
 };
 
 export const landMine: Skill = {
@@ -433,10 +399,7 @@ export const blastMine: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/hunter/blast_mine.png",
-  preRequisites: [
-    { skill: freezingTrap, level: 1 },
-    { skill: landMine, level: 1 },
-  ],
+  preRequisites: [],
 };
 
 export const claymoreTrap: Skill = {
@@ -446,7 +409,7 @@ export const claymoreTrap: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/hunter/claymore_trap.png",
-  preRequisites: [{ skill: blastMine, level: 1 }],
+  preRequisites: [],
 };
 
 export const expandedSuperNoviceSkills = [
