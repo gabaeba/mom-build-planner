@@ -41,7 +41,7 @@ export const triangleShot: Skill = {
   maxLevel: 10,
   type: SkillType.offensive,
   icon: "./assets/stalker/triangle_shot.png",
-  preRequisites: [{ skill: bowMaster, level: 10 }],
+  preRequisites: [{ skill: bowMaster, level: 5 }],
 };
 
 export const manhole: Skill = {

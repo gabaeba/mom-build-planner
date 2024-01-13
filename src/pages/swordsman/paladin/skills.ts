@@ -2,6 +2,7 @@ import { Skill, SkillType } from "../../../common/types";
 import {
   faith,
   grandCross,
+  heal,
   repelEvil,
   shieldCharge,
   spearQuicken,
@@ -57,7 +58,11 @@ export const divineGlyph: Skill = {
   maxLevel: 10,
   type: SkillType.active,
   icon: "./assets/paladin/divine_glyph.png",
-  preRequisites: [{ skill: inspiration, level: 1 }],
+  preRequisites: [
+    { skill: faith, level: 5 },
+    { skill: repelEvil, level: 5 },
+    { skill: heal, level: 3 },
+  ],
 };
 
 export const divinePunishment: Skill = {
@@ -86,10 +91,7 @@ export const gospel: Skill = {
   maxLevel: 10,
   type: SkillType.active,
   icon: "./assets/paladin/gospel.png",
-  preRequisites: [
-    { skill: faith, level: 5 },
-    { skill: repelEvil, level: 3 },
-  ],
+  preRequisites: [{ skill: inspiration, level: 1 }],
 };
 
 export const moonSlasher: Skill = {
