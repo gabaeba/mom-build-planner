@@ -60,7 +60,7 @@ export const divineGlyph: Skill = {
   icon: "./assets/paladin/divine_glyph.png",
   preRequisites: [
     { skill: faith, level: 5 },
-    { skill: repelEvil, level: 5 },
+    { skill: repelEvil, level: 3 },
     { skill: heal, level: 3 },
   ],
 };

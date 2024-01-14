@@ -59,7 +59,7 @@ export const darkIllusion: Skill = {
   name: "Dark Illusion",
   description:
     "Instantly move to target foe, 4~9-cell range. Dealing critical damage. Increases attack speed by up to 10% when used.",
-  maxLevel: 10,
+  maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/assassinCross/dark_illusion.png",
   preRequisites: [{ skill: sonicBlow, level: 7 }],

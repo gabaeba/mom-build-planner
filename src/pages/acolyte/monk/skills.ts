@@ -152,9 +152,9 @@ export const bodyRelocation: Skill = {
   name: "Body Relocation",
   description:
     "Instantly transports the Monk to a targeted cell as long as a direct path to that cell exists.",
-  maxLevel: 5,
+  maxLevel: 1,
   type: SkillType.active,
-  icon: "./assets/monk/spirits_recovery.png",
+  icon: "./assets/monk/body_relocation.png",
   preRequisites: [
     { skill: spiritsRecovery, level: 2 },
     { skill: steelBody, level: 3 },

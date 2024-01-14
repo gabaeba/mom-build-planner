@@ -79,7 +79,7 @@ export const fallenEmpire: Skill = {
   name: "Fallen Empire",
   description:
     "Combo Skill - A powerful blow that ignores the target's defenses. Can only be used after Combo Finish or other Champion combo skills.",
-  maxLevel: 10,
+  maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/champion/fallen_empire.png",
   preRequisites: [{ skill: dragonCombo, level: 3 }],
