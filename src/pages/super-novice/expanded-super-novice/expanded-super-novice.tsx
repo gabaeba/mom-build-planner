@@ -234,6 +234,7 @@ export const SuperNovice = () => {
     "Spear Mastery": NumberParam,
     "Iron Defense": NumberParam,
     "One-Hand Quicken": NumberParam,
+    "Mace Mastery": NumberParam,
     "Repel Evil": NumberParam,
     Ruwach: NumberParam,
     "Holy Light": NumberParam,

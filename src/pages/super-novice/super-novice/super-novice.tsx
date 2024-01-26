@@ -32,6 +32,7 @@ import {
   itemAppraisal,
   lightningBolt,
   magnumBreak,
+  maceMastery,
   mammonite,
   napalmBeat,
   oneHandQuicken,
@@ -99,6 +100,7 @@ export type SuperNoviceSkills = {
   "Spear Mastery": typeof NumberParam;
   "Iron Defense": typeof NumberParam;
   "One-Hand Quicken": typeof NumberParam;
+  "Mace Mastery": typeof NumberParam;
   "Repel Evil": typeof NumberParam;
   Ruwach: typeof NumberParam;
   "Holy Light": typeof NumberParam;
@@ -281,6 +283,12 @@ export const Novice = ({
         />
         <SkillComponent
           skill={repelEvil}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={maceMastery}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}

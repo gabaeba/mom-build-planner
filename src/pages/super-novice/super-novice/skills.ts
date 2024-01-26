@@ -94,6 +94,16 @@ export const repelEvil: Skill = {
   preRequisites: [],
 };
 
+export const maceMastery: Skill = {
+  name: "Mace Mastery",
+  description:
+    "Increases attack and Resistance against against Demons and Undead monsters by 6~15%.",
+  maxLevel: 10,
+  type: SkillType.passive,
+  icon: "./assets/acolyte/mace_mastery.png",
+  preRequisites: [],
+};
+
 export const holyLight: Skill = {
   name: "Holy Light",
   description:
@@ -530,6 +540,7 @@ export const superNoviceSkills = [
   magnumBreak,
   provoke,
   endure,
+  maceMastery,
   repelEvil,
   angelus,
   aquaBenedicta,
