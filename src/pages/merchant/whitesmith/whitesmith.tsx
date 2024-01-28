@@ -15,6 +15,7 @@ import {
   whitesmithSkills,
   cartSlide,
   explosiveCart,
+  fullAdrenalineRush,
 } from "./skills";
 import { useSkill } from "../../../common/helpers/handle-skill-change";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -141,6 +142,7 @@ export type WhitesmithSkillParams = BlacksmithSkills & {
   "Create Augment": typeof NumberParam;
   "Lava Flow": typeof NumberParam;
   "Maximum Over Thrust": typeof NumberParam;
+  "Full Adrenaline Rush": typeof NumberParam;
   "Melt Down": typeof NumberParam;
   "Supernatural Weaponcraft": typeof NumberParam;
   "Weapon Augmentation": typeof NumberParam;
@@ -190,6 +192,7 @@ export const Whitesmith = () => {
     "Create Augment": NumberParam,
     "Lava Flow": NumberParam,
     "Maximum Over Thrust": NumberParam,
+    "Full Adrenaline Rush": NumberParam,
     "Melt Down": NumberParam,
     "Supernatural Weaponcraft": NumberParam,
     "Weapon Augmentation": NumberParam,
@@ -552,6 +555,12 @@ export const Whitesmith = () => {
               />
               <SkillComponent
                 skill={maximumOverThrust}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={fullAdrenalineRush}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}

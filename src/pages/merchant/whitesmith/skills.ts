@@ -39,7 +39,7 @@ export const axeTornado: Skill = {
   name: "Axe Tornado",
   description:
     "Spins rapidly like a whirlwind with an axe striking all targets around you. The VIT stat increases your damage.",
-  maxLevel: 10,
+  maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/whitesmith/axe_tornado.png",
   preRequisites: [{ skill: axeBoomerang, level: 3 }],
@@ -132,6 +132,16 @@ export const maximumOverThrust: Skill = {
   preRequisites: [{ skill: overThrust, level: 5 }],
 };
 
+export const fullAdrenalineRush: Skill = {
+  name: "Full Adrenaline Rush",
+  description:
+    "Places a temporary buff on the user and all party members that increases their Attack Speed by 10% with any weapon except long range weapons.",
+  maxLevel: 1,
+  type: SkillType.supportive,
+  icon: "./assets/whitesmith/full_adrenaline_rush.png",
+  preRequisites: [],
+};
+
 export const meltDown: Skill = {
   name: "Melt Down",
   description:
@@ -177,6 +187,7 @@ export const whitesmithSkills = [
   createAugment,
   lavaFlow,
   maximumOverThrust,
+  fullAdrenalineRush,
   meltDown,
   supernaturalWeaponcraft,
   weaponAugmentation,
