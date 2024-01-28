@@ -10,16 +10,6 @@ export const crimsonFireBlossom: Skill = {
   preRequisites: [],
 };
 
-export const crimsonFireFormation: Skill = {
-  name: "Crimson Fire Formation",
-  description:
-    "Create a 5x5 field of fire that knocks back enemies and rapidly deals Fire-element damage.",
-  maxLevel: 5,
-  type: SkillType.offensive,
-  icon: "./assets/ninja/crimson_fire_formation.png",
-  preRequisites: [{ skill: crimsonFireBlossom, level: 5 }],
-};
-
 export const dragonFireFormation: Skill = {
   name: "Dragon Fire Formation",
   description:
@@ -27,7 +17,17 @@ export const dragonFireFormation: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/ninja/dragon_fire_formation.png",
-  preRequisites: [],
+  preRequisites: [{ skill: crimsonFireBlossom, level: 1 }],
+};
+
+export const crimsonFireFormation: Skill = {
+  name: "Crimson Fire Formation",
+  description:
+    "Create a 5x5 field of fire that knocks back enemies and rapidly deals Fire-element damage.",
+  maxLevel: 5,
+  type: SkillType.offensive,
+  icon: "./assets/ninja/crimson_fire_formation.png",
+  preRequisites: [{ skill: dragonFireFormation, level: 1 }],
 };
 
 export const lightningSpearOfIce: Skill = {
@@ -47,7 +47,7 @@ export const fallingIcePillar: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/ninja/falling_ice_pillar.png",
-  preRequisites: [],
+  preRequisites: [{ skill: lightningSpearOfIce, level: 1 }],
 };
 
 export const waterEscapeTechnique: Skill = {
@@ -56,7 +56,7 @@ export const waterEscapeTechnique: Skill = {
   maxLevel: 5,
   type: SkillType.active,
   icon: "./assets/ninja/water_escape_technique.png",
-  preRequisites: [{ skill: lightningSpearOfIce, level: 5 }],
+  preRequisites: [{ skill: fallingIcePillar, level: 1 }],
 };
 
 export const windBlade: Skill = {
@@ -76,16 +76,7 @@ export const lightningCrash: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/ninja/lightning_crash.png",
-  preRequisites: [],
-};
-
-export const shadowJump: Skill = {
-  name: "Shadow Jump",
-  description: "Teleport to a target location from the Cloaking status.",
-  maxLevel: 5,
-  type: SkillType.active,
-  icon: "./assets/ninja/shadow_jump.png",
-  preRequisites: [],
+  preRequisites: [{ skill: windBlade, level: 1 }],
 };
 
 export const illusionThrust: Skill = {
@@ -106,6 +97,15 @@ export const mistSlash: Skill = {
   preRequisites: [{ skill: illusionThrust, level: 5 }],
 };
 
+export const shadowJump: Skill = {
+  name: "Shadow Jump",
+  description: "Teleport to a target location from the Cloaking status.",
+  maxLevel: 5,
+  type: SkillType.active,
+  icon: "./assets/ninja/shadow_jump.png",
+  preRequisites: [{ skill: mistSlash, level: 1 }],
+};
+
 export const zephyrStrike: Skill = {
   name: "Zephyr Strike",
   description:
@@ -123,10 +123,7 @@ export const shadowSlash: Skill = {
   maxLevel: 10,
   type: SkillType.offensive,
   icon: "./assets/ninja/shadow_slash.png",
-  preRequisites: [
-    { skill: mistSlash, level: 1 },
-    { skill: shadowJump, level: 1 },
-  ],
+  preRequisites: [{ skill: shadowJump, level: 1 }],
 };
 
 export const illusionaryShadow: Skill = {
@@ -136,23 +133,7 @@ export const illusionaryShadow: Skill = {
   maxLevel: 5,
   type: SkillType.active,
   icon: "./assets/ninja/illusionary_shadow.png",
-  preRequisites: [{ skill: shadowSlash, level: 1 }],
-};
-
-export const finalStrike: Skill = {
-  name: "Final Strike",
-  description:
-    "Reduce the Ninja's HP to 1 in order to deal a strong blow to a single target.",
-  maxLevel: 5,
-  type: SkillType.offensive,
-  icon: "./assets/ninja/final_strike.png",
-  preRequisites: [
-    { skill: shadowJump, level: 1 },
-    { skill: shadowSlash, level: 1 },
-    { skill: dragonFireFormation, level: 1 },
-    { skill: fallingIcePillar, level: 1 },
-    { skill: lightningCrash, level: 1 },
-  ],
+  preRequisites: [],
 };
 
 export const soul: Skill = {
@@ -162,12 +143,21 @@ export const soul: Skill = {
   type: SkillType.supportive,
   icon: "./assets/ninja/soul.png",
   preRequisites: [
-    { skill: shadowJump, level: 1 },
     { skill: shadowSlash, level: 1 },
     { skill: dragonFireFormation, level: 1 },
     { skill: fallingIcePillar, level: 1 },
     { skill: lightningCrash, level: 1 },
   ],
+};
+
+export const finalStrike: Skill = {
+  name: "Final Strike",
+  description:
+    "Reduce the Ninja's HP to 1 in order to deal a strong blow to a single target.",
+  maxLevel: 5,
+  type: SkillType.offensive,
+  icon: "./assets/ninja/final_strike.png",
+  preRequisites: [{ skill: soul, level: 1 }],
 };
 
 export const flipTatami: Skill = {
@@ -206,10 +196,7 @@ export const throwHuumaShuriken: Skill = {
   maxLevel: 10,
   type: SkillType.offensive,
   icon: "./assets/ninja/throw_huuma_shuriken.png",
-  preRequisites: [
-    { skill: bladeMastery, level: 5 },
-    { skill: throwKunai, level: 3 },
-  ],
+  preRequisites: [{ skill: throwKunai, level: 3 }],
 };
 
 export const coinTrick: Skill = {
@@ -243,21 +230,21 @@ export const ninpouTraining: Skill = {
 
 export const ninjaSkills = [
   crimsonFireBlossom,
-  crimsonFireFormation,
   dragonFireFormation,
+  crimsonFireFormation,
   lightningSpearOfIce,
   fallingIcePillar,
   waterEscapeTechnique,
   windBlade,
   lightningCrash,
-  shadowJump,
   illusionThrust,
   mistSlash,
+  shadowJump,
   zephyrStrike,
   shadowSlash,
   illusionaryShadow,
-  finalStrike,
   soul,
+  finalStrike,
   flipTatami,
   bladeMastery,
   throwKunai,
