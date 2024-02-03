@@ -89,7 +89,7 @@ export const cartSlide: Skill = {
     "Uses the wheels of the cart to slide forward 12 cells, damaging enemies in a 5x5 area at the end of the slide.",
   maxLevel: 5,
   type: SkillType.offensive,
-  icon: "./assets/placeholder.png",
+  icon: "./assets/whitesmith/cart_slide.png",
   preRequisites: [{ skill: cartTermination, level: 5 }],
 };
 
@@ -99,7 +99,7 @@ export const explosiveCart: Skill = {
     "When the user casts Cart Slide, small explosives are left along the path, dealing 5x5 area damage to enemies in the caster's path.",
   maxLevel: 5,
   type: SkillType.offensive,
-  icon: "./assets/placeholder.png",
+  icon: "./assets/whitesmith/explosive_cart.png",
   preRequisites: [{ skill: cartSlide, level: 5 }],
 };
 

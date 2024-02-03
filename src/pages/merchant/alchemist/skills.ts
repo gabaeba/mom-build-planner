@@ -44,7 +44,7 @@ export const bioSplice: Skill = {
     "Splices additional genetic information into the currently active homunculus to allow the homunculus to apply +13 of the given status on each attack.",
   maxLevel: 5,
   type: SkillType.supportive,
-  icon: "./assets/placeholder.png",
+  icon: "./assets/alchemist/bio_splice.png",
   preRequisites: [{ skill: resurrectHomunculus, level: 1 }],
 };
 
@@ -93,7 +93,7 @@ export const transmutePotion: Skill = {
     "Transmutes a potion to alter its effects when thrown at enemies. Deals damage to enemies in a 5x5 area an causes knockback. Skill level determines the type of potion thrown. Damage is equal to the healing value of the potion. When throwing Green Potion, a random status effect is induced.",
   maxLevel: 5,
   type: SkillType.offensive,
-  icon: "./assets/placeholder.png",
+  icon: "./assets/alchemist/transmute_potion.png",
   preRequisites: [{ skill: potionPitcher, level: 5 }],
 };
 
