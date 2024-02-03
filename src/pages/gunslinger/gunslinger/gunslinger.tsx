@@ -167,12 +167,6 @@ export const Gunslinger = ({
       </div>
       <div className={skillGrid}>
         <SkillComponent
-          skill={singleAction}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
           skill={coinFlip}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
@@ -186,12 +180,6 @@ export const Gunslinger = ({
         />
         <SkillComponent
           skill={lastStand}
-          handleKeyPress={handleKeyPress}
-          isHovered={isHovered}
-          setIsHovered={setIsHovered}
-        />
-        <SkillComponent
-          skill={gatlingFever}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}
@@ -228,6 +216,18 @@ export const Gunslinger = ({
         />
         <SkillComponent
           skill={gunmanInsignia}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={gatlingFever}
+          handleKeyPress={handleKeyPress}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+        <SkillComponent
+          skill={singleAction}
           handleKeyPress={handleKeyPress}
           isHovered={isHovered}
           setIsHovered={setIsHovered}

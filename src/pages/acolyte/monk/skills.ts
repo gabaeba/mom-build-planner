@@ -35,8 +35,8 @@ export const absorbSpirits: Skill = {
 
 export const dodge: Skill = {
   name: "Dodge",
-  description: "Adds 1~15 Flee.",
-  maxLevel: 10,
+  description: "Adds 4~20 Flee.",
+  maxLevel: 5,
   type: SkillType.passive,
   icon: "./assets/monk/dodge.png",
   preRequisites: [

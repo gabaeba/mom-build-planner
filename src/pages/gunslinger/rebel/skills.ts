@@ -239,7 +239,7 @@ export const overheat: Skill = {
 export const bandolier: Skill = {
   name: "Bandolier",
   description: "Increases carrying capacity by up to 2000.",
-  maxLevel: 1,
+  maxLevel: 5,
   type: SkillType.passive,
   icon: "./assets/rebel/bandolier.png",
   preRequisites: [],

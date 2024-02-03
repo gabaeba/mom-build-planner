@@ -1,14 +1,5 @@
 import { Skill, SkillType } from "../../../common/types";
 
-export const singleAction: Skill = {
-  name: "Single Action",
-  description: "Increases Critical Damage when wielding Rifles.",
-  maxLevel: 5,
-  type: SkillType.passive,
-  icon: "./assets/gunslinger/single_action.png",
-  preRequisites: [],
-};
-
 export const coinFlip: Skill = {
   name: "Coin Flip",
   description:
@@ -26,7 +17,7 @@ export const coinFling: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/gunslinger/coin_fling.png",
-  preRequisites: [{ skill: coinFlip, level: 1 }],
+  preRequisites: [{ skill: coinFlip, level: 5 }],
 };
 
 export const lastStand: Skill = {
@@ -36,20 +27,7 @@ export const lastStand: Skill = {
   maxLevel: 5,
   type: SkillType.supportive,
   icon: "./assets/gunslinger/last_stand.png",
-  preRequisites: [
-    { skill: coinFlip, level: 5 },
-    { skill: coinFling, level: 1 },
-  ],
-};
-
-export const gatlingFever: Skill = {
-  name: "Gatling Fever",
-  description:
-    "Greatly boosts ASPD and ATK when cast, at the cost of immobilizing the user. Must be used with a Gatling-type weapon.",
-  maxLevel: 5,
-  type: SkillType.offensive,
-  icon: "./assets/gunslinger/gatling_fever.png",
-  preRequisites: [],
+  preRequisites: [{ skill: coinFling, level: 1 }],
 };
 
 export const disarm: Skill = {
@@ -86,7 +64,7 @@ export const spreadAttack: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/gunslinger/spread_attack.png",
-  preRequisites: [],
+  preRequisites: [{ skill: dust, level: 3 }],
 };
 
 export const fullBuster: Skill = {
@@ -95,10 +73,7 @@ export const fullBuster: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/gunslinger/full_buster.png",
-  preRequisites: [
-    { skill: dust, level: 3 },
-    { skill: spreadAttack, level: 3 },
-  ],
+  preRequisites: [{ skill: spreadAttack, level: 3 }],
 };
 
 export const gunmanInsignia: Skill = {
@@ -109,6 +84,25 @@ export const gunmanInsignia: Skill = {
   type: SkillType.supportive,
   icon: "./assets/gunslinger/gunman_insignia.png",
   preRequisites: [],
+};
+
+export const singleAction: Skill = {
+  name: "Single Action",
+  description: "Increases Critical Damage when wielding Rifles.",
+  maxLevel: 5,
+  type: SkillType.passive,
+  icon: "./assets/gunslinger/single_action.png",
+  preRequisites: [{ skill: gunmanInsignia, level: 5 }],
+};
+
+export const gatlingFever: Skill = {
+  name: "Gatling Fever",
+  description:
+    "Greatly boosts ASPD and ATK when cast, at the cost of immobilizing the user. Must be used with a Gatling-type weapon.",
+  maxLevel: 5,
+  type: SkillType.offensive,
+  icon: "./assets/gunslinger/gatling_fever.png",
+  preRequisites: [{ skill: gunmanInsignia, level: 5 }],
 };
 
 export const groundDrift: Skill = {
@@ -201,17 +195,17 @@ export const manufacture: Skill = {
 };
 
 export const gunslingerSkills = [
-  singleAction,
   coinFlip,
   coinFling,
   lastStand,
-  gatlingFever,
   disarm,
   cripplingShot,
   dust,
   spreadAttack,
   fullBuster,
   gunmanInsignia,
+  singleAction,
+  gatlingFever,
   groundDrift,
   chainAction,
   bullsEye,
