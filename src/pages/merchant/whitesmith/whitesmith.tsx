@@ -5,12 +5,9 @@ import {
   bodyTempering,
   cartBoostWhitesmith,
   cartTermination,
-  createAugment,
   lavaFlow,
   maximumOverThrust,
   meltDown,
-  supernaturalWeaponcraft,
-  weaponAugmentation,
   weaponTraining,
   whitesmithSkills,
   cartSlide,
@@ -139,13 +136,10 @@ export type WhitesmithSkillParams = BlacksmithSkills & {
   "Cart Termination": typeof NumberParam;
   "Cart Slide": typeof NumberParam;
   "Explosive Cart": typeof NumberParam;
-  "Create Augment": typeof NumberParam;
   "Lava Flow": typeof NumberParam;
   "Maximum Over Thrust": typeof NumberParam;
   "Full Adrenaline Rush": typeof NumberParam;
   "Melt Down": typeof NumberParam;
-  "Supernatural Weaponcraft": typeof NumberParam;
-  "Weapon Augmentation": typeof NumberParam;
   BuildName: typeof StringParam;
 };
 
@@ -189,13 +183,10 @@ export const Whitesmith = () => {
     "Cart Termination": NumberParam,
     "Cart Slide": NumberParam,
     "Explosive Cart": NumberParam,
-    "Create Augment": NumberParam,
     "Lava Flow": NumberParam,
     "Maximum Over Thrust": NumberParam,
     "Full Adrenaline Rush": NumberParam,
     "Melt Down": NumberParam,
-    "Supernatural Weaponcraft": NumberParam,
-    "Weapon Augmentation": NumberParam,
     BuildName: StringParam,
   });
 
@@ -542,12 +533,6 @@ export const Whitesmith = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={createAugment}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
                 skill={lavaFlow}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
@@ -567,18 +552,6 @@ export const Whitesmith = () => {
               />
               <SkillComponent
                 skill={meltDown}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={supernaturalWeaponcraft}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={weaponAugmentation}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}

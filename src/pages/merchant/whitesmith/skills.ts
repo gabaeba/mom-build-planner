@@ -1,5 +1,6 @@
 import { Skill, SkillType } from "../../../common/types";
 import {
+  adrenalineRush,
   hammerFall,
   overThrust,
   skinTempering,
@@ -102,16 +103,6 @@ export const explosiveCart: Skill = {
   preRequisites: [{ skill: cartSlide, level: 5 }],
 };
 
-export const createAugment: Skill = {
-  name: "Create Augment",
-  description:
-    "Creates various Weapon augments used in special Whitesmith crafting.",
-  maxLevel: 3,
-  type: SkillType.active,
-  icon: "./assets/whitesmith/create_augment.png",
-  preRequisites: [{ skill: weaponryResearch, level: 5 }],
-};
-
 export const lavaFlow: Skill = {
   name: "Lava Flow",
   description:
@@ -136,10 +127,10 @@ export const fullAdrenalineRush: Skill = {
   name: "Full Adrenaline Rush",
   description:
     "Places a temporary buff on the user and all party members that increases their Attack Speed by 10% with any weapon except long range weapons.",
-  maxLevel: 1,
+  maxLevel: 5,
   type: SkillType.supportive,
   icon: "./assets/whitesmith/full_adrenaline_rush.png",
-  preRequisites: [],
+  preRequisites: [{ skill: adrenalineRush, level: 5 }],
 };
 
 export const meltDown: Skill = {
@@ -156,25 +147,6 @@ export const meltDown: Skill = {
   ],
 };
 
-export const supernaturalWeaponcraft: Skill = {
-  name: "Supernatural Weaponcraft",
-  description: "Allows altering forged weapons into Holy or Shadow element.",
-  maxLevel: 2,
-  type: SkillType.passive,
-  icon: "./assets/whitesmith/supernatural_weaponcraft.png",
-  preRequisites: [{ skill: createAugment, level: 1 }],
-};
-
-export const weaponAugmentation: Skill = {
-  name: "Weapon Augmentation",
-  description:
-    "Allows use of Augments to alter the properties of forged weaponry.",
-  maxLevel: 10,
-  type: SkillType.passive,
-  icon: "./assets/whitesmith/weapon_augmentation.png",
-  preRequisites: [{ skill: createAugment, level: 1 }],
-};
-
 export const whitesmithSkills = [
   weaponTraining,
   axeBoomerang,
@@ -184,11 +156,8 @@ export const whitesmithSkills = [
   cartTermination,
   cartSlide,
   explosiveCart,
-  createAugment,
   lavaFlow,
   maximumOverThrust,
   fullAdrenalineRush,
   meltDown,
-  supernaturalWeaponcraft,
-  weaponAugmentation,
 ];
