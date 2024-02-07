@@ -111,7 +111,7 @@ export const sonicAcceleration: Skill = {
   maxLevel: 5,
   type: SkillType.passive,
   icon: "./assets/assassin/sonic_acceleration.png",
-  preRequisites: [],
+  preRequisites: [{ skill: sonicBlow, level: 10 }],
 };
 
 export const venomKnife: Skill = {

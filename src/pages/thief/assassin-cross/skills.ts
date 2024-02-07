@@ -6,7 +6,7 @@ import {
   katarMastery,
   sonicBlow,
 } from "../assassin/skills";
-import { detoxify, doubleAttack, envenom } from "../thief/skills";
+import { detoxify, envenom, increaseSpeed } from "../thief/skills";
 
 export const advancedKatarMastery: Skill = {
   name: "Advanced Katar Mastery",
@@ -15,10 +15,7 @@ export const advancedKatarMastery: Skill = {
   maxLevel: 10,
   type: SkillType.passive,
   icon: "./assets/assassinCross/advanced_katar_mastery.png",
-  preRequisites: [
-    { skill: doubleAttack, level: 5 },
-    { skill: katarMastery, level: 10 },
-  ],
+  preRequisites: [{ skill: katarMastery, level: 10 }],
 };
 
 export const createDeadlyPoison: Skill = {
@@ -92,7 +89,10 @@ export const hallucinationWalk: Skill = {
   maxLevel: 5,
   type: SkillType.active,
   icon: "./assets/assassinCross/hallucination_walk.png",
-  preRequisites: [{ skill: phantomMenace, level: 1 }],
+  preRequisites: [
+    { skill: phantomMenace, level: 1 },
+    { skill: increaseSpeed, level: 10 },
+  ],
 };
 
 export const siphoningBlades: Skill = {
@@ -126,7 +126,7 @@ export const rollingCutter: Skill = {
   type: SkillType.offensive,
   icon: "./assets/assassinCross/rolling_cutter.png",
   preRequisites: [
-    { skill: katarMastery, level: 10 },
+    { skill: advancedKatarMastery, level: 5 },
     { skill: grimtooth, level: 3 },
   ],
 };
