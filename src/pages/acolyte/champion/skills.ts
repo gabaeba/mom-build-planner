@@ -1,12 +1,14 @@
 import { Skill, SkillType } from "../../../common/types";
-import { blessing, heal } from "../acolyte/skills";
+import { blessing, cure } from "../acolyte/skills";
 import {
   bladeStop,
   bodyRelocation,
+  callSpirits,
   chainCombo,
   comboFinish,
   fury,
   ironHand,
+  spiritsRecovery,
   steelBody,
 } from "../monk/skills";
 
@@ -16,7 +18,7 @@ export const zen: Skill = {
   maxLevel: 1,
   type: SkillType.active,
   icon: "./assets/champion/zen.png",
-  preRequisites: [{ skill: fury, level: 5 }],
+  preRequisites: [{ skill: callSpirits, level: 5 }],
 };
 
 export const palmPushStrike: Skill = {
@@ -133,7 +135,7 @@ export const curingTouch: Skill = {
   type: SkillType.supportive,
   icon: "./assets/champion/curing_touch.png",
   preRequisites: [
-    { skill: heal, level: 2 },
+    { skill: cure, level: 1 },
     { skill: blessing, level: 5 },
   ],
 };
@@ -185,7 +187,10 @@ export const spiritualConcentration: Skill = {
   maxLevel: 5,
   type: SkillType.passive,
   icon: "./assets/champion/spiritual_concentration.png",
-  preRequisites: [{ skill: zen, level: 1 }],
+  preRequisites: [
+    { skill: zen, level: 1 },
+    { skill: spiritsRecovery, level: 2 },
+  ],
 };
 
 export const championSkills = [

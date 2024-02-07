@@ -115,7 +115,7 @@ export const comboFinish: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/monk/combo_finish.png",
-  preRequisites: [{ skill: tripleAttack, level: 3 }],
+  preRequisites: [{ skill: chainCombo, level: 3 }],
 };
 
 export const steelBody: Skill = {
@@ -157,7 +157,6 @@ export const bodyRelocation: Skill = {
   icon: "./assets/monk/body_relocation.png",
   preRequisites: [
     { skill: spiritsRecovery, level: 2 },
-    { skill: steelBody, level: 3 },
     { skill: asuraStrike, level: 3 },
   ],
 };
