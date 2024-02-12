@@ -501,6 +501,18 @@ export const Creator = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
+                skill={demonicFire}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={fireExpansion}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
                 skill={cartRemodeling}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
@@ -531,37 +543,7 @@ export const Creator = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
-                skill={demonicFire}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={fireExpansion}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
                 skill={fullChemicalProtection}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={illusionDoping}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={plantCultivation}
-                handleKeyPress={handleKeyPress}
-                isHovered={isHovered}
-                setIsHovered={setIsHovered}
-              />
-              <SkillComponent
-                skill={slingItem}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}
@@ -573,7 +555,25 @@ export const Creator = () => {
                 setIsHovered={setIsHovered}
               />
               <SkillComponent
+                skill={illusionDoping}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={slingItem}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
                 skill={thornTrap}
+                handleKeyPress={handleKeyPress}
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+              <SkillComponent
+                skill={plantCultivation}
                 handleKeyPress={handleKeyPress}
                 isHovered={isHovered}
                 setIsHovered={setIsHovered}

@@ -134,7 +134,7 @@ export const chemicalProtectHelm: Skill = {
   maxLevel: 5,
   type: SkillType.supportive,
   icon: "./assets/alchemist/chemical_protect_helm.png",
-  preRequisites: [{ skill: pharmacy, level: 1 }],
+  preRequisites: [],
 };
 
 export const chemicalProtectShield: Skill = {
@@ -144,7 +144,7 @@ export const chemicalProtectShield: Skill = {
   maxLevel: 5,
   type: SkillType.supportive,
   icon: "./assets/alchemist/chemical_protect_shield.png",
-  preRequisites: [{ skill: chemicalProtectHelm, level: 3 }],
+  preRequisites: [],
 };
 
 export const chemicalProtectArmor: Skill = {
@@ -154,7 +154,7 @@ export const chemicalProtectArmor: Skill = {
   maxLevel: 5,
   type: SkillType.supportive,
   icon: "./assets/alchemist/chemical_protect_armor.png",
-  preRequisites: [{ skill: chemicalProtectShield, level: 3 }],
+  preRequisites: [],
 };
 
 export const chemicalProtectWeapon: Skill = {
@@ -164,7 +164,7 @@ export const chemicalProtectWeapon: Skill = {
   maxLevel: 5,
   type: SkillType.supportive,
   icon: "./assets/alchemist/chemical_protect_weapon.png",
-  preRequisites: [{ skill: chemicalProtectArmor, level: 3 }],
+  preRequisites: [],
 };
 
 export const bioethics: Skill = {

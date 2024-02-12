@@ -1,12 +1,15 @@
 import { Skill, SkillType } from "../../../common/types";
 import {
   acidTerror,
+  bioCannibalize,
   chemicalProtectArmor,
   chemicalProtectHelm,
   chemicalProtectShield,
   chemicalProtectWeapon,
   demonstration,
+  pharmacy,
 } from "../alchemist/skills";
+import { cartRevolution, pushcartMastery } from "../merchant/skills";
 
 export const acidDemonstration: Skill = {
   name: "Acid Demonstration",
@@ -28,7 +31,7 @@ export const cartRemodeling: Skill = {
   maxLevel: 5,
   type: SkillType.passive,
   icon: "./assets/creator/cart_remodeling.png",
-  preRequisites: [],
+  preRequisites: [{ skill: pushcartMastery, level: 5 }],
 };
 
 export const cartBoostCreator: Skill = {
@@ -38,7 +41,10 @@ export const cartBoostCreator: Skill = {
   maxLevel: 5,
   type: SkillType.supportive,
   icon: "./assets/creator/cart_boost.png",
-  preRequisites: [{ skill: cartRemodeling, level: 3 }],
+  preRequisites: [
+    { skill: cartRemodeling, level: 5 },
+    { skill: cartRevolution, level: 10 },
+  ],
 };
 
 export const cartCannon: Skill = {
@@ -48,7 +54,10 @@ export const cartCannon: Skill = {
   maxLevel: 10,
   type: SkillType.offensive,
   icon: "./assets/creator/cart_cannon.png",
-  preRequisites: [{ skill: cartRemodeling, level: 3 }],
+  preRequisites: [
+    { skill: cartRemodeling, level: 5 },
+    { skill: cartRevolution, level: 10 },
+  ],
 };
 
 export const cartTornado: Skill = {
@@ -58,7 +67,7 @@ export const cartTornado: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/creator/cart_tornado.png",
-  preRequisites: [{ skill: cartRemodeling, level: 3 }],
+  preRequisites: [{ skill: cartBoostCreator, level: 3 }],
 };
 
 export const changeMaterial: Skill = {
@@ -77,7 +86,7 @@ export const demonicFire: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/creator/demonic_fire.png",
-  preRequisites: [],
+  preRequisites: [{ skill: acidDemonstration, level: 5 }],
 };
 
 export const fireExpansion: Skill = {
@@ -87,7 +96,7 @@ export const fireExpansion: Skill = {
   maxLevel: 5,
   type: SkillType.offensive,
   icon: "./assets/creator/fire_expansion.png",
-  preRequisites: [],
+  preRequisites: [{ skill: demonicFire, level: 5 }],
 };
 
 export const fullChemicalProtection: Skill = {
@@ -105,16 +114,6 @@ export const fullChemicalProtection: Skill = {
   ],
 };
 
-export const illusionDoping: Skill = {
-  name: "Illusion Doping",
-  description:
-    "Consumes 1 Acid Bottle to Inflict Blind, Hallucination, and an attack speed debuff in an targeted AoE. Additionally increases damage taken from Acid Terror on affected targets.",
-  maxLevel: 5,
-  type: SkillType.offensive,
-  icon: "./assets/creator/illusion_doping.png",
-  preRequisites: [],
-};
-
 export const plantCultivation: Skill = {
   name: "Plant Cultivation",
   description:
@@ -125,16 +124,6 @@ export const plantCultivation: Skill = {
   preRequisites: [],
 };
 
-export const slingItem: Skill = {
-  name: "Sling Item",
-  description:
-    "Flings various manufactured items at a target, for effects ranging from Damage to status effects and debuffs.",
-  maxLevel: 5,
-  type: SkillType.offensive,
-  icon: "./assets/creator/sling_item.png",
-  preRequisites: [],
-};
-
 export const specialPharmacy: Skill = {
   name: "Special Pharmacy",
   description:
@@ -142,7 +131,27 @@ export const specialPharmacy: Skill = {
   maxLevel: 10,
   type: SkillType.offensive,
   icon: "./assets/creator/special_pharmacy.png",
-  preRequisites: [],
+  preRequisites: [{ skill: pharmacy, level: 1 }],
+};
+
+export const slingItem: Skill = {
+  name: "Sling Item",
+  description:
+    "Flings various manufactured items at a target, for effects ranging from Damage to status effects and debuffs.",
+  maxLevel: 5,
+  type: SkillType.offensive,
+  icon: "./assets/creator/sling_item.png",
+  preRequisites: [{ skill: specialPharmacy, level: 7 }],
+};
+
+export const illusionDoping: Skill = {
+  name: "Illusion Doping",
+  description:
+    "Consumes 1 Acid Bottle to Inflict Blind, Hallucination, and an attack speed debuff in an targeted AoE. Additionally increases damage taken from Acid Terror on affected targets.",
+  maxLevel: 5,
+  type: SkillType.offensive,
+  icon: "./assets/creator/illusion_doping.png",
+  preRequisites: [{ skill: specialPharmacy, level: 3 }],
 };
 
 export const thornTrap: Skill = {
@@ -152,22 +161,22 @@ export const thornTrap: Skill = {
   maxLevel: 5,
   type: SkillType.active,
   icon: "./assets/creator/thorn_trap.png",
-  preRequisites: [],
+  preRequisites: [{ skill: bioCannibalize, level: 3 }],
 };
 
 export const creatorSkills = [
   acidDemonstration,
   cartRemodeling,
-  cartBoostCreator,
   cartCannon,
+  cartBoostCreator,
   cartTornado,
   changeMaterial,
   demonicFire,
   fireExpansion,
   fullChemicalProtection,
-  illusionDoping,
   plantCultivation,
-  slingItem,
   specialPharmacy,
+  slingItem,
+  illusionDoping,
   thornTrap,
 ];
