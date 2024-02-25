@@ -158,6 +158,7 @@ export const bodyRelocation: Skill = {
   preRequisites: [
     { skill: spiritsRecovery, level: 2 },
     { skill: asuraStrike, level: 3 },
+    { skill: steelBody, level: 3 },
   ],
 };
 
