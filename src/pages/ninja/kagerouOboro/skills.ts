@@ -2,6 +2,7 @@ import { Skill, SkillType } from "../../../common/types";
 import { coinFlip } from "../../gunslinger/gunslinger/skills";
 import {
   castOffCicadaShell,
+  coinTrick,
   illusionThrust,
   ninpouTraining,
   shadowSlash,
@@ -117,7 +118,10 @@ export const makibishi: Skill = {
   maxLevel: 3,
   type: SkillType.active,
   icon: "./assets/kagerouOboro/makibishi.png",
-  preRequisites: [{ skill: coinFlip, level: 1 }],
+  preRequisites: [
+    { skill: coinFlip, level: 1 },
+    { skill: coinTrick, level: 1 },
+  ],
 };
 
 export const izayoi: Skill = {

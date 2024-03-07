@@ -497,7 +497,7 @@ export const KagerouOboro = () => {
                   color: "#111111",
                   fontWeight: 600,
                   marginLeft: "auto",
-                  background: skillPoints > 74 ? "#F0A199" : "#ABD973",
+                  background: skillPoints > 54 ? "#F0A199" : "#ABD973",
                   borderRadius: "8px 0px 0px 8px",
                   width: "46px",
                   height: "25px",
@@ -522,7 +522,7 @@ export const KagerouOboro = () => {
                     "0px 3px 1px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
                 }}
               >
-                74
+                54
               </div>
             </div>
             <div className={skillGrid}>
